@@ -1,0 +1,203 @@
+// UI dictionary. en-US defines the shape; other locales must match it exactly (typed as Dict).
+// Templates use {name} placeholders, filled by `tpl()` in src/i18n/index.ts.
+
+const enUS = {
+  site: {
+    tagline: "Free insulation calculator for attics, walls and floors",
+    skip: "Skip to content",
+  },
+  nav: {
+    calculators: "Calculators",
+    converter: "R ↔ U converter",
+    methodology: "Methodology",
+    faq: "FAQ",
+    about: "About",
+    menu: "Menu",
+    close: "Close",
+    country: "Country",
+  },
+  hero: {
+    eyebrow: "Free · No sign-up · US + Europe",
+  },
+  calc: {
+    title: "Insulation calculator",
+    areaQ: "What are you insulating?",
+    areas: {
+      attic: "Attic",
+      roof: "Sloped roof",
+      wall: "Walls",
+      floor: "Floor",
+      basementWall: "Basement walls",
+    },
+    sizeQ: "How big is it?",
+    dimModes: { rect: "Length × width", total: "Total area", walls: "Measure walls" },
+    length: "Length",
+    width: "Width",
+    totalArea: "Area",
+    perimeter: "Total wall length",
+    wallHeight: "Wall height",
+    doors: "Doors",
+    windows: "Windows",
+    netArea: "Net area {area}",
+    existingQ: "What's there now?",
+    existingKinds: {
+      none: "Nothing",
+      thickness: "I know the depth",
+      r: "I know the R-value",
+      u: "I know the U-value",
+    },
+    existingDepth: "Depth",
+    existingType: "Type",
+    existingR: "Current R-value",
+    existingU: "Current U-value",
+    locationQ: "Where do you live?",
+    zip: "ZIP code",
+    zipHelp: "We look up your 2021 IECC climate zone.",
+    zipFound: "Climate zone {zone}",
+    zipNotFound: "ZIP not found. Pick your zone instead.",
+    zone: "Climate zone",
+    zoneOption: "Zone {zone}",
+    dept: "Département",
+    targetQ: "How far do you want to go?",
+    materialQ: "What will you use?",
+    product: "Product",
+    advanced: "More options",
+    cavity: "Cavity depth",
+    cavityNone: "Not limited",
+    cavityHelp: "Insulation inside a closed wall or rafter cavity can't be deeper than the cavity.",
+    waste: "Waste allowance",
+    price: "Your price per {unit}",
+    pricePlaceholder: "Typical",
+    units: { imperial: "ft / in", metric: "m / cm" },
+    reset: "Reset",
+  },
+  result: {
+    addLabel: "Add on top of what you have",
+    settles: "Install {installed}, settles to {settled}",
+    alreadyMet: "You're already there",
+    alreadyMetBody: "Your current insulation meets this target. Pick a higher level to see what an upgrade would take.",
+    invalid: "Enter the size of the area to see results.",
+    noTarget: "There's no published target for this area at this level. Try another level.",
+    now: "Now",
+    target: "Target",
+    after: "After",
+    toBuy: "To buy",
+    estCost: "Material cost",
+    costNote: "Typical retail prices, {date}. Excludes tools and labor.",
+    sprayNote: "Spray foam is installed by professionals. Price is a typical installed cost.",
+    layer: "Layer {n}",
+    of: "{count} × {name}",
+    coverage: "covers {area} each",
+    depth: "Depth",
+    totalDepth: "Total depth added",
+    copy: "Copy shopping list",
+    copied: "Copied!",
+    print: "Print",
+    share: "Copy link",
+    linkCopied: "Link copied",
+    showMath: "Show the math",
+    disclaimer:
+      "Planning estimate only. Check the coverage chart on the product you buy and your local building code before you start.",
+    jump: "See results",
+    packages: {
+      bag: ["bag", "bags"],
+      roll: ["roll", "rolls"],
+      pack: ["pack", "packs"],
+      board: ["board", "boards"],
+      sheet: ["sheet", "sheets"],
+    },
+    warnings: {
+      asbestosRisk:
+        "Vermiculite (pebbly, grey-brown loose fill) may contain asbestos. Don't disturb it — get it tested by a professional first.",
+      oldMineralWool:
+        "Old mineral wool can irritate skin and lungs. Wear a mask (FFP2/N95), goggles and gloves when working near it.",
+      cavityLimit:
+        "This much insulation won't fit in the cavity. You'd need to add continuous insulation boards to reach the target.",
+      targetNotReached: "No standard combination reaches the target. This is the closest option.",
+      noTarget: "No target is published for this combination.",
+    },
+    steps: {
+      target: "Target: {target} of insulation{uNote}.",
+      targetU: " (from a maximum U-value of {u} after subtracting {rOther} for the rest of the build-up)",
+      existing: "Already there: {existing}.",
+      add: "To add: {add}.",
+      quantityArea: "Area {area} + {waste}% waste = {qty} to cover.",
+      layers: "{count} layer(s), {depth} total, {packages} packages.",
+      loosefill: "Settled depth {settled}, installed {installed}: {bags} bags ({how}).",
+      loosefillChart: "from the manufacturer's coverage chart",
+      loosefillPhysics: "from density and bag weight",
+      spray: "Spray to {depth}.",
+      cost: "Material cost {low} – {high}.",
+    },
+  },
+  shopping: {
+    title: "Shopping list",
+    for: "{area} of {areaName}",
+    insulation: "Insulation",
+    extras: "Also useful",
+    extrasList: {
+      loosefill: [
+        "Blowing machine (often free to rent when you buy enough bags)",
+        "Attic rulers / depth markers",
+        "Rafter vents (baffles) to keep soffit vents clear",
+      ],
+      batt: ["Utility knife and a straightedge", "Staple gun (for faced batts)"],
+      roll: ["Utility knife and a straightedge", "Crawl boards to kneel on"],
+      board: ["Foam-board adhesive or fixings", "Foil tape for the joints"],
+      spray: ["Get 2–3 quotes from certified installers"],
+    },
+    safety: "Safety: mask (N95), goggles, gloves, long sleeves.",
+    printedFrom: "Made with {site} — {url}",
+  },
+  converter: {
+    title: "R-value ↔ U-value converter",
+    rIP: "R-value (US, ft²·°F·h/Btu)",
+    rSI: "R-value (SI, m²·K/W)",
+    u: "U-value (W/m²·K)",
+    thicknessTitle: "Thickness ↔ R-value",
+    lambda: "Thermal conductivity λ (W/m·K)",
+    rPerInch: "R per inch",
+    thickness: "Thickness",
+    note: "R and U are reciprocals: U = 1 / R (with R in SI units). 1 US R = 0.1761 m²·K/W.",
+  },
+  tables: {
+    thicknessTitle: "How thick is each R-value?",
+    thicknessIntro: "Depth needed for common R-values, by material.",
+    targetsTitle: "Recommended levels by area",
+    material: "Material",
+    area: "Area",
+    zone: "Zone",
+  },
+  page: {
+    updated: "Updated {date}",
+    sources: "Sources",
+    related: "More calculators",
+    faqTitle: "Frequently asked questions",
+    home: "Home",
+    notFoundTitle: "Page not found",
+    notFoundBody: "The page you're looking for doesn't exist. Try the calculator instead.",
+    notFoundCta: "Open the calculator",
+  },
+  footer: {
+    blurb: "Free, independent insulation calculators for the US and Europe. Runs in your browser. No sign-up, no cookies.",
+    calculators: "Calculators",
+    company: "About",
+    legal: "Legal",
+    countries: "Countries",
+    disclaimer: "Estimates are for planning. Confirm quantities with your supplier and your local building code.",
+    rights: "© {year} {site}",
+  },
+} as const;
+
+type Widen<T> = T extends string
+  ? string
+  : T extends readonly (infer U)[]
+    ? readonly Widen<U>[]
+    : T extends object
+      ? { -readonly [K in keyof T]: Widen<T[K]> }
+      : T;
+
+export type Dict = Widen<typeof enUS>;
+
+const dict: Dict = enUS;
+export default dict;

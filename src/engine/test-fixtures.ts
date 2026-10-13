@@ -17,6 +17,7 @@ export const fixtureInsulationR: MarketData = {
   tiers: [
     {
       id: "code",
+      label: "Code",
       basis: "insulationR",
       byZone: {
         "4": { attic: rIP(49), wall: rIP(13) },
@@ -25,7 +26,7 @@ export const fixtureInsulationR: MarketData = {
       },
       ...src,
     },
-    { id: "flat", basis: "insulationR", values: { attic: rIP(49) }, ...src },
+    { id: "flat", label: "Flat", basis: "insulationR", values: { attic: rIP(49) }, ...src },
   ],
   defaultTier: "code",
   products: [
@@ -86,9 +87,13 @@ export const fixtureInsulationR: MarketData = {
   ],
   defaultProduct: { attic: "cellulose", wall: "batt" },
   existing: [
-    { id: "oldBatts", lambda: 0.0254 / (3.0 * 0.1761101838) },
-    { id: "vermiculite", lambda: 0.0254 / (2.13 * 0.1761101838), warning: "asbestosRisk" },
+    { id: "oldBatts", label: "Old batts", lambda: 0.0254 / (3.0 * 0.1761101838) },
+    { id: "vermiculite", label: "Vermiculite", lambda: 0.0254 / (2.13 * 0.1761101838), warning: "asbestosRisk" },
   ],
+  materialLabels: {},
+  metricDepthUnit: "cm",
+  defaultWastePct: 10,
+  openings: { doorM2: 2, windowM2: 1.5 },
   conventions: {},
   sources: [{ id: "fixture", title: "Test fixture", url: "https://example.com", accessed: "2026-10-14" }],
 };
@@ -102,8 +107,8 @@ export const fixtureElementU: MarketData = {
   areas: ["attic", "wall"],
   zoneKind: "none",
   tiers: [
-    { id: "geg", basis: "elementU", values: { attic: 0.24, wall: 0.24 }, ...src },
-    { id: "beg", basis: "elementU", values: { attic: 0.14, wall: 0.2 }, ...src },
+    { id: "geg", label: "GEG", basis: "elementU", values: { attic: 0.24, wall: 0.24 }, ...src },
+    { id: "beg", label: "BEG", basis: "elementU", values: { attic: 0.14, wall: 0.2 }, ...src },
   ],
   defaultTier: "geg",
   products: [
@@ -127,7 +132,11 @@ export const fixtureElementU: MarketData = {
     },
   ],
   defaultProduct: { attic: "roll035", wall: "roll035" },
-  existing: [{ id: "oldWool", lambda: 0.045, warning: "oldMineralWool" }],
+  existing: [{ id: "oldWool", label: "Alte Mineralwolle", lambda: 0.045, warning: "oldMineralWool" }],
+  materialLabels: {},
+  metricDepthUnit: "cm",
+  defaultWastePct: 10,
+  openings: { doorM2: 2, windowM2: 1.5 },
   conventions: {
     attic: { rsi: 0.1, rse: 0.04, rStructure: 0.06, framingMm: 150, timberFraction: 0.1 },
     wall: { rsi: 0.13, rse: 0.04, rStructure: 0.5, framingMm: 0, timberFraction: 0 },

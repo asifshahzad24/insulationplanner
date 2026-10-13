@@ -95,6 +95,10 @@ export interface Product extends Sourced {
 
 export interface TargetTier extends Sourced {
   id: string;
+  /** short label in the market language, e.g. "Code minimum" */
+  label: string;
+  /** one-line explanation shown under the selector */
+  description?: string;
   /** insulationR: values are R of the insulation (m²K/W). elementU: values are max U of the whole element (W/m²K). */
   basis: "insulationR" | "elementU";
   values?: Partial<Record<AreaType, number>>;
@@ -123,6 +127,7 @@ export type WarningCode =
 
 export interface ExistingMaterial extends Partial<Sourced> {
   id: string;
+  label: string;
   lambda: number;
   warning?: WarningCode;
 }
@@ -145,6 +150,16 @@ export interface MarketData {
   products: Product[];
   defaultProduct: Partial<Record<AreaType, string>>;
   existing: ExistingMaterial[];
+  /** material group names in the market language */
+  materialLabels: Partial<Record<MaterialId, string>>;
+  /** display length unit for metric depths */
+  metricDepthUnit: "mm" | "cm";
+  /** default waste allowance, % */
+  defaultWastePct: number;
+  /** typical opening sizes for the walls area helper, m² */
+  openings: { doorM2: number; windowM2: number };
+  /** cavity depth presets for areas where insulation sits in a closed cavity; defaultIndex null = not limited */
+  cavities?: Partial<Record<AreaType, { options: { label: string; mm: number }[]; defaultIndex: number | null }>>;
   /** required for every area used by an elementU tier */
   conventions: Partial<Record<AreaType, AreaConvention>>;
   sources: Source[];

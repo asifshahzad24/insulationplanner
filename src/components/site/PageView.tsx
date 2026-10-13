@@ -1,0 +1,101 @@
+import { Calculator } from "@/components/calculator/Calculator";
+import { Converter } from "@/components/converter/Converter";
+import { site } from "@/config/site";
+import { getDict, tpl } from "@/i18n";
+import { getContent } from "@/lib/content";
+import { fmtDate } from "@/lib/format";
+import { breadcrumbLd, faqLd, switcherLinks, webAppLd } from "@/lib/seo";
+import { getMarket } from "@/markets";
+import { departementsForCalc } from "@/markets/fr/departements";
+import { MARKETS } from "@/markets/meta";
+import { pathOf, routeByGroup, routesFor, type Group, type RouteEntry } from "@/routes/registry";
+import { Breadcrumbs, Faq, JsonLd, RelatedLinks } from "./Blocks";
+import { Footer } from "./Footer";
+import { Header, type NavLink } from "./Header";
+import { TargetsTable, ThicknessChart } from "./Widgets";
+
+const linksFor = (entry: RouteEntry, groups: Group[]): NavLink[] =>
+  groups
+    .map((g) => routeByGroup(entry.market, g))
+    .filter((e): e is RouteEntry => Boolean(e))
+    .map((e) => ({ href: pathOf(e), label: getContent(e).nav }));
+
+export function PageView({ entry }: { entry: RouteEntry }) {
+  const market = getMarket(entry.market);
+  const dict = getDict(entry.market);
+  const content = getContent(entry);
+  const home = routeByGroup(entry.market, "home")!;
+  const isTool = entry.kind === "calculator" || entry.kind === "converter";
+
+  const nav = linksFor(entry, ["attic", "wall", "floor", "converter", "methodology"]);
+  const tools = routesFor(entry.market)
+    .filter((e) => e.tool)
+    .map((e) => ({ href: pathOf(e), label: getContent(e).nav }));
+  const company = linksFor(entry, ["methodology", "faq", "about"]);
+  const legal = linksFor(entry, ["privacy", "terms", "affiliate", "legalNotice"]);
+  const related = tools.filter((l) => l.href !== pathOf(entry)).slice(0, 6);
+
+  const crumbs = entry.group === "home" ? [] : [
+    { name: dict.page.home, href: pathOf(home) },
+    { name: content.nav, href: pathOf(entry) },
+  ];
+
+  return (
+    <>
+      <JsonLd
+        data={[
+          isTool ? webAppLd(entry, content) : null,
+          faqLd(content),
+          crumbs.length ? breadcrumbLd(crumbs.map((c) => ({ name: c.name, path: c.href }))) : null,
+        ]}
+      />
+
+      {/* ── Dark thermal hero ──────────────────────────────────────────── */}
+      <div className={`relative overflow-hidden bg-night ${isTool ? "pb-28" : "pb-14"}`}>
+        <div aria-hidden className="thermal-glow pointer-events-none absolute -right-24 -top-24 h-[420px] w-[620px] max-w-none" />
+        <Header market={entry.market} dict={dict} nav={nav} switcher={switcherLinks(entry)} />
+        <div className="relative mx-auto max-w-6xl px-4 pt-6 sm:px-6 sm:pt-10">
+          {crumbs.length ? <Breadcrumbs items={crumbs} /> : null}
+          {isTool ? <p className="mb-3 font-mono text-[12px] tracking-wide text-[#fdba74]">{dict.hero.eyebrow}</p> : null}
+          <h1 className="max-w-3xl font-display text-[2.4rem] font-extrabold leading-[1.02] tracking-[-0.03em] text-white sm:text-[3.4rem]">
+            {content.h1}
+          </h1>
+          {content.intro ? <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-night-text">{content.intro}</p> : null}
+        </div>
+      </div>
+
+      <main id="main" className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        {entry.kind === "calculator" ? (
+          <div className="relative z-10 -mt-20">
+            <Calculator
+              market={market}
+              dict={dict}
+              preset={entry.preset}
+              siteName={site.name}
+              departements={entry.market === "fr" ? departementsForCalc() : undefined}
+            />
+          </div>
+        ) : null}
+        {entry.kind === "converter" ? (
+          <div className="relative z-10 -mt-20">
+            <Converter dict={dict} locale={market.locale} imperialFirst={market.defaultUnits === "imperial"} />
+          </div>
+        ) : null}
+
+        {entry.widget === "targetsTable" ? <TargetsTable market={market} dict={dict} /> : null}
+        {entry.widget === "thicknessChart" ? <ThicknessChart market={market} dict={dict} /> : null}
+
+        <article className={`prose ${isTool || entry.widget ? "mt-14" : "mt-10"}`} dangerouslySetInnerHTML={{ __html: content.html }} />
+
+        <Faq title={dict.page.faqTitle} faqs={content.faqs} />
+        {isTool || entry.group === "home" ? <RelatedLinks title={dict.page.related} links={related} /> : null}
+
+        <p className="mt-12 text-xs text-faint">
+          {tpl(dict.page.updated, { date: fmtDate(MARKETS[entry.market].lang, site.updated) })}
+        </p>
+      </main>
+
+      <Footer market={entry.market} dict={dict} tools={tools} company={company} legal={legal} />
+    </>
+  );
+}

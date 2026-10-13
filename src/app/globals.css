@@ -1,26 +1,199 @@
 @import "tailwindcss";
 
+/* ── Thermal design tokens ─────────────────────────────────────────────── */
+@theme {
+  --color-ink: #0e1116;
+  --color-ink-2: #2a313b;
+  --color-muted: #5b6470;
+  --color-faint: #8a929c;
+  --color-line: #e3e6ea;
+  --color-line-2: #d3d8de;
+  --color-canvas: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-night: #0b0e14;
+  --color-night-2: #151a23;
+  --color-night-text: #a3abb6;
+
+  --color-hot: #dc2626;
+  --color-warm: #f97316;
+  --color-sun: #facc15;
+  --color-cool: #22d3ee;
+  --color-cold: #3b82f6;
+  --color-deep: #312e81;
+
+  --color-accent: #ea580c; /* warm orange, AA on white for large text / UI */
+  --color-accent-ink: #c2410c; /* AA on white for body text */
+  --color-ok: #15803d;
+  --color-warn-bg: #fff7ed;
+  --color-warn-line: #fed7aa;
+  --color-warn-ink: #9a3412;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius-card: 1rem;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --thermal: linear-gradient(90deg, #dc2626, #f97316, #facc15, #22d3ee, #3b82f6, #312e81);
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.thermal-bar {
+  background: var(--thermal);
+}
+
+.thermal-text {
+  background: linear-gradient(90deg, #f97316, #facc15);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Blurred thermal glow behind the hero headline */
+.thermal-glow {
+  background: radial-gradient(
+    closest-side,
+    rgba(250, 204, 21, 0.55),
+    rgba(249, 115, 22, 0.45) 35%,
+    rgba(220, 38, 38, 0.32) 58%,
+    rgba(59, 130, 246, 0.22) 80%,
+    transparent
+  );
+  filter: blur(8px);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cold);
+  outline-offset: 2px;
+}
+
+/* ── Prose (Markdown content) ──────────────────────────────────────────── */
+.prose {
+  color: var(--color-ink-2);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  max-width: 72ch;
+}
+.prose > * + * {
+  margin-top: 1em;
+}
+.prose h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+  margin-top: 2.2em;
+}
+.prose h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--color-ink);
+  margin-top: 1.8em;
+}
+.prose a {
+  color: var(--color-accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose ul,
+.prose ol {
+  padding-left: 1.4em;
+}
+.prose ul {
+  list-style: disc;
+}
+.prose ol {
+  list-style: decimal;
+}
+.prose li + li {
+  margin-top: 0.35em;
+}
+.prose strong {
+  color: var(--color-ink);
+}
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+}
+.prose blockquote {
+  border-left: 3px solid var(--color-warm);
+  padding-left: 1em;
+  color: var(--color-muted);
+}
+.prose .table-wrap {
+  overflow-x: auto;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+.prose th,
+.prose td {
+  text-align: left;
+  padding: 0.55em 0.75em;
+  border-bottom: 1px solid var(--color-line);
+}
+.prose th {
+  font-weight: 600;
+  color: var(--color-ink);
+  background: var(--color-canvas);
+}
+
+/* ── Print: only the shopping list and summary ─────────────────────────── */
+@media print {
+  body {
+    background: #fff;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
+.print-only {
+  display: none;
 }
