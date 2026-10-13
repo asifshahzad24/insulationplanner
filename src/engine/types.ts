@@ -101,6 +101,8 @@ export interface TargetTier extends Sourced {
   description?: string;
   /** insulationR: values are R of the insulation (m²K/W). elementU: values are max U of the whole element (W/m²K). */
   basis: "insulationR" | "elementU";
+  /** grant rules that count only the newly added insulation (e.g. French CEE: new R ≥ 7) */
+  newOnly?: boolean;
   values?: Partial<Record<AreaType, number>>;
   byZone?: Record<string, Partial<Record<AreaType, number>>>;
 }
@@ -145,6 +147,9 @@ export interface MarketData {
   areas: AreaType[];
   zoneKind: ZoneKind;
   defaultZone?: string;
+  /** regions the user picks from (FR départements); each maps to a zone */
+  regions?: { code: string; name: string; zone: string }[];
+  defaultRegion?: string;
   tiers: TargetTier[];
   defaultTier: string;
   products: Product[];

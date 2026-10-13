@@ -46,7 +46,7 @@ for (const market of Object.values(MARKET_DATA)) {
       }
     });
 
-    it("has sane products: positive prices and coverage, R rising with thickness", () => {
+    it("has sane products: positive prices and coverage, plausible conductivity per thickness", () => {
       for (const p of market.products) {
         expect(p.lambda, p.id).toBeGreaterThan(0.015);
         expect(p.lambda, p.id).toBeLessThan(0.08);
@@ -58,9 +58,11 @@ for (const market of Object.values(MARKET_DATA)) {
             expect(t.price.low, p.id).toBeGreaterThan(0);
             expect(t.price.high, p.id).toBeGreaterThanOrEqual(t.price.low);
           }
-          const sorted = [...p.thicknesses].sort((a, b) => a.mm - b.mm);
-          for (let i = 1; i < sorted.length; i++) {
-            if (sorted[i].mm > sorted[i - 1].mm) expect(sorted[i].rSI, p.id).toBeGreaterThan(sorted[i - 1].rSI);
+          // Denser products can have more R in less depth (US R-21 vs R-19), so check λ = d/R instead of monotonic R.
+          for (const t of p.thicknesses) {
+            const lambda = t.mm / 1000 / t.rSI;
+            expect(lambda, `${p.id} ${t.mm} mm`).toBeGreaterThan(0.015);
+            expect(lambda, `${p.id} ${t.mm} mm`).toBeLessThan(0.08);
           }
         }
         if (p.form === "loosefill") {

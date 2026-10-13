@@ -81,6 +81,9 @@ export function calculate(input: CalcInput, market: MarketData): CalcResult {
   }
   const existingStackR = stackR(existingLayers, framing);
   const existingRSI = existingFixedR + existingStackR;
+  // Grant rules like the French CEE count only the new layer: it must reach the target on its own.
+  const newOnly = Boolean(target.tier.newOnly) && basis === "insulationR";
+  const goalRSI = newOnly ? targetRSI + existingRSI : targetRSI;
 
   /** Effective insulation R once `added` is installed on top of what is there. */
   const rWith = (added: StackLayer[]): number => {
@@ -98,17 +101,17 @@ export function calculate(input: CalcInput, market: MarketData): CalcResult {
   const steps: MathStep[] = [
     {
       key: "target",
-      values: { basis, targetRSI, ...(basis === "elementU" ? { targetU: target.value, rOther } : {}) },
+      values: { basis, targetRSI, newOnly: newOnly ? 1 : 0, ...(basis === "elementU" ? { targetU: target.value, rOther } : {}) },
     },
     { key: "existing", values: { existingRSI } },
-    { key: "add", values: { addRSI: Math.max(0, targetRSI - existingRSI) } },
+    { key: "add", values: { addRSI: Math.max(0, goalRSI - existingRSI) } },
   ];
 
   const base = {
     basis,
     areaM2: input.areaM2,
     quantityAreaM2,
-    targetRSI,
+    targetRSI: goalRSI,
     existingRSI,
     targetU: basis === "elementU" ? target.value : undefined,
     currentU: uOf(existingRSI),
@@ -116,7 +119,7 @@ export function calculate(input: CalcInput, market: MarketData): CalcResult {
     warnings,
   };
 
-  if (existingRSI >= targetRSI - EPS) {
+  if (existingRSI >= goalRSI - EPS) {
     return {
       ...blank("alreadyMet"),
       ...base,
@@ -132,7 +135,7 @@ export function calculate(input: CalcInput, market: MarketData): CalcResult {
   // ── Layered products: batts, rolls, boards ─────────────────────────────────
   if ((product.form === "batt" || product.form === "roll" || product.form === "board") && product.thicknesses) {
     const sel = selectLayers(product.thicknesses, {
-      target: targetRSI,
+      target: goalRSI,
       evalR: (picks) => rWith(picks.map(layerOf)),
       quantityAreaM2,
       maxMm: maxNewMm,
@@ -153,7 +156,7 @@ export function calculate(input: CalcInput, market: MarketData): CalcResult {
       afterRSI,
       afterU: uOf(afterRSI),
       addedRSI: sel.picks.reduce((s, t) => s + t.rSI, 0),
-      shortfallRSI: Math.max(0, targetRSI - afterRSI),
+      shortfallRSI: Math.max(0, goalRSI - afterRSI),
       depthMm: layers.reduce((s, l) => s + l.mm, 0),
       layers,
       packages,
@@ -164,9 +167,9 @@ export function calculate(input: CalcInput, market: MarketData): CalcResult {
 
   // ── Continuous products: loose-fill and spray ──────────────────────────────
   const lambda = product.lambda;
-  const neededR = targetRSI - existingRSI;
+  const neededR = goalRSI - existingRSI;
   let settledMm =
-    basis === "insulationR" ? neededR * lambda * 1000 : solveMm((mm) => rWith([{ mm, lambda }]), targetRSI);
+    basis === "insulationR" ? neededR * lambda * 1000 : solveMm((mm) => rWith([{ mm, lambda }]), goalRSI);
   let capped = false;
   if (maxNewMm != null && settledMm > maxNewMm + EPS) {
     settledMm = maxNewMm;
@@ -193,7 +196,7 @@ export function calculate(input: CalcInput, market: MarketData): CalcResult {
       afterRSI,
       afterU: uOf(afterRSI),
       addedRSI: row ? neededR : settledMm / 1000 / lambda,
-      shortfallRSI: Math.max(0, targetRSI - afterRSI),
+      shortfallRSI: Math.max(0, goalRSI - afterRSI),
       depthMm: installedMm,
       settledMm,
       layers: [],
@@ -215,7 +218,7 @@ export function calculate(input: CalcInput, market: MarketData): CalcResult {
       afterRSI,
       afterU: uOf(afterRSI),
       addedRSI: settledMm / 1000 / lambda,
-      shortfallRSI: Math.max(0, targetRSI - afterRSI),
+      shortfallRSI: Math.max(0, goalRSI - afterRSI),
       depthMm: settledMm,
       layers: [],
       packages: 0,

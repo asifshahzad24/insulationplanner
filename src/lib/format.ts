@@ -38,7 +38,10 @@ export function fmtDepth(market: Pick<MarketData, "locale" | "metricDepthUnit">,
     const inch = mmToInches(mm);
     return `${fmtNum(market.locale, inch, inch < 10 ? 2 : 1).replace(/[.,]?0+$/, "")} in`;
   }
-  if (market.metricDepthUnit === "cm") return `${fmtNum(market.locale, mm / 10, mm < 100 ? 1 : 0)} cm`;
+  if (market.metricDepthUnit === "cm") {
+    const cm = Math.round(mm) / 10;
+    return `${fmtNum(market.locale, cm, mm < 100 && !Number.isInteger(cm) ? 1 : 0)} cm`;
+  }
   return `${fmtNum(market.locale, Math.round(mm))} mm`;
 }
 

@@ -156,6 +156,24 @@ describe("calculate · insulation-R basis (US style)", () => {
   });
 });
 
+describe("calculate · grant tiers that count new insulation only", () => {
+  const market = {
+    ...US,
+    tiers: [...US.tiers, { id: "newOnly", label: "New only", basis: "insulationR" as const, newOnly: true, values: { attic: rIP(30) }, source: "fixture" }],
+  };
+  it("ignores existing insulation when sizing the new layer", () => {
+    const r = calculate(usAttic({ tierId: "newOnly", existing: { kind: "r", rSI: rIP(19) } }), market);
+    expect(r.status).toBe("ok");
+    expect(r.addedRSI).toBeGreaterThanOrEqual(rIP(30) - 1e-9);
+    expect(r.layers.map((l) => l.label)).toEqual(["R-30"]);
+    expect(r.targetRSI).toBeCloseTo(rIP(49), 9);
+  });
+  it("is never already met by existing insulation alone", () => {
+    const r = calculate(usAttic({ tierId: "newOnly", existing: { kind: "r", rSI: rIP(60) } }), market);
+    expect(r.status).toBe("ok");
+  });
+});
+
 describe("calculate · element-U basis (EU style)", () => {
   const euAttic = (over: Partial<CalcInput> = {}): CalcInput => ({
     area: "attic",

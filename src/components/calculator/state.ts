@@ -85,7 +85,8 @@ export function defaultState(market: MarketData, preset: Preset = {}): UiState {
     existingR: "",
     existingU: "",
     zip: "",
-    zone: market.defaultZone ?? "",
+    // FR: a département code (mapped to its climate zone in toInput); US: an IECC zone.
+    zone: market.zoneKind === "frZone" ? (market.defaultRegion ?? "") : (market.defaultZone ?? ""),
     tier: market.defaultTier,
     product: preset.productId ?? defaultProductFor(market, area, preset.form),
     cavity: defaultCavity(market, area),
@@ -153,7 +154,10 @@ export function toInput(ui: UiState, market: MarketData): CalcInput {
     areaM2: Number.isFinite(areaM2) ? areaM2 : 0,
     existing,
     tierId: ui.tier,
-    zone: ui.zone || market.defaultZone,
+    zone:
+      market.zoneKind === "frZone"
+        ? (market.regions?.find((r) => r.code === ui.zone)?.zone ?? market.defaultZone)
+        : ui.zone || market.defaultZone,
     productId: ui.product,
     wastePct: Math.min(50, Math.max(0, num(ui.waste) || 0)),
     cavityMm,
@@ -222,6 +226,7 @@ export function decodeState(search: string, defaults: UiState, market: MarketDat
   if (!market.tiers.some((t) => t.id === next.tier)) next.tier = defaults.tier;
   if (!productsFor(market, next.area).some((p) => p.id === next.product)) next.product = defaultProductFor(market, next.area);
   if (!market.existing.some((m) => m.id === next.existingMaterial)) next.existingMaterial = defaults.existingMaterial;
+  if (market.zoneKind === "frZone" && !market.regions?.some((r) => r.code === next.zone)) next.zone = defaults.zone;
   const cav = market.cavities?.[next.area]?.options ?? [];
   if (next.cavity < -1 || next.cavity >= cav.length) next.cavity = defaultCavity(market, next.area);
   return next;

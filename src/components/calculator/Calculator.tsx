@@ -28,11 +28,9 @@ interface Props {
   dict: Dict;
   preset?: Preset;
   siteName: string;
-  /** optional FR département → zone list */
-  departements?: { code: string; name: string; zone: string }[];
 }
 
-export function Calculator({ market, dict, preset, siteName, departements }: Props) {
+export function Calculator({ market, dict, preset, siteName }: Props) {
   const defaults = useMemo(() => defaultState(market, preset), [market, preset]);
   const [ui, setUi] = useState<UiState>(defaults);
   const [zipStatus, setZipStatus] = useState<"idle" | "found" | "missing">("idle");
@@ -273,7 +271,7 @@ export function Calculator({ market, dict, preset, siteName, departements }: Pro
                 </Field>
               </div>
             </section>
-          ) : market.zoneKind === "frZone" && departements?.length ? (
+          ) : market.zoneKind === "frZone" && market.regions?.length ? (
             <section>
               <Question>{c.locationQ}</Question>
               <Field label={c.dept} htmlFor="dept">
@@ -281,7 +279,7 @@ export function Calculator({ market, dict, preset, siteName, departements }: Pro
                   id="dept"
                   value={ui.zone}
                   onChange={(v) => set("zone", v)}
-                  options={departements.map((d) => ({ value: d.zone, label: `${d.code} · ${d.name} (${d.zone})` }))}
+                  options={market.regions.map((d) => ({ value: d.code, label: `${d.code} · ${d.name} (${d.zone})` }))}
                 />
               </Field>
             </section>

@@ -118,6 +118,7 @@ const fr: Dict = {
     steps: {
       target: "Objectif : {target} d'isolant{uNote}.",
       targetU: " (à partir d'un U maximal de {u}, moins {rOther} pour le reste de la paroi)",
+      newOnly: " pour le seul nouvel isolant (l'isolant existant ne compte pas)",
       existing: "Déjà en place : {existing}.",
       add: "À ajouter : {add}.",
       quantityArea: "Surface {area} + {waste} % de chutes = {qty}.",

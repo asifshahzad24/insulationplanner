@@ -118,6 +118,7 @@ const enGB: Dict = {
     steps: {
       target: "Target: {target} of insulation{uNote}.",
       targetU: " (from a maximum U-value of {u} after subtracting {rOther} for the rest of the build-up)",
+      newOnly: " for the new insulation alone (existing insulation doesn't count)",
       existing: "Already there: {existing}.",
       add: "To add: {add}.",
       quantityArea: "Area {area} + {waste}% waste = {qty} to cover.",

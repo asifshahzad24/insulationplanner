@@ -1,5 +1,5 @@
 // United States market data. Authored in US units, converted to SI by the helpers.
-// Research notes and full source list: docs/data/us-research.md
+// Research notes and full source list: docs/research/us.json
 import type { AreaType, MarketData, Thickness } from "@/engine/types";
 import { inches, lb, pcf, perBoardFoot, rIP, sqft } from "@/engine/units";
 

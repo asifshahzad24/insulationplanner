@@ -6,7 +6,6 @@ import { getContent } from "@/lib/content";
 import { fmtDate } from "@/lib/format";
 import { breadcrumbLd, faqLd, switcherLinks, webAppLd } from "@/lib/seo";
 import { getMarket } from "@/markets";
-import { departementsForCalc } from "@/markets/fr/departements";
 import { MARKETS } from "@/markets/meta";
 import { pathOf, routeByGroup, routesFor, type Group, type RouteEntry } from "@/routes/registry";
 import { Breadcrumbs, Faq, JsonLd, RelatedLinks } from "./Blocks";
@@ -72,7 +71,6 @@ export function PageView({ entry }: { entry: RouteEntry }) {
               dict={dict}
               preset={entry.preset}
               siteName={site.name}
-              departements={entry.market === "fr" ? departementsForCalc() : undefined}
             />
           </div>
         ) : null}

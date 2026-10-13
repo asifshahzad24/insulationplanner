@@ -118,6 +118,7 @@ const de: Dict = {
     steps: {
       target: "Ziel: {target} Dämmung{uNote}.",
       targetU: " (aus dem maximalen U-Wert {u} abzüglich {rOther} für den restlichen Aufbau)",
+      newOnly: " allein für die neue Dämmung (vorhandene Dämmung zählt nicht)",
       existing: "Vorhanden: {existing}.",
       add: "Zusätzlich nötig: {add}.",
       quantityArea: "Fläche {area} + {waste} % Verschnitt = {qty}.",

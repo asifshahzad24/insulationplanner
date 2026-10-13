@@ -178,8 +178,13 @@ function MathSteps({ result, market, dict, units }: { result: CalcResult; market
     switch (step.key) {
       case "target":
         return tpl(s.target, {
-          target: R(result.targetRSI),
-          uNote: v.targetU != null ? tpl(s.targetU, { u: fmtU(market.locale, Number(v.targetU)), rOther: R(Number(v.rOther)) }) : "",
+          target: R(Number(v.targetRSI)),
+          uNote:
+            v.targetU != null
+              ? tpl(s.targetU, { u: fmtU(market.locale, Number(v.targetU)), rOther: R(Number(v.rOther)) })
+              : v.newOnly
+                ? s.newOnly
+                : "",
         });
       case "existing":
         return tpl(s.existing, { existing: R(result.existingRSI) });
