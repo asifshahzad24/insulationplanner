@@ -30,7 +30,7 @@ export function RMeter({
 
   return (
     <figure className="my-5" aria-label={`${labels.now} ${fmtR(market, now)}, ${labels.target} ${fmtR(market, target)}, ${labels.after} ${fmtR(market, after)}`}>
-      <div className="relative h-6 text-[11px] font-medium text-ink">
+      <div className="relative mb-2 h-5 text-[11px] font-medium text-ink">
         <span className={`absolute bottom-0 whitespace-nowrap ${align(target)}`} style={{ left: pct(target) }}>
           {labels.target} {fmtR(market, target, false)}
         </span>

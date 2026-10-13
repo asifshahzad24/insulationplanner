@@ -93,7 +93,7 @@ export function ResultPanel({ result, product, market, dict, units, areaName, ti
         </div>
         <div className="rounded-xl bg-canvas px-3.5 py-3">
           <span className="block text-xs text-muted">{t.estCost}</span>
-          <b className="font-mono text-xl font-semibold tabular">{costText}</b>
+          <b className="block font-mono text-[17px] font-semibold leading-snug tabular">{costText}</b>
         </div>
       </div>
 
