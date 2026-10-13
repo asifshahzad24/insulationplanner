@@ -89,9 +89,9 @@ export const ROUTES: RouteEntry[] = [
   // ── United Kingdom ─────────────────────────────────────────────────────
   r("uk", "", "calculator", "home", { priority: 1 }),
   r("uk", "loft-insulation-calculator", "calculator", "attic", { preset: { area: "attic" }, tool: true, priority: 0.9 }),
-  r("uk", "blown-loft-insulation-calculator", "calculator", "blown", { preset: { area: "attic", form: "loosefill" }, tool: true, priority: 0.8 }),
-  r("uk", "cavity-wall-insulation-calculator", "calculator", "wall", { preset: { area: "wall", form: "loosefill" }, tool: true, priority: 0.8 }),
-  r("uk", "solid-wall-insulation-calculator", "calculator", "solidWall", { preset: { area: "wall", form: "board" }, tool: true, priority: 0.8 }),
+  r("uk", "blown-loft-insulation-calculator", "calculator", "blown", { preset: { area: "attic", productId: "blownLoft" }, tool: true, priority: 0.8 }),
+  r("uk", "cavity-wall-insulation-calculator", "calculator", "wall", { preset: { area: "wall", productId: "cavityFill" }, tool: true, priority: 0.8 }),
+  r("uk", "solid-wall-insulation-calculator", "calculator", "solidWall", { preset: { area: "solidWall" }, tool: true, priority: 0.8 }),
   r("uk", "floor-insulation-calculator", "calculator", "floor", { preset: { area: "floor" }, tool: true, priority: 0.8 }),
   r("uk", "part-l-u-values", "calculator", "targets", { widget: "targetsTable", preset: { area: "attic" }, tool: true, priority: 0.7 }),
   r("uk", "loft-insulation-thickness", "article", "thickness", { widget: "thicknessChart", tool: true, priority: 0.8 }),
@@ -108,7 +108,7 @@ export const ROUTES: RouteEntry[] = [
   // ── Deutschland ────────────────────────────────────────────────────────
   r("de", "", "calculator", "home", { priority: 1 }),
   r("de", "oberste-geschossdecke-daemmen", "calculator", "attic", { preset: { area: "attic" }, tool: true, priority: 0.9 }),
-  r("de", "einblasdaemmung-rechner", "calculator", "blown", { preset: { area: "attic", form: "loosefill" }, tool: true, priority: 0.8 }),
+  r("de", "einblasdaemmung-rechner", "calculator", "blown", { preset: { area: "attic", productId: "zellulose" }, tool: true, priority: 0.8 }),
   r("de", "aussenwand-daemmen", "calculator", "wall", { preset: { area: "wall" }, tool: true, priority: 0.8 }),
   r("de", "kellerdecke-daemmen", "calculator", "floor", { preset: { area: "floor" }, tool: true, priority: 0.8 }),
   r("de", "dach-daemmen", "calculator", "roof", { preset: { area: "roof" }, tool: true, priority: 0.8 }),

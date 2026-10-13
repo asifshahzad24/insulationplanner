@@ -45,7 +45,7 @@ export interface Preset {
   productId?: string;
 }
 
-const isWallLike = (a: AreaType) => a === "wall" || a === "basementWall";
+export const isWallLike = (a: AreaType) => a === "wall" || a === "solidWall" || a === "basementWall";
 
 export function productsFor(market: MarketData, area: AreaType): Product[] {
   return market.products.filter((p) => p.areas.includes(area));

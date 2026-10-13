@@ -25,6 +25,7 @@ const fr: Dict = {
       attic: "Combles perdus",
       roof: "Rampants",
       wall: "Murs",
+      solidWall: "Murs pleins",
       floor: "Plancher bas",
       basementWall: "Murs de sous-sol",
     },

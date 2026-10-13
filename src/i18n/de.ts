@@ -25,6 +25,7 @@ const de: Dict = {
       attic: "Oberste Geschossdecke",
       roof: "Dachschräge",
       wall: "Außenwand",
+      solidWall: "Massivwand",
       floor: "Kellerdecke",
       basementWall: "Kellerwand",
     },

@@ -14,6 +14,7 @@ import {
   defaultProductFor,
   defaultState,
   encodeState,
+  isWallLike,
   productsFor,
   toInput,
   type DimMode,
@@ -60,7 +61,7 @@ export function Calculator({ market, dict, preset, siteName }: Props) {
 
   const changeArea = (area: AreaType) =>
     setUi((s) => {
-      const wall = area === "wall" || area === "basementWall";
+      const wall = isWallLike(area);
       const keepProduct = productsFor(market, area).some((p) => p.id === s.product);
       return {
         ...s,
@@ -95,7 +96,7 @@ export function Calculator({ market, dict, preset, siteName }: Props) {
   const lenUnit = imperial ? "ft" : "m";
   const areaUnit = imperial ? "sq ft" : "m²";
   const depthUnit = imperial ? "in" : market.metricDepthUnit;
-  const isWall = ui.area === "wall" || ui.area === "basementWall";
+  const isWall = isWallLike(ui.area);
   const hasElementU = market.tiers.some((t) => t.basis === "elementU");
   const cavities = market.cavities?.[ui.area];
   const areaM2 = areaM2Of(ui, market);
@@ -374,10 +375,14 @@ export function Calculator({ market, dict, preset, siteName }: Props) {
           className="no-print fixed inset-x-3 bottom-3 z-40 flex items-center justify-between gap-3 rounded-2xl bg-night px-4 py-3 text-white shadow-2xl lg:hidden"
           style={{ marginBottom: "env(safe-area-inset-bottom, 0px)" }}
         >
-          <span className="truncate font-mono text-[13px] tabular">
-            +{fmtDepth(market, ui.units, result.depthMm)}
-            {product.form !== "spray" && unitForms ? ` · ${result.packages} ${plural(result.packages, unitForms)}` : ""}
-            {` · ${fmtMoneyRange(market.locale, market.currency, result.cost.low, result.cost.high)}`}
+          <span className="min-w-0 leading-tight">
+            <span className="block font-display text-lg font-extrabold tabular">
+              +{fmtDepth(market, ui.units, result.depthMm)}
+            </span>
+            <span className="block truncate font-mono text-[12px] text-night-text tabular">
+              {product.form !== "spray" && unitForms ? `${result.packages} ${plural(result.packages, unitForms)} · ` : ""}
+              {fmtMoneyRange(market.locale, market.currency, result.cost.low, result.cost.high)}
+            </span>
           </span>
           <span className="shrink-0 rounded-lg bg-white/10 px-2.5 py-1 text-xs font-semibold">{dict.result.jump}</span>
         </a>

@@ -70,7 +70,7 @@ for (const market of Object.values(MARKET_DATA)) {
           expect(p.loosefill!.price.low).toBeGreaterThan(0);
           expect(p.loosefill!.bagKg).toBeGreaterThan(0);
         }
-        if (p.form === "spray") expect(p.spray?.pricePerM2Mm.low, p.id).toBeGreaterThan(0);
+        if (p.form === "spray") expect(p.spray?.pricePerM2Mm?.low ?? p.spray?.pricePerM2?.low, p.id).toBeGreaterThan(0);
       }
     });
 

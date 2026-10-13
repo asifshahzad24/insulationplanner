@@ -207,6 +207,37 @@ describe("calculate · element-U basis (EU style)", () => {
     expect(r.warnings).toContain("oldMineralWool");
   });
 
+  it("fills the whole cavity with cavity-fill products and prices them per m²", () => {
+    const market = {
+      ...EU,
+      products: [
+        ...EU.products,
+        {
+          id: "cavityFill",
+          material: "blownFiberglass" as const,
+          form: "spray" as const,
+          name: "Cavity fill",
+          lambda: 0.04,
+          areas: ["wall" as const],
+          betweenFraming: true,
+          fillsCavity: true,
+          spray: { pricePerM2: { low: 20, high: 28 } },
+          priceDate: "2026-10",
+          source: "fixture",
+        },
+      ],
+      tiers: [...EU.tiers, { id: "cavity", label: "Cavity", basis: "elementU" as const, values: { wall: 0.55 }, source: "fixture" }],
+    };
+    const r = calculate(euAttic({ area: "wall", areaM2: 80, tierId: "cavity", productId: "cavityFill", cavityMm: 65 }), market);
+    expect(r.depthMm).toBe(65);
+    expect(r.afterRSI).toBeCloseTo(0.065 / 0.04, 9);
+    expect(r.cost).toEqual({ low: 80 * 20, high: 80 * 28 });
+    expect(r.warnings).not.toContain("cavityLimit");
+    const tooThin = calculate(euAttic({ area: "wall", areaM2: 80, tierId: "geg", productId: "cavityFill", cavityMm: 50 }), market);
+    expect(tooThin.depthMm).toBe(50);
+    expect(tooThin.warnings).toContain("cavityLimit");
+  });
+
   it("uses a known existing U-value", () => {
     const r = calculate(euAttic({ area: "wall", existing: { kind: "u", u: 1.4 } }), EU);
     expect(r.existingRSI).toBeCloseTo(1 / 1.4 - 0.67, 9);

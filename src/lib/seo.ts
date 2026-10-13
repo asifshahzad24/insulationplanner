@@ -62,6 +62,18 @@ export function webAppLd(entry: RouteEntry, content: PageContent) {
   };
 }
 
+/** Rendered HTML → plain text for JSON-LD (no Markdown syntax or tags). */
+const plainText = (html: string) =>
+  html
+    .replace(/<[^>]+>/g, "")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#x27;|&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/\s+/g, " ")
+    .trim();
+
 export function faqLd(content: PageContent) {
   if (!content.faqs.length) return null;
   return {
@@ -70,7 +82,7 @@ export function faqLd(content: PageContent) {
     mainEntity: content.faqs.map((f) => ({
       "@type": "Question",
       name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
+      acceptedAnswer: { "@type": "Answer", text: plainText(f.html) },
     })),
   };
 }

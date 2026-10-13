@@ -1,0 +1,3404 @@
+{
+  "meta": {
+    "region": "United Kingdom (focus: England; notes for Wales and Scotland)",
+    "generated": "2026-10-14",
+    "purpose": "Reference data for Insulation Planner (UK): targets, U-value conventions, products, retail prices and installed costs.",
+    "conventions": "Every numeric entry carries a source id (see sources[]) and confidence. Unverified values are null with a note. \"derived\" means arithmetic on cited inputs.",
+    "caveats": [
+      "Web search budget was exhausted mid-research; some items (blown-loft installed cost per m2, cellulose/sheep wool/vermiculite lambda, XPS manufacturer lambda, ISO 6946 Table 9 intermediate roof-space value) remain null.",
+      "B&Q prices unavailable (site returned 503 to automated access); Screwfix stocked no mineral-wool rolls or PIR boards online.",
+      "Retail prices are a single-day snapshot (2026-10-14) and include promotions (Wickes Knauf Space rolls all GBP 27 on offer).",
+      "ADL 2026 (Future Homes Standard) takes effect 24 Mar 2027 and does not change existing-dwelling U-value targets."
+    ]
+  },
+  "targets": {
+    "england": {
+      "note": "Approved Document L Volume 1 (2021 edition incorporating 2023 amendments) is current guidance in England. The 2026 edition was published 24 Mar 2026 (revised 8 Sep 2026) and takes effect 24 Mar 2027 (24 Sep 2027 for higher-risk building work); its existing-dwelling tables (renumbered 3.2 and 3.3) carry the same values as 2021 Tables 4.2 and 4.3.",
+      "retainedOrRenovatedElements_ADL2021_Table4_3": {
+        "description": "Limiting U-values for existing elements in existing dwellings. Column (a) threshold: retained elements worse than this should be upgraded. Column (b) improved: target U-value for renovated or upgraded elements.",
+        "rows": [
+          {
+            "element": "Pitched roof - insulation at ceiling level (loft)",
+            "thresholdU": 0.35,
+            "improvedU": 0.16,
+            "unit": "W/m2K",
+            "source": "adl2021",
+            "confidence": "high",
+            "note": "ADL 2021 Table 4.3 has a single \"Roof\" row covering all roof types (pitched at ceiling, pitched at rafters, flat); the same 0.35/0.16 applies to each."
+          },
+          {
+            "element": "Pitched roof - insulation at rafter level (room in roof / warm loft)",
+            "thresholdU": 0.35,
+            "improvedU": 0.16,
+            "unit": "W/m2K",
+            "source": "adl2021",
+            "confidence": "high",
+            "note": "Single \"Roof\" row. Note 3: if meeting the standard would limit head room, a lesser standard may be appropriate, provided insulation plus any air gap is at least the rafter depth and the lowest practicable U-value insulant is used."
+          },
+          {
+            "element": "Flat roof or roof with integral insulation",
+            "thresholdU": 0.35,
+            "improvedU": 0.16,
+            "unit": "W/m2K",
+            "source": "adl2021",
+            "confidence": "high",
+            "note": "Single \"Roof\" row. Note 4: lesser standard may be appropriate where load-bearing capacity of frame or upstand height is a problem."
+          },
+          {
+            "element": "Wall - cavity insulation (cavity fill)",
+            "thresholdU": 0.7,
+            "improvedU": 0.55,
+            "unit": "W/m2K",
+            "source": "adl2021",
+            "confidence": "high",
+            "note": "Note 5: applies only to a wall suitable for cavity insulation; otherwise treat as internal/external insulation."
+          },
+          {
+            "element": "Wall - internal or external insulation (solid wall, IWI/EWI)",
+            "thresholdU": 0.7,
+            "improvedU": 0.3,
+            "unit": "W/m2K",
+            "source": "adl2021",
+            "confidence": "high",
+            "note": "Note 6: if meeting the standard would reduce the room floor area by more than 5%, a lesser standard may be appropriate."
+          },
+          {
+            "element": "Floor",
+            "thresholdU": 0.7,
+            "improvedU": 0.25,
+            "unit": "W/m2K",
+            "source": "adl2021",
+            "confidence": "high",
+            "note": "Note 8: lesser standard may be appropriate where adjoining floor levels would be significantly affected."
+          }
+        ],
+        "rules": [
+          {
+            "rule": "Renovation of >50% of an individual thermal element, or a major renovation (>25% of the envelope surface area), triggers upgrading the whole element to column (b).",
+            "values": {
+              "elementShare": 0.5,
+              "envelopeShare": 0.25
+            },
+            "source": "adl2021",
+            "ref": "para 11.3",
+            "confidence": "high"
+          },
+          {
+            "rule": "If column (b) is not technically/functionally feasible or would not achieve a simple payback of 15 years or less, upgrade to the lowest U-value that is feasible within a 15-year payback.",
+            "values": {
+              "paybackYears": 15
+            },
+            "source": "adl2021",
+            "ref": "para 4.13",
+            "confidence": "high"
+          },
+          {
+            "rule": "Generally an upgraded thermal element should not have a U-value greater than 0.7 W/m2K (lesser standard acceptable if Part C condensation requirements are met).",
+            "values": {
+              "maxUAfterUpgrade": 0.7
+            },
+            "source": "adl2021",
+            "ref": "para 4.13",
+            "confidence": "high"
+          },
+          {
+            "rule": "Renovation includes: new cladding/render layer, dry-lining, stripping to structure and rebuilding, replacing a flat roof membrane, and providing cavity wall insulation.",
+            "source": "adl2021",
+            "ref": "para 11.2",
+            "confidence": "high"
+          }
+        ],
+        "appendixC_typicalConstructions": [
+          {
+            "works": "Renewal of roof covering / ceiling, cold loft (no living accommodation), existing loft insulation <50mm or poor",
+            "targetU": 0.16,
+            "typicalConstruction": "250mm mineral fibre or cellulose fibre quilt between and across ceiling joists, or loose fill or equivalent",
+            "insulationDepthMm": 250,
+            "source": "adl2021",
+            "ref": "Appendix C Table C1",
+            "confidence": "high"
+          },
+          {
+            "works": "Renewal of roof covering, existing loft insulation 50-100mm in good condition",
+            "targetU": 0.16,
+            "typicalConstruction": "Top up loft insulation to at least 250mm mineral fibre or cellulose fibre (may be boarded out)",
+            "insulationDepthMm": 250,
+            "existingRangeMm": [
+              50,
+              100
+            ],
+            "source": "adl2021",
+            "ref": "Appendix C Table C1",
+            "confidence": "high"
+          },
+          {
+            "works": "Flat roof renewal of covering, existing insulation <100mm mineral fibre or poor",
+            "targetU": 0.16,
+            "source": "adl2021",
+            "ref": "Appendix C Table C1",
+            "confidence": "high"
+          },
+          {
+            "works": "Solid wall: dry-lining or EWI when renewing finishes",
+            "targetU": 0.3,
+            "note": "Accept up to 5% loss of room area; where insulation is returned at party walls the target may rise to 0.35 or above.",
+            "source": "adl2021",
+            "ref": "Appendix C Table C1",
+            "confidence": "high"
+          },
+          {
+            "works": "Ground floor renovation (screed or timber deck replacement)",
+            "targetU": 0.25,
+            "note": "Added insulation likely cost-effective where existing floor U > 0.70.",
+            "source": "adl2021",
+            "ref": "Appendix C Table C1",
+            "confidence": "high"
+          }
+        ]
+      },
+      "newElementsInExistingDwellings_ADL2021_Table4_2": {
+        "description": "Limiting U-values for new (or replacement) fabric elements in existing dwellings, e.g. extensions. Area-weighted except windows/doors/rooflights.",
+        "rows": [
+          {
+            "element": "Roof",
+            "maxU": 0.15,
+            "unit": "W/m2K",
+            "source": "adl2021",
+            "confidence": "high"
+          },
+          {
+            "element": "Wall",
+            "maxU": 0.18,
+            "unit": "W/m2K",
+            "note": "Lesser provision may be appropriate if meeting it would reduce room floor area by >5%.",
+            "source": "adl2021",
+            "confidence": "high"
+          },
+          {
+            "element": "Floor",
+            "maxU": 0.18,
+            "unit": "W/m2K",
+            "note": "Lesser provision may be appropriate where adjoining floor levels are a problem; extension floor may use whole-dwelling perimeter/area.",
+            "source": "adl2021",
+            "confidence": "high"
+          },
+          {
+            "element": "Swimming pool basin",
+            "maxU": 0.25,
+            "unit": "W/m2K",
+            "source": "adl2021",
+            "confidence": "high"
+          },
+          {
+            "element": "Window / roof window",
+            "maxU": 1.4,
+            "unit": "W/m2K",
+            "alternative": "Window Energy Rating Band B minimum",
+            "source": "adl2021",
+            "confidence": "high"
+          },
+          {
+            "element": "Rooflight",
+            "maxU": 2.2,
+            "unit": "W/m2K",
+            "source": "adl2021",
+            "confidence": "high"
+          },
+          {
+            "element": "Door >60% glazed",
+            "maxU": 1.4,
+            "unit": "W/m2K",
+            "alternative": "Doorset Energy Rating Band C minimum",
+            "source": "adl2021",
+            "confidence": "high"
+          },
+          {
+            "element": "Other doors",
+            "maxU": 1.4,
+            "unit": "W/m2K",
+            "alternative": "Doorset Energy Rating Band B minimum",
+            "source": "adl2021",
+            "confidence": "high"
+          }
+        ]
+      },
+      "newDwellings_ADL2021_Table4_1_forReference": [
+        {
+          "element": "All roof types",
+          "maxU": 0.16,
+          "source": "adl2021",
+          "confidence": "high"
+        },
+        {
+          "element": "Wall",
+          "maxU": 0.26,
+          "source": "adl2021",
+          "confidence": "high"
+        },
+        {
+          "element": "Floor",
+          "maxU": 0.18,
+          "source": "adl2021",
+          "confidence": "high"
+        },
+        {
+          "element": "Party wall",
+          "maxU": 0.2,
+          "source": "adl2021",
+          "confidence": "high"
+        }
+      ],
+      "futureHomesStandard_ADL2026": {
+        "published": "2026-03-24",
+        "revised": "2026-09-08",
+        "takesEffect": "2027-03-24",
+        "takesEffectHigherRiskBuildings": "2027-09-24",
+        "renamedTo": "Approved Document L: Energy and greenhouse gas emissions (2026 edition)",
+        "existingDwellingChanges": "No change to limiting U-values for existing dwellings: 2026 Table 3.2 (new elements in existing dwellings: roof 0.15, wall 0.18, floor 0.18, windows 1.4/WER B) and Table 3.3 (retained/renovated: roof 0.35->0.16, cavity 0.70->0.55, IWI/EWI 0.70->0.30, floor 0.70->0.25) match 2021 Tables 4.2/4.3. The 15-year simple payback test, the 0.7 W/m2K cap and Appendix C (250mm mineral fibre loft) are retained. The 2021 timber window/door transitional notes are removed. Main 2026 changes (new-build notional dwelling, heat, Requirement L3 renewable electricity) do not alter retrofit insulation targets.",
+        "table3_2_newElementsInExisting": {
+          "roof": 0.15,
+          "wall": 0.18,
+          "floor": 0.18,
+          "window": 1.4,
+          "rooflight": 2.2,
+          "doors": 1.4
+        },
+        "table3_3_retained": {
+          "roof": {
+            "threshold": 0.35,
+            "improved": 0.16
+          },
+          "wallCavity": {
+            "threshold": 0.7,
+            "improved": 0.55
+          },
+          "wallInternalExternal": {
+            "threshold": 0.7,
+            "improved": 0.3
+          },
+          "floor": {
+            "threshold": 0.7,
+            "improved": 0.25
+          }
+        },
+        "table3_1_newDwellings": {
+          "roof": 0.16,
+          "wall": 0.26,
+          "floor": 0.18,
+          "partyWall": 0.2
+        },
+        "source": "adl2026",
+        "sourcesAlso": [
+          "adl2026-page",
+          "adl2026-faq"
+        ],
+        "confidence": "high"
+      }
+    },
+    "energySavingTrust": {
+      "loftDepthMm": {
+        "value": 270,
+        "text": "Current building regulations recommend a minimum depth of 270mm for mineral wool insulation.",
+        "source": "est-loft",
+        "confidence": "high"
+      },
+      "loftTopUpExample": {
+        "fromMm": 120,
+        "toMm": 270,
+        "annualSavingGBP_GB": 17,
+        "annualSavingGBP_NI": 20,
+        "source": "est-loft",
+        "confidence": "high",
+        "note": "EST notes 270mm is \"the minimum recommendation for new builds\". Savings basis not stated on page."
+      },
+      "loftMethod": {
+        "text": "First layer of mineral wool rolls between joists, second layer at right angles across joists to reach depth; do not squash mineral wool (reduces effectiveness); leave a ventilation gap below boards; do not cover vents.",
+        "source": "est-loft",
+        "confidence": "high"
+      },
+      "floors": {
+        "targetU_EnglandWalesNI": 0.25,
+        "targetU_Scotland": 0.18,
+        "typicalThickness": {
+          "rigidFoamMinMm": 70,
+          "mineralWoolApproxMm": 150
+        },
+        "replacingShareTrigger": 0.5,
+        "source": "est-floor",
+        "confidence": "medium",
+        "note": "EST states floors should achieve 0.25 (E/W/NI) or 0.18 (Scotland) and that at least 70mm high-performance rigid foam or around 150mm mineral wool is typically needed. The Scotland figure conflicts with the April 2026 Scottish handbook Table 6.2 floor value of 0.15 (applies to alterations/extensions) - treat Scotland value as uncertain."
+      },
+      "walls": {
+        "cavityMinWidthMm": 50,
+        "cavityLikelyIfBrickWallThicknessMm": [
+          260,
+          350
+        ],
+        "stoneWallsUpToMm": 500,
+        "note": "Cavity wall insulation needs a cavity at least 50mm wide, clear of rubble; narrow cavities (<50mm, often pre-1920s) are a risk. A brick wall 260-350mm thick is likely a cavity wall; thinner is probably solid. Guarantee: 25 years via CIGA or insurance-backed.",
+        "source": "est-cavity",
+        "confidence": "high"
+      },
+      "solidWallWarning": {
+        "text": "Oct 2025 National Audit Office report on quality failures in EWI/IWI under government schemes; EST reports 98% of homes fitted with EWI under ECO4/GBIS have problems needing fixing (TrustMark Find & Fix audits).",
+        "source": "est-solidwall",
+        "confidence": "medium"
+      }
+    },
+    "wales": {
+      "note": "Wales has its own Approved Document L. 2022 edition current; 2026 edition takes effect 4 Mar 2027 with the same fabric values. In Wales, retained/renovated elements should be upgraded to column (a); column (b) is the worst acceptable when (a) is not feasible.",
+      "retained_Table11_1": [
+        {
+          "element": "Wall - cavity insulation",
+          "targetU": 0.55,
+          "limitingU": 0.7,
+          "source": "wales-adl1-2022",
+          "confidence": "high",
+          "note": "Partially filled cavities exempt from column (a); exposed sites may be exempt from CWI."
+        },
+        {
+          "element": "Wall - internal or external insulation",
+          "targetU": 0.3,
+          "limitingU": 0.7,
+          "source": "wales-adl1-2022",
+          "confidence": "high"
+        },
+        {
+          "element": "Floor",
+          "targetU": 0.25,
+          "limitingU": 0.7,
+          "source": "wales-adl1-2022",
+          "confidence": "high"
+        },
+        {
+          "element": "Pitched roof - ceiling level",
+          "targetU": 0.16,
+          "limitingU": 0.35,
+          "source": "wales-adl1-2022",
+          "confidence": "high"
+        },
+        {
+          "element": "Pitched roof - between rafters",
+          "targetU": 0.16,
+          "limitingU": 0.35,
+          "source": "wales-adl1-2022",
+          "confidence": "high"
+        },
+        {
+          "element": "Flat roof / integral insulation",
+          "targetU": 0.16,
+          "limitingU": 0.35,
+          "source": "wales-adl1-2022",
+          "confidence": "high"
+        }
+      ],
+      "newElementsInExistingDwellings_Table4_1": {
+        "roof": 0.13,
+        "wallHouses": 0.18,
+        "wallFlats": 0.21,
+        "floor": 0.15,
+        "partyWall": 0.2,
+        "window": 1.4,
+        "rooflight": 2.2,
+        "doors": 1.4,
+        "unit": "W/m2K",
+        "source": "wales-adl1-2022",
+        "confidence": "high",
+        "note": "Stricter than England for roofs (0.13 vs 0.15) and floors (0.15 vs 0.18)."
+      },
+      "edition2026": {
+        "takesEffect": "2027-03-04",
+        "sameValues": true,
+        "source": "wales-adl1-2026",
+        "sourcesAlso": [
+          "wales-wgc006-2026"
+        ],
+        "confidence": "high"
+      }
+    },
+    "scotland": {
+      "note": "Scotland uses Building Standards Technical Handbooks (Section 6 Energy), not Approved Documents. April 2026 edition applies to warrant applications on/after 6 Apr 2026.",
+      "table6_2_maxU_newAndAlterations": {
+        "wall": 0.17,
+        "floor": 0.15,
+        "roof": 0.12,
+        "windowsDoors": 1.4,
+        "rooflights": 2.1,
+        "cavitySeparatingWall": 0,
+        "unit": "W/m2K",
+        "source": "scot-th-2026",
+        "confidence": "high",
+        "note": "Applies to new buildings and to alteration, extension or conversion of existing buildings (clause 6.2.1). Individual localised elements no worse than 0.7 (walls/floors) or 0.35 (roofs)."
+      },
+      "alterations": {
+        "text": "Where an envelope element is altered/rebuilt, Table 6.2 values are benchmarks to be met as far as reasonably practicable; in most cases a roof should achieve at least 0.35 and a wall or floor 0.70 average. Infill of small openings (about 4 m2 or less) should match the surrounding element but be no worse than 0.70 (wall/floor) or 0.35 (roof).",
+        "roofMinAvgU": 0.35,
+        "wallFloorMinAvgU": 0.7,
+        "smallOpeningM2": 4,
+        "source": "scot-th-2026",
+        "ref": "clause 6.2.10",
+        "confidence": "high"
+      },
+      "loftDepthClaim": {
+        "valueMm": 350,
+        "text": "Knauf states building regulations require a minimum loft depth of 270mm (350mm in Scotland).",
+        "source": "knauf-loftroll-guide",
+        "confidence": "low",
+        "note": "Manufacturer statement; not found as a prescribed depth in the Scottish handbook (which sets U-values)."
+      }
+    }
+  },
+  "conventions": {
+    "method": {
+      "text": "ADL requires U-values assessed using BR 443 conventions; BR 443 uses BS EN ISO 6946 (above-ground elements, combined upper/lower-limit method for bridged layers) and BS EN ISO 13370 (ground floors, depends on perimeter/area ratio). Simple formula for unbridged build-ups: U = 1 / (Rsi + sum(d/lambda) + Rse). Use nominal thickness except where compressible insulation is constrained (use installed thickness). Use manufacturer declared lambda where available.",
+      "source": "br443",
+      "sourcesAlso": [
+        "adl2021"
+      ],
+      "confidence": "high"
+    },
+    "surfaceResistances_ISO6946": [
+      {
+        "heatFlow": "horizontal (walls, windows; within +/-30 deg of horizontal)",
+        "Rsi": 0.13,
+        "Rse": 0.04,
+        "unit": "m2K/W",
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "heatFlow": "upwards (roofs, ceilings)",
+        "Rsi": 0.1,
+        "Rse": 0.04,
+        "unit": "m2K/W",
+        "source": "br443",
+        "confidence": "high",
+        "note": "Roof pitches of 60 deg or less are treated as upward heat flow."
+      },
+      {
+        "heatFlow": "downwards (floors)",
+        "Rsi": 0.17,
+        "Rse": 0.04,
+        "unit": "m2K/W",
+        "source": "br443",
+        "confidence": "high",
+        "note": "For ground floors Rse is not used; ISO 13370 handles the ground."
+      }
+    ],
+    "layerResistances": [
+      {
+        "layer": "Plasterboard 12.5mm, standard (lambda 0.21)",
+        "R": 0.06,
+        "unit": "m2K/W",
+        "source": "derived",
+        "inputs": "br443 lambda 0.21 W/mK (standard wallboard up to 700 kg/m3)",
+        "confidence": "high"
+      },
+      {
+        "layer": "Plasterboard 12.5mm, dense/fire/acoustic (lambda 0.25)",
+        "R": 0.05,
+        "unit": "m2K/W",
+        "source": "derived",
+        "inputs": "br443 lambda 0.25",
+        "confidence": "high"
+      },
+      {
+        "layer": "Brick 102.5mm, outer leaf (lambda 0.77)",
+        "R": 0.133,
+        "unit": "m2K/W",
+        "source": "derived",
+        "inputs": "br443 default brick lambda outer leaf 0.77",
+        "confidence": "high"
+      },
+      {
+        "layer": "Brick 102.5mm, inner leaf (lambda 0.56)",
+        "R": 0.183,
+        "unit": "m2K/W",
+        "source": "derived",
+        "inputs": "br443 default brick lambda inner leaf 0.56",
+        "confidence": "high"
+      },
+      {
+        "layer": "Dense concrete block 100mm (lambda 1.13)",
+        "R": 0.088,
+        "unit": "m2K/W",
+        "source": "derived",
+        "inputs": "knauf-solutions-2026 assumed lambda 1.13 W/mK",
+        "confidence": "medium"
+      },
+      {
+        "layer": "Medium-density block 100mm (lambda 0.45)",
+        "R": 0.222,
+        "unit": "m2K/W",
+        "source": "derived",
+        "inputs": "knauf-solutions-2026 assumed lambda 0.45 W/mK",
+        "confidence": "medium"
+      },
+      {
+        "layer": "Standard aircrete block 100mm (lambda 0.15)",
+        "R": 0.667,
+        "unit": "m2K/W",
+        "source": "derived",
+        "inputs": "knauf-solutions-2026 assumed lambda 0.15 W/mK",
+        "confidence": "medium"
+      },
+      {
+        "layer": "Unventilated masonry cavity (high-emissivity surfaces)",
+        "R": 0.18,
+        "unit": "m2K/W",
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "layer": "Unventilated airspace >=25mm with low-emissivity (foil) surface, e=0.2",
+        "R_wall": 0.44,
+        "R_roof": 0.34,
+        "R_floor": 0.5,
+        "unit": "m2K/W",
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "layer": "Plasterboard on dabs: 15mm airspace (dabs 20% of area, dab lambda 0.43)",
+        "R": 0.17,
+        "unit": "m2K/W",
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "layer": "Plasterboard on 22mm battens: airspace",
+        "R": 0.18,
+        "unit": "m2K/W",
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "layer": "Roof void between rafters and flat ceiling (rafter-level insulation, flat ceiling)",
+        "R": 0.16,
+        "unit": "m2K/W",
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "layer": "Ventilated loft/roof space above insulated ceiling (BS EN ISO 6946 Table 9, includes roof covering; excludes Rse=0.04)",
+        "R_min_tiledNoFeltOrBoards": 0.06,
+        "R_max_linedWithBoardsAndFelt": 0.3,
+        "R_tiledWithFeltOrBoards": null,
+        "unit": "m2K/W",
+        "source": "br443",
+        "confidence": "high",
+        "note": "BR 443 gives the range 0.06 (tiled roof, no felt/boards) to 0.3 (roof lined with boards and felt). The intermediate ISO 6946 Table 9 category (felt OR boards under tiles - the common UK case) was not verified in an accessible source; null. Knauf typical loft U-values assume \"cold ventilated roof with felt or sarking boards\"."
+      },
+      {
+        "layer": "Ventilated cladding cavity behind tile-hanging etc. (use as Rse, ignore layers outside)",
+        "Rse_wall_highE": 0.13,
+        "Rse_roof_highE": 0.1,
+        "Rse_wall_lowE": 0.29,
+        "Rse_roof_lowE": 0.17,
+        "unit": "m2K/W",
+        "source": "br443",
+        "confidence": "high"
+      }
+    ],
+    "materialConductivities": [
+      {
+        "material": "Softwood timber (joists, rafters, studs)",
+        "lambda": 0.13,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Hardwood",
+        "lambda": 0.18,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Plywood / OSB",
+        "lambda": 0.13,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Particleboard / fibreboard",
+        "lambda": 0.14,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Plasterboard, standard",
+        "lambda": 0.21,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Plasterboard, higher density",
+        "lambda": 0.25,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Brick, outer leaf (exposed)",
+        "lambda": 0.77,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Brick, inner leaf (protected)",
+        "lambda": 0.56,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Mortar, outer leaf",
+        "lambda": 0.94,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Mortar, inner leaf",
+        "lambda": 0.88,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Concrete screed (1800 kg/m3)",
+        "lambda": 1.15,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Limestone (2000 kg/m3)",
+        "lambda": 1.4,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Sandstone or granite (2600 kg/m3)",
+        "lambda": 2.3,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Dense concrete block",
+        "lambda": 1.13,
+        "source": "knauf-solutions-2026",
+        "confidence": "medium",
+        "note": "Manufacturer U-value table assumption; BR 443 says use manufacturer/CIBSE Guide A/BS EN 1745 data."
+      },
+      {
+        "material": "Medium density block",
+        "lambda": 0.45,
+        "source": "knauf-solutions-2026",
+        "confidence": "medium",
+        "note": "Knauf existing-cavity tables also use unnamed block values of 0.51 and 0.34 W/mK."
+      },
+      {
+        "material": "Lightweight aggregate block",
+        "lambda": 0.28,
+        "source": "knauf-solutions-2026",
+        "confidence": "medium"
+      },
+      {
+        "material": "Aircrete block (high strength / standard / lightweight)",
+        "lambda": [
+          0.19,
+          0.15,
+          0.11
+        ],
+        "source": "knauf-solutions-2026",
+        "confidence": "medium"
+      },
+      {
+        "material": "Ground: clay/silt (most common UK)",
+        "lambda": 1.5,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Ground: sand/gravel",
+        "lambda": 2,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "material": "Ground: rock",
+        "lambda": 3.5,
+        "source": "br443",
+        "confidence": "high"
+      }
+    ],
+    "timberFractions_BR443": [
+      {
+        "case": "Ceiling joists, default (47mm at 400mm centres + 1%)",
+        "fraction": 0.128,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "case": "Ceiling joists 47mm at 600mm centres (+1%)",
+        "fraction": 0.088,
+        "source": "derived",
+        "inputs": "br443 formula width/spacing + 0.01; Knauf loft tables quote 8.8% per BR443",
+        "confidence": "high"
+      },
+      {
+        "case": "Doubled-up timbers 2x47mm at 600mm (+1%)",
+        "fraction": 0.167,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "case": "Suspended timber ground floor joists, default (38mm at 400mm + nogging every 3m)",
+        "fraction": 0.108,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "case": "Timber-frame wall studs, default",
+        "fraction": 0.15,
+        "source": "br443",
+        "confidence": "high",
+        "note": "0.125 allowed if single top plate, sole plate below FFL, no mid-height noggings, junction studs <=38mm deep with insulation behind."
+      },
+      {
+        "case": "Rafters - no BR 443 default; use width/spacing + 0.01",
+        "fraction": null,
+        "examples": [
+          {
+            "spec": "38mm at 600mm",
+            "fraction": 0.073
+          },
+          {
+            "spec": "47mm at 600mm",
+            "fraction": 0.088
+          },
+          {
+            "spec": "47mm at 400mm",
+            "fraction": 0.128
+          }
+        ],
+        "source": "derived",
+        "inputs": "br443 general rule (examples in BR 443: 35@600 = 0.068, 50@400 = 0.135). Knauf solutions guide assumes 38mm rafters at 600mm = 6.3% (no +1%).",
+        "confidence": "medium"
+      },
+      {
+        "case": "Dry-lining battens 47mm at 600mm incl. top/bottom rails (2.4m room)",
+        "fraction": 0.118,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "case": "Dry-lining battens 47mm at 400mm incl. rails",
+        "fraction": 0.157,
+        "source": "br443",
+        "confidence": "high"
+      }
+    ],
+    "corrections": [
+      {
+        "item": "Air gaps in insulation, level 0 (no gaps; e.g. second layer covering joists)",
+        "deltaU": 0,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "item": "Air gaps level 1 (default; e.g. insulation between joists/rafters only)",
+        "deltaU": 0.01,
+        "source": "br443",
+        "confidence": "high"
+      },
+      {
+        "item": "Air gaps level 2 (air circulation possible, e.g. loose partial-fill boards)",
+        "deltaU": 0.04,
+        "source": "br443",
+        "confidence": "high",
+        "note": "Air-gap corrections apply to walls and roofs, not floors."
+      },
+      {
+        "item": "Uninsulated loft hatch",
+        "deltaU": 0.015,
+        "source": "br443",
+        "confidence": "medium",
+        "note": "Typical +9% at U=0.16. Table extracted from PDF with imperfect layout: 0mm -> 0.015, 25mm -> 0.006, 50mm -> 0.003 (hatch insulation lambda 0.040)."
+      },
+      {
+        "item": "Loft hatch with 25mm insulation",
+        "deltaU": 0.006,
+        "source": "br443",
+        "confidence": "medium"
+      },
+      {
+        "item": "Loft hatch with 50mm insulation",
+        "deltaU": 0.003,
+        "source": "br443",
+        "confidence": "medium"
+      }
+    ],
+    "loftLayering": {
+      "text": "Pitched roof at ceiling level: U-value calculated at the ceiling plane; joists + insulation between them is a bridged layer; a second cross-laid layer is continuous. Knauf: 100mm between joists + 170mm over joists (270mm, LR44) gives U=0.16; 100mm + 150mm (250mm, LR40) gives 0.16 (100x47 joists at 400mm, 12.8% timber, 12.5mm plasterboard, ventilated roof with felt or sarking boards).",
+      "source": "knauf-loftroll-guide",
+      "sourcesAlso": [
+        "br443",
+        "knauf-solutions-2026"
+      ],
+      "confidence": "high"
+    },
+    "rollQuantity": {
+      "formula": "rolls per layer = loft length (m) x loft width (m) / area per roll (m2); for the base layer add about 0.3m per run where it meets the eaves",
+      "source": "knauf-loftroll-guide",
+      "confidence": "high",
+      "note": "Rolls are sold by area per pack; first layer is cut to joist spacing (combi-cut perforated at 2x600/3x400mm or 2x570/3x380mm)."
+    },
+    "cavityFillTypicalU_existingWalls": {
+      "product": "Knauf Supafil 40 blown into existing brick/cavity/100mm inner leaf, plasterboard on dabs",
+      "rows": [
+        {
+          "cavityMm": 50,
+          "U": [
+            0.5,
+            0.55
+          ]
+        },
+        {
+          "cavityMm": 65,
+          "U": [
+            0.42,
+            0.45
+          ]
+        },
+        {
+          "cavityMm": 75,
+          "U": [
+            0.38,
+            0.41
+          ]
+        },
+        {
+          "cavityMm": 85,
+          "U": [
+            0.35,
+            0.37
+          ]
+        },
+        {
+          "cavityMm": 100,
+          "U": [
+            0.31,
+            0.33
+          ]
+        }
+      ],
+      "note": "Range across inner leaf brick 0.56, block 1.13, 0.51, 0.34 W/mK.",
+      "source": "knauf-solutions-2026",
+      "confidence": "medium"
+    },
+    "floors": {
+      "text": "Ground-floor U-values depend on perimeter/area ratio (BS EN ISO 13370); exposed perimeter excludes party walls. Uninsulated large floors can already be 0.15-0.35 depending on size (BR 443 Appendix B). For a simplified calculator, take insulation R and apply ISO 13370 or use manufacturer P/A tables.",
+      "source": "br443",
+      "confidence": "high"
+    }
+  },
+  "materials": [
+    {
+      "id": "gmw-loft-044",
+      "name": "Glass mineral wool loft roll (commodity, e.g. Knauf Loft Roll 44, Isover Spacesaver)",
+      "lambda": 0.044,
+      "source": "knauf-lr44-readycut",
+      "sourcesAlso": [
+        "isover-spacesaver"
+      ],
+      "confidence": "high",
+      "diy": true
+    },
+    {
+      "id": "gmw-loft-040",
+      "name": "Glass mineral wool loft roll (improved, e.g. Knauf Loft Roll 40, Isover Spacesaver Plus)",
+      "lambda": 0.04,
+      "source": "knauf-lr40-combicut",
+      "sourcesAlso": [
+        "isover-spacesaver-plus"
+      ],
+      "confidence": "high",
+      "diy": true
+    },
+    {
+      "id": "rmw-roll",
+      "name": "Rock (stone) mineral wool roll (ROCKWOOL Roll/Twin Roll/Rollbatt)",
+      "lambda": 0.044,
+      "source": "rockwool-roll-ds",
+      "confidence": "high",
+      "diy": true
+    },
+    {
+      "id": "rmw-flexi",
+      "name": "Rock mineral wool flexible slab (ROCKWOOL Flexi)",
+      "lambda": 0.038,
+      "lambdaAtOrAbove140mm": 0.035,
+      "source": "rockwool-flexi-ds",
+      "confidence": "high",
+      "diy": true,
+      "note": "Toolstation listing states 0.035 for the 100mm slab, which conflicts with the manufacturer (0.038 for 50-120mm); use manufacturer value."
+    },
+    {
+      "id": "gmw-slab-035",
+      "name": "Glass mineral wool slab (Knauf OmniFit Slab 35)",
+      "lambda": 0.035,
+      "source": "wickes-cavity",
+      "confidence": "high",
+      "diy": true
+    },
+    {
+      "id": "gmw-cavity-slab-032",
+      "name": "Glass mineral wool cavity slab (Knauf DriTherm 32, Isover 32) - new-build full fill",
+      "lambda": 0.032,
+      "source": "wickes-cavity",
+      "sourcesAlso": [
+        "toolstation-insulation"
+      ],
+      "confidence": "high",
+      "diy": false
+    },
+    {
+      "id": "pir-foil",
+      "name": "PIR board, foil faced (SOPRATHERM/Celotex GA4000, Kingspan Thermapitch TP10, Thermafloor TF70, Recticel Eurothane GP)",
+      "lambda": 0.022,
+      "source": "soprema-ga4000",
+      "sourcesAlso": [
+        "kingspan-tp10",
+        "kingspan-tf70"
+      ],
+      "confidence": "high",
+      "diy": true
+    },
+    {
+      "id": "phenolic",
+      "name": "Phenolic board (Kingspan Kooltherm K107 roof, K103 floor, K118 insulated plasterboard core)",
+      "lambda": 0.019,
+      "source": "kingspan-k107",
+      "sourcesAlso": [
+        "kingspan-k103",
+        "kingspan-k118"
+      ],
+      "confidence": "high",
+      "diy": true
+    },
+    {
+      "id": "eps-70",
+      "name": "EPS 70 (white expanded polystyrene, e.g. Jabfloor 70)",
+      "lambda": 0.038,
+      "source": "wickes-boards",
+      "confidence": "high",
+      "diy": true
+    },
+    {
+      "id": "eps-graphite",
+      "name": "Graphite-enhanced EPS (e.g. Jablite HP+ EWI 70)",
+      "lambda": 0.03,
+      "source": "wickes-boards",
+      "confidence": "medium",
+      "diy": false
+    },
+    {
+      "id": "eps-generic",
+      "name": "EPS generic (RdSAP convention)",
+      "lambda": 0.04,
+      "source": "rdsap10",
+      "confidence": "medium"
+    },
+    {
+      "id": "xps-generic",
+      "name": "XPS extruded polystyrene (generic; RdSAP \"optional\" convention)",
+      "lambda": 0.03,
+      "source": "rdsap10",
+      "confidence": "low",
+      "note": "No UK manufacturer XPS lambda verified in this research (Ravatherm XPS X pages gave no figures). Retail \"XPS\" boards found (NoMorePly) are tile-backer boards, not thermal insulation products."
+    },
+    {
+      "id": "blown-gmw-cavity-034",
+      "name": "Blown glass mineral wool for cavities (Knauf Supafil 34, 25 kg/m3)",
+      "lambda": 0.034,
+      "source": "knauf-supafil34",
+      "confidence": "high",
+      "diy": false
+    },
+    {
+      "id": "blown-gmw-cavity-040",
+      "name": "Blown glass mineral wool for existing cavities (Knauf Supafil 40, 18 kg/m3)",
+      "lambda": 0.04,
+      "source": "knauf-supafil40",
+      "confidence": "high",
+      "diy": false
+    },
+    {
+      "id": "blown-gmw-loft",
+      "name": "Loose-fill / blown mineral wool for lofts (installer-only)",
+      "lambda": null,
+      "source": null,
+      "confidence": "low",
+      "diy": false,
+      "note": "No current UK loft blowing-wool product page verified (Knauf UK lists Supafil only for walls/frames/party walls). ADL Appendix C treats 250mm loose fill or cellulose as equivalent to 250mm mineral fibre quilt."
+    },
+    {
+      "id": "cellulose",
+      "name": "Loose-fill cellulose (installer-only)",
+      "lambda": null,
+      "source": null,
+      "confidence": "low",
+      "diy": false,
+      "note": "Not verified: Warmcel site returned HTTP 500; SOPREMA cellulose pages had no data."
+    },
+    {
+      "id": "wood-fibre",
+      "name": "Wood fibre flexible batt (STEICOflex 036)",
+      "lambda": 0.036,
+      "source": "steico-flex036",
+      "confidence": "high",
+      "diy": true
+    },
+    {
+      "id": "sheep-wool",
+      "name": "Sheep's wool roll (Thermafleece CosyWool)",
+      "lambda": null,
+      "source": "thermafleece-cosywool",
+      "confidence": "low",
+      "diy": true,
+      "note": "Lambda not shown on manufacturer page/HTML; factsheet download links not reachable."
+    },
+    {
+      "id": "eps-bead-cavity",
+      "name": "Bonded EPS bead cavity fill (installer-only)",
+      "lambda": null,
+      "source": null,
+      "confidence": "low",
+      "diy": false,
+      "note": "EST mentions polystyrene beads as a cavity fill; no product lambda verified."
+    }
+  ],
+  "products": [
+    {
+      "id": "knauf-lr44-combicut",
+      "brand": "Knauf Insulation",
+      "name": "Loft Roll 44 (Combi-cut) [formerly Earthwool Loft Roll 44]",
+      "type": "glass mineral wool roll",
+      "lambda": 0.044,
+      "cutWidths": "2x570 / 3x380mm",
+      "formats": [
+        {
+          "thicknessMm": 100,
+          "lengthMm": 12180,
+          "widthMm": 1140,
+          "areaM2PerRoll": 13.89
+        },
+        {
+          "thicknessMm": 150,
+          "lengthMm": 8050,
+          "widthMm": 1140,
+          "areaM2PerRoll": 9.18
+        },
+        {
+          "thicknessMm": 170,
+          "lengthMm": 7030,
+          "widthMm": 1140,
+          "areaM2PerRoll": 8.01
+        },
+        {
+          "thicknessMm": 200,
+          "lengthMm": 6000,
+          "widthMm": 1140,
+          "areaM2PerRoll": 6.84
+        }
+      ],
+      "shortLengthFormats": [
+        {
+          "thicknessMm": 100,
+          "lengthMm": 9725,
+          "widthMm": 1140,
+          "areaM2PerRoll": 11.09
+        },
+        {
+          "thicknessMm": 150,
+          "lengthMm": 6450,
+          "widthMm": 1140,
+          "areaM2PerRoll": 7.35
+        },
+        {
+          "thicknessMm": 170,
+          "lengthMm": 5700,
+          "widthMm": 1140,
+          "areaM2PerRoll": 6.5
+        },
+        {
+          "thicknessMm": 200,
+          "lengthMm": 4825,
+          "widthMm": 1140,
+          "areaM2PerRoll": 5.5
+        }
+      ],
+      "rValuesByThickness": {
+        "100": 2.25,
+        "150": 3.4,
+        "170": 3.85,
+        "200": 4.5
+      },
+      "source": "knauf-lr44-combicut",
+      "sourcesAlso": [
+        "knauf-loftroll-ds"
+      ],
+      "confidence": "high",
+      "note": "Datasheet (Nov 2025) table layout is jumbled; R-values follow thickness/0.044 rounded down as declared (2.25, 3.40, 3.85, 4.50) and match Wickes listings."
+    },
+    {
+      "id": "knauf-lr44-readycut",
+      "brand": "Knauf Insulation",
+      "name": "Loft Roll 44 (Ready-cut)",
+      "type": "glass mineral wool roll",
+      "lambda": 0.044,
+      "formats": [
+        {
+          "thicknessMm": 100,
+          "lengthMm": 12180,
+          "widthMm": 1140,
+          "areaM2PerRoll": 13.89
+        },
+        {
+          "thicknessMm": 150,
+          "lengthMm": 8050,
+          "widthMm": 1140,
+          "areaM2PerRoll": 9.18
+        },
+        {
+          "thicknessMm": 200,
+          "lengthMm": 6000,
+          "widthMm": 1140,
+          "areaM2PerRoll": 6.84
+        }
+      ],
+      "source": "knauf-lr44-readycut",
+      "confidence": "high"
+    },
+    {
+      "id": "knauf-lr40-combicut",
+      "brand": "Knauf Insulation",
+      "name": "Loft Roll 40 (Combi-cut)",
+      "type": "glass mineral wool roll",
+      "lambda": 0.04,
+      "formats": [
+        {
+          "thicknessMm": 100,
+          "lengthMm": 11250,
+          "widthMm": 1140,
+          "areaM2PerRoll": 12.83,
+          "lambda": 0.04,
+          "rValue": 2.5
+        },
+        {
+          "thicknessMm": 150,
+          "lengthMm": 7530,
+          "widthMm": 1140,
+          "areaM2PerRoll": 8.58,
+          "lambda": 0.04,
+          "rValue": 3.75
+        },
+        {
+          "thicknessMm": 200,
+          "lengthMm": 4850,
+          "widthMm": 1140,
+          "areaM2PerRoll": 5.53,
+          "lambda": 0.04,
+          "rValue": 5
+        }
+      ],
+      "source": "knauf-lr40-combicut",
+      "sourcesAlso": [
+        "knauf-loftroll-ds"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "knauf-space",
+      "brand": "Knauf Insulation",
+      "name": "Space Loft Roll (Wickes range: Bottom Layer 100mm / Standard Top Up 170mm / Super Top Up 200mm)",
+      "type": "glass mineral wool roll",
+      "lambda": 0.044,
+      "formats": [
+        {
+          "thicknessMm": 100,
+          "lengthMm": 9725,
+          "widthMm": 1140,
+          "areaM2PerRoll": 11.08,
+          "lambda": 0.044,
+          "rValue": 2.25
+        },
+        {
+          "thicknessMm": 170,
+          "lengthMm": 5680,
+          "widthMm": 1140,
+          "areaM2PerRoll": 6.47,
+          "lambda": 0.044,
+          "rValue": 3.85
+        },
+        {
+          "thicknessMm": 200,
+          "lengthMm": 4925,
+          "widthMm": 1140,
+          "areaM2PerRoll": 5.61,
+          "lambda": 0.044,
+          "rValue": 4.5
+        }
+      ],
+      "source": "wickes-loft",
+      "confidence": "high"
+    },
+    {
+      "id": "isover-spacesaver",
+      "brand": "Isover (Saint-Gobain)",
+      "name": "Isover Spacesaver",
+      "type": "glass mineral wool roll (pre-perforated)",
+      "lambda": 0.044,
+      "formats": [
+        {
+          "thicknessMm": 100,
+          "lengthMm": 12180,
+          "widthMm": 1160,
+          "areaM2PerRoll": 14.13,
+          "lambda": 0.044,
+          "rValue": 2.25
+        },
+        {
+          "thicknessMm": 150,
+          "lengthMm": 8050,
+          "widthMm": 1160,
+          "areaM2PerRoll": 9.34,
+          "lambda": 0.044,
+          "rValue": 3.4
+        },
+        {
+          "thicknessMm": 170,
+          "lengthMm": 7030,
+          "widthMm": 1160,
+          "areaM2PerRoll": 8.15,
+          "lambda": 0.044,
+          "rValue": 3.85
+        },
+        {
+          "thicknessMm": 200,
+          "lengthMm": 5200,
+          "widthMm": 1160,
+          "areaM2PerRoll": 6.03,
+          "lambda": 0.044,
+          "rValue": 4.5
+        }
+      ],
+      "source": "isover-spacesaver",
+      "confidence": "high"
+    },
+    {
+      "id": "isover-spacesaver-plus",
+      "brand": "Isover (Saint-Gobain)",
+      "name": "Isover Spacesaver Plus",
+      "type": "glass mineral wool roll (pre-perforated 3x386 / 2x580mm)",
+      "lambda": 0.04,
+      "formats": [
+        {
+          "thicknessMm": 100,
+          "lengthMm": 7000,
+          "widthMm": 1160,
+          "areaM2PerRoll": 8.12,
+          "lambda": 0.04,
+          "rValue": 2.5
+        },
+        {
+          "thicknessMm": 150,
+          "lengthMm": 4670,
+          "widthMm": 1160,
+          "areaM2PerRoll": 5.42,
+          "lambda": 0.04,
+          "rValue": 3.75
+        },
+        {
+          "thicknessMm": 200,
+          "lengthMm": 3500,
+          "widthMm": 1160,
+          "areaM2PerRoll": 4.06,
+          "lambda": 0.04,
+          "rValue": 5
+        }
+      ],
+      "source": "isover-spacesaver-plus",
+      "confidence": "high"
+    },
+    {
+      "id": "rockwool-roll",
+      "brand": "ROCKWOOL",
+      "name": "ROCKWOOL Roll / Twin Roll / Rollbatt",
+      "type": "stone wool roll",
+      "lambda": 0.044,
+      "formats": [
+        {
+          "variant": "Twin Roll (pre-split 2x100mm)",
+          "thicknessMm": 200,
+          "widthMm": 1200,
+          "lengthMm": 2750,
+          "areaM2PerPack": 6.6,
+          "rValue": 2.27,
+          "note": "Area per pack 6.60 m2 per datasheet (two 100mm layers of 3.3 m2); Wickes lists coverage 3.3 m2 at 200mm."
+        },
+        {
+          "variant": "Roll",
+          "thicknessMm": 150,
+          "widthMm": 1200,
+          "lengthMm": 3200,
+          "areaM2PerPack": 3.84,
+          "rValue": 3.41
+        },
+        {
+          "variant": "Roll",
+          "thicknessMm": 170,
+          "widthMm": 1200,
+          "lengthMm": 3200,
+          "areaM2PerPack": 3.84,
+          "rValue": 3.86
+        },
+        {
+          "variant": "Rollbatt (2x600 or 3x400)",
+          "thicknessMm": 100,
+          "widthMm": 1200,
+          "lengthMm": 4800,
+          "areaM2PerPack": 5.76,
+          "rValue": 2.27
+        },
+        {
+          "variant": "Rollbatt (2x600 or 3x400)",
+          "thicknessMm": 150,
+          "widthMm": 1200,
+          "lengthMm": 3200,
+          "areaM2PerPack": 3.84,
+          "rValue": 3.41
+        }
+      ],
+      "loftUValues": [
+        {
+          "U": 0.17,
+          "betweenMm": 100,
+          "overMm": 150,
+          "totalMm": 250
+        },
+        {
+          "U": 0.16,
+          "betweenMm": 100,
+          "overMm": 170,
+          "totalMm": 270
+        },
+        {
+          "U": 0.14,
+          "betweenMm": 100,
+          "overMm": 200,
+          "totalMm": 300
+        },
+        {
+          "U": 0.12,
+          "betweenMm": 100,
+          "overMm": 250,
+          "totalMm": 350
+        },
+        {
+          "U": 0.11,
+          "betweenMm": 100,
+          "overMm": 300,
+          "totalMm": 400
+        },
+        {
+          "U": 0.09,
+          "betweenMm": 100,
+          "overMm": 400,
+          "totalMm": 500
+        }
+      ],
+      "source": "rockwool-roll-ds",
+      "confidence": "high",
+      "note": "Datasheet \"R-value\" column header says W/m2K (typo; values are m2K/W). The web page says Roll is available in 150mm only."
+    },
+    {
+      "id": "rockwool-flexi",
+      "brand": "ROCKWOOL",
+      "name": "ROCKWOOL Flexi",
+      "type": "stone wool flexible-edge slab",
+      "lambda": 0.038,
+      "lambdaAtOrAbove140mm": 0.035,
+      "slabMm": [
+        1200,
+        400,
+        600
+      ],
+      "thicknessesMm": [
+        50,
+        60,
+        70,
+        90,
+        100,
+        120,
+        140,
+        180
+      ],
+      "declaredR": [
+        1.3,
+        1.55,
+        1.8,
+        2.35,
+        2.6,
+        3.15,
+        4,
+        5.1
+      ],
+      "packAreaM2": {
+        "100": 5.76
+      },
+      "source": "rockwool-flexi",
+      "sourcesAlso": [
+        "rockwool-flexi-ds",
+        "toolstation-insulation"
+      ],
+      "confidence": "high",
+      "note": "Slab 1200mm long, 400 or 600mm wide. Pack area for 100mm (5.76 m2) from Toolstation listing; other thicknesses not verified."
+    },
+    {
+      "id": "sopratherm-ga4000",
+      "brand": "SOPREMA (formerly Celotex)",
+      "name": "SOPRATHERM GA4000 (previously Celotex GA4000)",
+      "type": "PIR board, foil faced",
+      "lambda": 0.022,
+      "boardMm": [
+        2400,
+        1200
+      ],
+      "areaM2PerBoard": 2.88,
+      "thicknessesMm": [
+        50,
+        60,
+        70,
+        75,
+        80,
+        90,
+        100
+      ],
+      "source": "soprema-ga4000",
+      "sourcesAlso": [
+        "soprema-celotex"
+      ],
+      "confidence": "high",
+      "note": "Celotex is now SOPREMA; retailers list both names (Travis Perkins still \"Celotex GA4000\"). TB4000 (thin, 20-40mm) and XR4000 (120-150mm) are sister ranges."
+    },
+    {
+      "id": "kingspan-tp10",
+      "brand": "Kingspan",
+      "name": "Thermapitch TP10",
+      "type": "PIR board, foil faced (pitched roofs)",
+      "lambda": 0.022,
+      "boardMm": [
+        2400,
+        1200
+      ],
+      "areaM2PerBoard": 2.88,
+      "thicknessesSeenAtRetailMm": [
+        25,
+        50,
+        75,
+        100
+      ],
+      "source": "kingspan-tp10",
+      "sourcesAlso": [
+        "wickes-boards"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "kingspan-tf70",
+      "brand": "Kingspan",
+      "name": "Thermafloor TF70",
+      "type": "PIR floor board",
+      "lambda": 0.022,
+      "source": "kingspan-tf70",
+      "confidence": "high",
+      "note": "Sizes/prices not verified."
+    },
+    {
+      "id": "kingspan-k107",
+      "brand": "Kingspan",
+      "name": "Kooltherm K107 Pitched Roof Board",
+      "type": "phenolic board",
+      "lambda": 0.019,
+      "source": "kingspan-k107",
+      "confidence": "high",
+      "note": "Sizes/prices not verified."
+    },
+    {
+      "id": "kingspan-k118",
+      "brand": "Kingspan",
+      "name": "Kooltherm K118 Insulated Plasterboard (IWI)",
+      "type": "phenolic core bonded to plasterboard",
+      "lambda": 0.019,
+      "source": "kingspan-k118",
+      "confidence": "high",
+      "note": "Core lambda; sizes/prices not verified."
+    },
+    {
+      "id": "kingspan-tw50",
+      "brand": "Kingspan",
+      "name": "TW50 (cavity/general board)",
+      "type": "PIR board",
+      "lambda": 0.022,
+      "boardMm": [
+        1200,
+        450
+      ],
+      "areaM2PerBoard": 0.54,
+      "source": "wickes-boards",
+      "confidence": "high"
+    },
+    {
+      "id": "jabfloor-70",
+      "brand": "Jablite (BEWI)",
+      "name": "Jabfloor 70",
+      "type": "EPS 70 board",
+      "lambda": 0.038,
+      "boardMm": [
+        2400,
+        1200
+      ],
+      "areaM2PerBoard": 2.88,
+      "thicknessesMm": [
+        25,
+        50,
+        75
+      ],
+      "source": "wickes-boards",
+      "confidence": "high"
+    },
+    {
+      "id": "jablite-hpplus-ewi",
+      "brand": "Jablite (BEWI)",
+      "name": "Jablite HP+ External Wall Insulation 70",
+      "type": "graphite EPS board",
+      "lambda": 0.03,
+      "boardMm": [
+        1200,
+        600
+      ],
+      "areaM2PerBoard": 0.72,
+      "source": "wickes-boards",
+      "confidence": "medium",
+      "note": "Retailer-stated lambda (0.03 W/mK, R 1.667 at 50mm)."
+    },
+    {
+      "id": "steicoflex-036",
+      "brand": "STEICO",
+      "name": "STEICOflex 036",
+      "type": "wood fibre batt",
+      "lambda": 0.036,
+      "widthMm": 575,
+      "source": "steico-flex036",
+      "confidence": "high"
+    },
+    {
+      "id": "thermafleece-cosywool",
+      "brand": "Thermafleece",
+      "name": "CosyWool Roll",
+      "type": "sheep's wool roll (75% British wool, 15% recycled polyester, 10% polyester binder)",
+      "lambda": null,
+      "formats": [
+        {
+          "thicknessMm": 100,
+          "widthMm": 370,
+          "lengthMm": 6500,
+          "rollsPerPack": 3,
+          "areaM2PerPack": 7.22
+        },
+        {
+          "thicknessMm": 100,
+          "widthMm": 570,
+          "lengthMm": 6500,
+          "rollsPerPack": 2,
+          "areaM2PerPack": 7.41
+        },
+        {
+          "thicknessMm": 150,
+          "widthMm": 370,
+          "lengthMm": 4300,
+          "rollsPerPack": 3,
+          "areaM2PerPack": 4.77
+        },
+        {
+          "thicknessMm": 150,
+          "widthMm": 570,
+          "lengthMm": 4300,
+          "rollsPerPack": 2,
+          "areaM2PerPack": 4.9
+        },
+        {
+          "thicknessMm": 50,
+          "widthMm": 570,
+          "lengthMm": 13000,
+          "rollsPerPack": 2,
+          "areaM2PerPack": 14.82
+        }
+      ],
+      "source": "thermafleece-cosywool",
+      "confidence": "high",
+      "note": "Lambda not verified (null)."
+    }
+  ],
+  "prices": {
+    "currency": "GBP",
+    "vatNote": "All retail prices include 20% VAT unless stated; Travis Perkins ex-VAT shown where available. Prices are single-unit online prices on the access date and include temporary promotions where flagged.",
+    "retailerCoverage": [
+      {
+        "retailer": "Wickes",
+        "status": "ok",
+        "note": "Sells Knauf \"Space\" loft rolls, Rockwool twin roll, Kingspan TP10/TW50, Jabfloor EPS; no Celotex/Sopratherm or Isover loft rolls found.",
+        "source": "wickes-loft",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "status": "ok",
+        "note": "Knauf Loft Roll 44c, Rockwool Flexi, Sopratherm GA4000/TB4000/XR4000, DriTherm 32.",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "status": "ok (JS-rendered listing)",
+        "note": "Knauf LR44, Superglass, Celotex GA4000/TB4000/XR4000, Recticel Eurothane GP. Some listings show two inc-VAT figures; the first (ex VAT x 1.2) is used.",
+        "source": "tp-boards",
+        "confidence": "medium"
+      },
+      {
+        "retailer": "Screwfix",
+        "status": "no relevant products",
+        "note": "Loft-insulation category on 2026-10-14 listed only multifoil/foil products and a \"Diall Insulation Roll 6m x 370mm\" (100mm, R up to 2.25, buy 2 for GBP 45 offer); no mineral-wool loft rolls or PIR boards found.",
+        "source": "screwfix-loft",
+        "confidence": "medium"
+      },
+      {
+        "retailer": "B&Q",
+        "status": "unavailable",
+        "note": "diy.com returned an HTTP 503 maintenance page to automated access on 2026-10-14; no prices captured.",
+        "source": "bq-diy",
+        "confidence": "high"
+      }
+    ],
+    "summary": [
+      {
+        "category": "Glass mineral wool loft roll 100mm (lambda 0.044)",
+        "unit": "roll",
+        "count": 5,
+        "priceLowGBP": 27,
+        "priceHighGBP": 71.56,
+        "perM2LowGBP": 2.44,
+        "perM2HighGBP": 5.9,
+        "retailers": [
+          "Wickes",
+          "Toolstation",
+          "Travis Perkins"
+        ],
+        "date": "2026-10-14",
+        "source": "derived",
+        "inputs": "retail[] rows matching this category",
+        "confidence": "medium"
+      },
+      {
+        "category": "Glass mineral wool loft roll 150mm (lambda 0.044)",
+        "unit": "roll",
+        "count": 2,
+        "priceLowGBP": 80.15,
+        "priceHighGBP": 87.4,
+        "perM2LowGBP": 9.52,
+        "perM2HighGBP": 10.9,
+        "retailers": [
+          "Travis Perkins"
+        ],
+        "date": "2026-10-14",
+        "source": "derived",
+        "inputs": "retail[] rows matching this category",
+        "confidence": "medium"
+      },
+      {
+        "category": "Glass mineral wool loft roll 170mm (lambda 0.044)",
+        "unit": "roll",
+        "count": 3,
+        "priceLowGBP": 27,
+        "priceHighGBP": 80.32,
+        "perM2LowGBP": 4.17,
+        "perM2HighGBP": 12.36,
+        "retailers": [
+          "Wickes",
+          "Travis Perkins"
+        ],
+        "date": "2026-10-14",
+        "source": "derived",
+        "inputs": "retail[] rows matching this category",
+        "confidence": "medium"
+      },
+      {
+        "category": "Glass mineral wool loft roll 200mm (lambda 0.044)",
+        "unit": "roll",
+        "count": 4,
+        "priceLowGBP": 27,
+        "priceHighGBP": 40.99,
+        "perM2LowGBP": 4.81,
+        "perM2HighGBP": 7.2,
+        "retailers": [
+          "Wickes",
+          "Toolstation",
+          "Travis Perkins"
+        ],
+        "date": "2026-10-14",
+        "source": "derived",
+        "inputs": "retail[] rows matching this category",
+        "confidence": "medium"
+      },
+      {
+        "category": "PIR board 2400x1200x25mm",
+        "unit": "board",
+        "count": 4,
+        "priceLowGBP": 26.99,
+        "priceHighGBP": 33.46,
+        "perM2LowGBP": 9.37,
+        "perM2HighGBP": 11.62,
+        "retailers": [
+          "Wickes",
+          "Toolstation",
+          "Travis Perkins"
+        ],
+        "date": "2026-10-14",
+        "source": "derived",
+        "inputs": "retail[] rows matching this category",
+        "confidence": "medium"
+      },
+      {
+        "category": "PIR board 2400x1200x50mm",
+        "unit": "board",
+        "count": 4,
+        "priceLowGBP": 37.99,
+        "priceHighGBP": 45.55,
+        "perM2LowGBP": 13.19,
+        "perM2HighGBP": 15.82,
+        "retailers": [
+          "Wickes",
+          "Toolstation",
+          "Travis Perkins"
+        ],
+        "date": "2026-10-14",
+        "source": "derived",
+        "inputs": "retail[] rows matching this category",
+        "confidence": "medium"
+      },
+      {
+        "category": "PIR board 2400x1200x75mm",
+        "unit": "board",
+        "count": 4,
+        "priceLowGBP": 45.99,
+        "priceHighGBP": 64.32,
+        "perM2LowGBP": 15.97,
+        "perM2HighGBP": 22.33,
+        "retailers": [
+          "Wickes",
+          "Toolstation",
+          "Travis Perkins"
+        ],
+        "date": "2026-10-14",
+        "source": "derived",
+        "inputs": "retail[] rows matching this category",
+        "confidence": "medium"
+      },
+      {
+        "category": "PIR board 2400x1200x100mm",
+        "unit": "board",
+        "count": 4,
+        "priceLowGBP": 52.98,
+        "priceHighGBP": 55,
+        "perM2LowGBP": 18.4,
+        "perM2HighGBP": 19.1,
+        "retailers": [
+          "Wickes",
+          "Toolstation",
+          "Travis Perkins"
+        ],
+        "date": "2026-10-14",
+        "source": "derived",
+        "inputs": "retail[] rows matching this category",
+        "confidence": "medium"
+      },
+      {
+        "category": "EPS 70 board 2400x1200 (25-75mm)",
+        "unit": "board",
+        "count": 3,
+        "priceLowGBP": 8.5,
+        "priceHighGBP": 28,
+        "perM2LowGBP": 2.95,
+        "perM2HighGBP": 9.72,
+        "retailers": [
+          "Wickes"
+        ],
+        "date": "2026-10-14",
+        "source": "derived",
+        "inputs": "retail[] rows matching this category",
+        "confidence": "medium"
+      }
+    ],
+    "retail": [
+      {
+        "retailer": "Wickes",
+        "productId": "knauf-space",
+        "description": "Knauf Space Bottom Layer Loft Roll 100mm (9725x1140)",
+        "thicknessMm": 100,
+        "unit": "roll",
+        "areaM2PerUnit": 11.08,
+        "priceGBPIncVat": 27,
+        "pricePerM2": 2.44,
+        "date": "2026-10-14",
+        "wasGBP": 37,
+        "url": "https://www.wickes.co.uk/Knauf-Insulation-100mm-Space-Bottom-Layer-Loft-Roll---11-08m2/p/109449",
+        "source": "wickes-loft",
+        "confidence": "high",
+        "note": "Promotional price (save GBP 10)."
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "knauf-space",
+        "description": "Knauf Space Standard Top Up Loft Roll 170mm (5680x1140)",
+        "thicknessMm": 170,
+        "unit": "roll",
+        "areaM2PerUnit": 6.47,
+        "priceGBPIncVat": 27,
+        "pricePerM2": 4.17,
+        "date": "2026-10-14",
+        "wasGBP": 38,
+        "url": "https://www.wickes.co.uk/Knauf-Insulation-170mm-Space-Standard-Top-Up-Loft-Roll---6-47m2/p/109450",
+        "source": "wickes-loft",
+        "confidence": "high",
+        "note": "Promotional price (save GBP 11)."
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "knauf-space",
+        "description": "Knauf Space Super Top Up Loft Roll 200mm (4925x1140)",
+        "thicknessMm": 200,
+        "unit": "roll",
+        "areaM2PerUnit": 5.61,
+        "priceGBPIncVat": 27,
+        "pricePerM2": 4.81,
+        "date": "2026-10-14",
+        "wasGBP": 40,
+        "url": "https://www.wickes.co.uk/Knauf-Insulation-200mm-Space-Super-Top-Up-Loft-Roll---5-61m2/p/109451",
+        "source": "wickes-loft",
+        "confidence": "high",
+        "note": "Promotional price (save GBP 13)."
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "rockwool-roll",
+        "description": "Rockwool Thermal Insulation Roll 100/200mm twin roll (2750x1200), coverage 3.3 m2 at 200mm",
+        "thicknessMm": 200,
+        "unit": "pack",
+        "areaM2PerUnit": 3.3,
+        "priceGBPIncVat": 84,
+        "pricePerM2": 25.45,
+        "date": "2026-10-14",
+        "url": "https://www.wickes.co.uk/Rockwool-Thermal-Insulation-Roll---100-200mm/p/148843",
+        "source": "wickes-loft",
+        "confidence": "medium",
+        "note": "Per-m2 shown is at 200mm; pack covers 6.6 m2 if laid as 100mm (Rockwool datasheet)."
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "kingspan-tp10",
+        "description": "Kingspan TP10 2400x1200x25mm",
+        "thicknessMm": 25,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 31,
+        "pricePerM2": 10.76,
+        "date": "2026-10-14",
+        "url": "https://www.wickes.co.uk/Kingspan-TP10-Roof-Insulation-Board---2400-x-1200-x-25mm/p/180435",
+        "source": "wickes-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "kingspan-tp10",
+        "description": "Kingspan TP10 2400x1200x50mm",
+        "thicknessMm": 50,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 43,
+        "pricePerM2": 14.93,
+        "date": "2026-10-14",
+        "url": "https://www.wickes.co.uk/Kingspan-TP10-Roof-Insulation-Board---2400-x-1200-x-50mm/p/180436",
+        "source": "wickes-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "kingspan-tp10",
+        "description": "Kingspan TP10 2400x1200x75mm",
+        "thicknessMm": 75,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 61,
+        "pricePerM2": 21.18,
+        "date": "2026-10-14",
+        "url": "https://www.wickes.co.uk/Kingspan-TP10-Roof-Insulation-Board---2400-x-1200-x-75mm/p/180437",
+        "source": "wickes-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "kingspan-tp10",
+        "description": "Kingspan TP10 2400x1200x100mm",
+        "thicknessMm": 100,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 55,
+        "pricePerM2": 19.1,
+        "date": "2026-10-14",
+        "url": "https://www.wickes.co.uk/Kingspan-TP10-Roof-Insulation-Board---2400-x-1200-x-100mm/p/180438",
+        "source": "wickes-boards",
+        "confidence": "high",
+        "note": "Listed cheaper than the 75mm board on the access date."
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "kingspan-tw50",
+        "description": "Kingspan TW50 1200x450x50mm",
+        "thicknessMm": 50,
+        "unit": "board",
+        "areaM2PerUnit": 0.54,
+        "priceGBPIncVat": 8.5,
+        "pricePerM2": 15.74,
+        "date": "2026-10-14",
+        "url": "https://www.wickes.co.uk/Kingspan-TW50-Thermal-Insulation-Board---1200-x-450-x-50mm/p/180440",
+        "source": "wickes-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "kingspan-tw50",
+        "description": "Kingspan TW50 1200x450x100mm",
+        "thicknessMm": 100,
+        "unit": "board",
+        "areaM2PerUnit": 0.54,
+        "priceGBPIncVat": 20.5,
+        "pricePerM2": 37.96,
+        "date": "2026-10-14",
+        "url": "https://www.wickes.co.uk/Kingspan-TW50-Thermal-Insulation-Board---1200-x-450-x-100mm/p/180441",
+        "source": "wickes-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "jabfloor-70",
+        "description": "Jabfloor 70 EPS 2400x1200x25mm",
+        "thicknessMm": 25,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 8.5,
+        "pricePerM2": 2.95,
+        "date": "2026-10-14",
+        "wasGBP": 10.5,
+        "url": "https://www.wickes.co.uk/Jabfloor-70-Polystyrene-Insulation-Board---2400-x-1200-x-25mm/p/287740",
+        "source": "wickes-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "jabfloor-70",
+        "description": "Jabfloor 70 EPS 2400x1200x50mm",
+        "thicknessMm": 50,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 19,
+        "pricePerM2": 6.6,
+        "date": "2026-10-14",
+        "wasGBP": 21,
+        "url": "https://www.wickes.co.uk/Jabfloor-70-Polystyrene-Insulation-Board---2400-x-1200-x-50mm/p/287738",
+        "source": "wickes-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "jabfloor-70",
+        "description": "Jabfloor 70 EPS 2400x1200x75mm",
+        "thicknessMm": 75,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 28,
+        "pricePerM2": 9.72,
+        "date": "2026-10-14",
+        "wasGBP": 31,
+        "url": "https://www.wickes.co.uk/Jabfloor-70-Polystyrene-Insulation-Board---2400-x-1200-x-75mm/p/287744",
+        "source": "wickes-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "jablite-hpplus-ewi",
+        "description": "Jablite HP+ EWI 70 graphite EPS 1200x600x50mm",
+        "thicknessMm": 50,
+        "unit": "board",
+        "areaM2PerUnit": 0.72,
+        "priceGBPIncVat": 12,
+        "pricePerM2": 16.67,
+        "date": "2026-10-14",
+        "wasGBP": 13.5,
+        "url": "https://www.wickes.co.uk/Jablite-HP%2B-External-Wall-Insulation-70-Expanded-Polystyrene-Insulation-Board---1200-x-600-x-50mm/p/287743",
+        "source": "wickes-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "gmw-slab-035",
+        "description": "Knauf OmniFit 35 Slab 100x620x1220mm, pack of 6",
+        "thicknessMm": 100,
+        "unit": "pack",
+        "areaM2PerUnit": 4.32,
+        "priceGBPIncVat": 55,
+        "pricePerM2": 12.73,
+        "date": "2026-10-14",
+        "url": "https://www.wickes.co.uk/Knauf-Insulation-Omnifit-35-Slab---100-x-620-x-1220mm/p/143386",
+        "source": "wickes-cavity",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "gmw-cavity-slab-032",
+        "description": "Knauf DriTherm 32 Cavity Slab 100x455x1200mm, pack of 6",
+        "thicknessMm": 100,
+        "unit": "pack",
+        "areaM2PerUnit": 3.276,
+        "priceGBPIncVat": 53,
+        "pricePerM2": 16.18,
+        "date": "2026-10-14",
+        "url": "https://www.wickes.co.uk/Knauf-Insulation-DriTherm%C2%AE-32-Cavity-Slab---100-x-455-x-1200mm/p/143387",
+        "source": "wickes-cavity",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Wickes",
+        "productId": "gmw-cavity-slab-032",
+        "description": "Isover 32 Cavity Wall Slab 150x455x1200mm, pack of 4",
+        "thicknessMm": 150,
+        "unit": "pack",
+        "areaM2PerUnit": 2.18,
+        "priceGBPIncVat": 51,
+        "pricePerM2": 23.39,
+        "date": "2026-10-14",
+        "url": "https://www.wickes.co.uk/Isover-32-Cavity-Wall-Slab---150-x-455-x-1200mm/p/331758",
+        "source": "wickes-cavity",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "knauf-lr44-combicut",
+        "description": "Knauf Loft Roll 44c (Combi Cut) 100mm, 12.18m x 1140mm",
+        "thicknessMm": 100,
+        "unit": "roll",
+        "areaM2PerUnit": 13.89,
+        "priceGBPIncVat": 38.49,
+        "pricePerM2": 2.77,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/knauf-insulation-loft-roll-44c-combi-cut/pAL975",
+        "source": "toolstation-insulation",
+        "confidence": "high",
+        "note": "Area derived 12.18 x 1.14 m (manufacturer: 13.89 m2)."
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "knauf-lr44-combicut",
+        "description": "Knauf Loft Roll 44c (Combi Cut) 200mm, 6m x 1140mm",
+        "thicknessMm": 200,
+        "unit": "roll",
+        "areaM2PerUnit": 6.84,
+        "priceGBPIncVat": 40.99,
+        "pricePerM2": 5.99,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/knauf-insulation-loft-roll-44c-combi-cut/pAL979",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "rockwool-flexi",
+        "description": "Rockwool Flexi 1200x600x100mm pack",
+        "thicknessMm": 100,
+        "unit": "pack",
+        "areaM2PerUnit": 5.76,
+        "priceGBPIncVat": 57.99,
+        "pricePerM2": 10.07,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/rockwool-flexi-insulation-slab/pAM061",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "sopratherm-ga4000",
+        "description": "Sopratherm GA4000 2400x1200x50mm",
+        "thicknessMm": 50,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 37.99,
+        "pricePerM2": 13.19,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/sopratherm-pir-insulation-board-ga4000/pAL990",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "sopratherm-ga4000",
+        "description": "Sopratherm GA4000 2400x1200x60mm",
+        "thicknessMm": 60,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 39.99,
+        "pricePerM2": 13.89,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/sopratherm-pir-insulation-board-ga4000/pAL983",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "sopratherm-ga4000",
+        "description": "Sopratherm GA4000 2400x1200x70mm",
+        "thicknessMm": 70,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 43.99,
+        "pricePerM2": 15.27,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/sopratherm-pir-insulation-board-ga4000/pAL996",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "sopratherm-ga4000",
+        "description": "Sopratherm GA4000 2400x1200x75mm",
+        "thicknessMm": 75,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 45.99,
+        "pricePerM2": 15.97,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/sopratherm-pir-insulation-board-ga4000/pAL980",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "sopratherm-ga4000",
+        "description": "Sopratherm GA4000 2400x1200x80mm",
+        "thicknessMm": 80,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 48.99,
+        "pricePerM2": 17.01,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/sopratherm-pir-insulation-board-ga4000/pAL981",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "sopratherm-ga4000",
+        "description": "Sopratherm GA4000 2400x1200x100mm",
+        "thicknessMm": 100,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 52.99,
+        "pricePerM2": 18.4,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/sopratherm-pir-insulation-board-ga4000/pAM004",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "sopratherm-ga4000",
+        "description": "Sopratherm TB4000 2400x1200x25mm",
+        "thicknessMm": 25,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 26.99,
+        "pricePerM2": 9.37,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/sopratherm-pir-insulation-board-tb4000/pAL991",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "sopratherm-ga4000",
+        "description": "Sopratherm TB4000 2400x1200x30mm",
+        "thicknessMm": 30,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 28.99,
+        "pricePerM2": 10.07,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/sopratherm-pir-insulation-board-tb4000/pAL985",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "sopratherm-ga4000",
+        "description": "Sopratherm TB4000 2400x1200x40mm",
+        "thicknessMm": 40,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 33.99,
+        "pricePerM2": 11.8,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/sopratherm-pir-insulation-board-tb4000/pAL987",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "sopratherm-ga4000",
+        "description": "Sopratherm XR4000 2400x1200x120mm",
+        "thicknessMm": 120,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 59.99,
+        "pricePerM2": 20.83,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/sopratherm-pir-insulation-board-xr4000/pAL973",
+        "source": "toolstation-insulation",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Toolstation",
+        "productId": "gmw-cavity-slab-032",
+        "description": "Knauf DriTherm Cavity Slab 32 1200x455x150mm",
+        "thicknessMm": 150,
+        "unit": "pack",
+        "areaM2PerUnit": null,
+        "priceGBPIncVat": 52.99,
+        "pricePerM2": null,
+        "date": "2026-10-14",
+        "url": "https://www.toolstation.com/knauf-insulation-dritherm-cavity-slab-32/pAL993",
+        "source": "toolstation-insulation",
+        "confidence": "medium",
+        "note": "Pack area not shown in extracted text."
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "knauf-lr44-combicut",
+        "description": "Knauf Loft Roll 44 Combi Cut 100mm 12180x1140 (13.89 m2)",
+        "thicknessMm": 100,
+        "unit": "roll",
+        "areaM2PerUnit": 13.89,
+        "priceGBPIncVat": 39.6,
+        "pricePerM2": 2.85,
+        "date": "2026-10-14",
+        "exVat": 33,
+        "url": "https://www.travisperkins.co.uk/product/building-materials/insulation/loft-insulation/c/1500215/",
+        "source": "tp-loft",
+        "confidence": "medium",
+        "note": "Listing also showed a lower \"GBP 36.00 INC. VAT\" figure (likely quantity/promo price; not verified)."
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "knauf-lr44-combicut",
+        "description": "Knauf Loft Roll 44 Short Length Combi Cut 100mm (11.087 m2)",
+        "thicknessMm": 100,
+        "unit": "roll",
+        "areaM2PerUnit": 11.087,
+        "priceGBPIncVat": 39.6,
+        "pricePerM2": 3.57,
+        "date": "2026-10-14",
+        "exVat": 33,
+        "source": "tp-loft",
+        "confidence": "medium"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "knauf-lr44-combicut",
+        "description": "Knauf Loft Roll 44 Combi Cut 150mm 8050x1140 (9.18 m2)",
+        "thicknessMm": 150,
+        "unit": "roll",
+        "areaM2PerUnit": 9.177,
+        "priceGBPIncVat": 87.4,
+        "pricePerM2": 9.52,
+        "date": "2026-10-14",
+        "exVat": 72.83,
+        "source": "tp-loft",
+        "confidence": "low",
+        "note": "Unusually high vs 100/200mm at the same retailer; recorded as listed."
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "knauf-lr44-combicut",
+        "description": "Knauf Loft Roll 44 Short Length Combi Cut 150mm (7.353 m2)",
+        "thicknessMm": 150,
+        "unit": "roll",
+        "areaM2PerUnit": 7.353,
+        "priceGBPIncVat": 80.15,
+        "pricePerM2": 10.9,
+        "date": "2026-10-14",
+        "exVat": 66.79,
+        "source": "tp-loft",
+        "confidence": "low"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "knauf-lr44-combicut",
+        "description": "Knauf Loft Roll 44 Combi Cut 170mm 7030 long (8.01 m2)",
+        "thicknessMm": 170,
+        "unit": "roll",
+        "areaM2PerUnit": 8.014,
+        "priceGBPIncVat": 76.3,
+        "pricePerM2": 9.52,
+        "date": "2026-10-14",
+        "exVat": 63.58,
+        "source": "tp-loft",
+        "confidence": "low",
+        "note": "Title says 450mm width but 8.01 m2 implies 1140mm."
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "knauf-lr44-combicut",
+        "description": "Knauf Loft Roll 44 Short Length Combi Cut 170mm (6.498 m2)",
+        "thicknessMm": 170,
+        "unit": "roll",
+        "areaM2PerUnit": 6.498,
+        "priceGBPIncVat": 80.32,
+        "pricePerM2": 12.36,
+        "date": "2026-10-14",
+        "exVat": 66.93,
+        "source": "tp-loft",
+        "confidence": "low"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "knauf-lr44-combicut",
+        "description": "Knauf Loft Roll 44 Combi Cut 200mm 1140x6.00m (6.84 m2)",
+        "thicknessMm": 200,
+        "unit": "roll",
+        "areaM2PerUnit": 6.84,
+        "priceGBPIncVat": 39.6,
+        "pricePerM2": 5.79,
+        "date": "2026-10-14",
+        "exVat": 33,
+        "source": "tp-loft",
+        "confidence": "medium"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "knauf-lr44-combicut",
+        "description": "Knauf Loft Roll 44 Combi Cut Short Length 200mm (5.501 m2)",
+        "thicknessMm": 200,
+        "unit": "roll",
+        "areaM2PerUnit": 5.501,
+        "priceGBPIncVat": 39.6,
+        "pricePerM2": 7.2,
+        "date": "2026-10-14",
+        "exVat": 33,
+        "source": "tp-loft",
+        "confidence": "medium"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "gmw-loft-044",
+        "description": "Superglass Multi-Roll 44 100mm (12.12 m2)",
+        "thicknessMm": 100,
+        "unit": "roll",
+        "areaM2PerUnit": 12.12,
+        "priceGBPIncVat": 71.56,
+        "pricePerM2": 5.9,
+        "date": "2026-10-14",
+        "exVat": 59.63,
+        "source": "tp-loft",
+        "confidence": "medium"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "rockwool-roll",
+        "description": "Rockwool Thermal Insulation Roll 100mm 1200x2750mm",
+        "thicknessMm": 100,
+        "unit": "roll",
+        "areaM2PerUnit": null,
+        "priceGBPIncVat": 148.02,
+        "pricePerM2": null,
+        "date": "2026-10-14",
+        "exVat": 123.35,
+        "source": "tp-loft",
+        "confidence": "low",
+        "note": "Pack contents/area not shown; price looks anomalous."
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "gmw-slab-035",
+        "description": "Knauf OmniFit Slab 1200x600x100mm (pack; listing shows GBP 15.35 per slab, i.e. about 6 slabs = 4.32 m2, not confirmed)",
+        "thicknessMm": 100,
+        "unit": "pack",
+        "areaM2PerUnit": null,
+        "priceGBPIncVat": 92.08,
+        "pricePerM2": null,
+        "date": "2026-10-14",
+        "exVat": 76.73,
+        "source": "tp-loft",
+        "confidence": "low"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "sopratherm-ga4000",
+        "description": "Celotex GA4000 2400x1200x50mm",
+        "thicknessMm": 50,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 45.55,
+        "pricePerM2": 15.82,
+        "date": "2026-10-14",
+        "exVat": 37.96,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "sopratherm-ga4000",
+        "description": "Celotex GA4000 2400x1200x60mm",
+        "thicknessMm": 60,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 61.76,
+        "pricePerM2": 21.44,
+        "date": "2026-10-14",
+        "exVat": 51.47,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "sopratherm-ga4000",
+        "description": "Celotex GA4000 2400x1200x70mm",
+        "thicknessMm": 70,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 91.03,
+        "pricePerM2": 31.61,
+        "date": "2026-10-14",
+        "exVat": 75.86,
+        "source": "tp-boards",
+        "confidence": "medium",
+        "note": "Second figure GBP 78.14 inc VAT also shown."
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "sopratherm-ga4000",
+        "description": "Celotex GA4000 2400x1200x75mm",
+        "thicknessMm": 75,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 64.32,
+        "pricePerM2": 22.33,
+        "date": "2026-10-14",
+        "exVat": 53.6,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "sopratherm-ga4000",
+        "description": "Celotex GA4000 2400x1200x90mm",
+        "thicknessMm": 90,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 96.35,
+        "pricePerM2": 33.45,
+        "date": "2026-10-14",
+        "exVat": 80.29,
+        "source": "tp-boards",
+        "confidence": "medium",
+        "note": "Second figure GBP 82.74 inc VAT also shown."
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "sopratherm-ga4000",
+        "description": "Celotex GA4000 2400x1200x100mm",
+        "thicknessMm": 100,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 52.98,
+        "pricePerM2": 18.4,
+        "date": "2026-10-14",
+        "exVat": 44.15,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "sopratherm-ga4000",
+        "description": "Celotex TB4000 2400x1200x25mm",
+        "thicknessMm": 25,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 33.46,
+        "pricePerM2": 11.62,
+        "date": "2026-10-14",
+        "exVat": 27.88,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "sopratherm-ga4000",
+        "description": "Celotex TB4000 2400x1200x40mm",
+        "thicknessMm": 40,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 45.28,
+        "pricePerM2": 15.72,
+        "date": "2026-10-14",
+        "exVat": 37.73,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "sopratherm-ga4000",
+        "description": "Celotex XR4000 2400x1200x150mm",
+        "thicknessMm": 150,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 102.89,
+        "pricePerM2": 35.73,
+        "date": "2026-10-14",
+        "exVat": 85.74,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "pir-foil",
+        "description": "Recticel Eurothane GP 2400x1200x25mm",
+        "thicknessMm": 25,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 33.46,
+        "pricePerM2": 11.62,
+        "date": "2026-10-14",
+        "exVat": 27.88,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "pir-foil",
+        "description": "Recticel Eurothane GP 2400x1200x50mm",
+        "thicknessMm": 50,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 45.54,
+        "pricePerM2": 15.81,
+        "date": "2026-10-14",
+        "exVat": 37.95,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "pir-foil",
+        "description": "Recticel Eurothane GP 2400x1200x75mm",
+        "thicknessMm": 75,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 64.3,
+        "pricePerM2": 22.33,
+        "date": "2026-10-14",
+        "exVat": 53.58,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "pir-foil",
+        "description": "Recticel Eurothane GP 2400x1200x100mm",
+        "thicknessMm": 100,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 52.99,
+        "pricePerM2": 18.4,
+        "date": "2026-10-14",
+        "exVat": 44.16,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "pir-foil",
+        "description": "Recticel Eurothane GP 2400x1200x150mm",
+        "thicknessMm": 150,
+        "unit": "board",
+        "areaM2PerUnit": 2.88,
+        "priceGBPIncVat": 102.9,
+        "pricePerM2": 35.73,
+        "date": "2026-10-14",
+        "exVat": 85.75,
+        "source": "tp-boards",
+        "confidence": "high"
+      },
+      {
+        "retailer": "Travis Perkins",
+        "productId": "gmw-cavity-slab-032",
+        "description": "Knauf DriTherm Cavity Slab 32 100mm 455x1200 (3.276 m2 per pack)",
+        "thicknessMm": 100,
+        "unit": "pack",
+        "areaM2PerUnit": 3.276,
+        "priceGBPIncVat": 59.57,
+        "pricePerM2": 18.18,
+        "date": "2026-10-14",
+        "exVat": 49.64,
+        "source": "tp-cavity",
+        "confidence": "medium",
+        "note": "Second figure GBP 52.99 also shown."
+      },
+      {
+        "retailer": "Thermafleece (manufacturer web shop)",
+        "productId": "thermafleece-cosywool",
+        "description": "CosyWool Roll 100mm x 370mm x 6.5m, 3 rolls",
+        "thicknessMm": 100,
+        "unit": "pack",
+        "areaM2PerUnit": 7.22,
+        "priceGBPIncVat": 137.03,
+        "pricePerM2": 18.98,
+        "date": "2026-10-14",
+        "url": "https://thermafleece.com/product/cosywool-roll",
+        "source": "thermafleece-cosywool",
+        "confidence": "high",
+        "note": "Not one of the five target retailers; inc VAT, delivery extra."
+      },
+      {
+        "retailer": "Thermafleece (manufacturer web shop)",
+        "productId": "thermafleece-cosywool",
+        "description": "CosyWool Roll 150mm x 370mm x 4.3m, 3 rolls",
+        "thicknessMm": 150,
+        "unit": "pack",
+        "areaM2PerUnit": 4.77,
+        "priceGBPIncVat": 135.78,
+        "pricePerM2": 28.47,
+        "date": "2026-10-14",
+        "url": "https://thermafleece.com/product/cosywool-roll",
+        "source": "thermafleece-cosywool",
+        "confidence": "high"
+      }
+    ],
+    "installed": [
+      {
+        "measure": "Loft insulation 0 -> 270mm (professionally installed)",
+        "costGBP": 750,
+        "region": "Great Britain",
+        "costGBP_NI": 1100,
+        "basis": "per typical home",
+        "source": "est-loft",
+        "confidence": "high",
+        "note": "EST does not state the house type or material behind the figure."
+      },
+      {
+        "measure": "Loft insulation top-up 120 -> 270mm (professionally installed)",
+        "costGBP": 600,
+        "region": "Great Britain",
+        "costGBP_NI": 700,
+        "basis": "per typical home",
+        "source": "est-loft",
+        "confidence": "high"
+      },
+      {
+        "measure": "Blown (loose-fill) loft insulation",
+        "costGBPPerM2": null,
+        "costGBPPerHome": null,
+        "source": null,
+        "confidence": "low",
+        "note": "No verifiable 2025-26 per-m2 or per-home figure found (Checkatrade blocked; web search budget exhausted). EST says blown mineral wool/cellulose/foam is used for hard-to-access lofts by professionals."
+      },
+      {
+        "measure": "Cavity wall insulation (installer-only)",
+        "costGBP": 2200,
+        "region": "Great Britain",
+        "costGBP_NI": 1000,
+        "basis": "typical home",
+        "source": "est-cavity",
+        "confidence": "high",
+        "note": "EST: payback typically five years or less; about two hours for an average home. Per-m2 rate not published by EST (null).",
+        "costGBPPerM2": null
+      },
+      {
+        "measure": "Suspended timber floor insulation",
+        "costGBPRange": [
+          1400,
+          2500
+        ],
+        "basis": "typical house, depends on house type",
+        "source": "est-floor",
+        "confidence": "high",
+        "note": "Solid floor insulation \"could cost considerably more\" (no figure)."
+      },
+      {
+        "measure": "Internal wall insulation (whole house, incl. redecoration)",
+        "costGBP": 12000,
+        "source": "est-solidwall",
+        "confidence": "high"
+      },
+      {
+        "measure": "External wall insulation (whole house)",
+        "costGBP": 15000,
+        "source": "est-solidwall",
+        "confidence": "high"
+      }
+    ]
+  },
+  "existingMaterials": {
+    "oldMineralWool": {
+      "lambda": 0.04,
+      "source": "rdsap10",
+      "confidence": "medium",
+      "note": "RdSAP Table 14 uses lambda 0.04 W/mK as typical for mineral wool, rock wool, fibre glass or EPS. Current commodity glass wool loft roll is 0.044 (Knauf/Isover). Old insulation that is compressed, damp, displaced or settled will perform worse than its nominal thickness (EST: squashing mineral wool reduces effectiveness).",
+      "sourcesAlso": [
+        "est-loft",
+        "knauf-lr44-readycut"
+      ],
+      "rValueByThickness": [
+        {
+          "thicknessMm": 25,
+          "R_at_0_040": 0.625,
+          "R_at_0_044": 0.568
+        },
+        {
+          "thicknessMm": 50,
+          "R_at_0_040": 1.25,
+          "R_at_0_044": 1.136
+        },
+        {
+          "thicknessMm": 100,
+          "R_at_0_040": 2.5,
+          "R_at_0_044": 2.273
+        }
+      ],
+      "rValueSource": "derived",
+      "rValueInputs": "R = thickness / lambda using rdsap10 lambda 0.04 and current commodity loft-roll lambda 0.044 (knauf-lr44-readycut)",
+      "rValueNote": "For lofts, prefer the RdSAP Table 16 U-values below (they already include joists and the roof space). RdSAP Table 14 (used for walls) tabulates R = 0.025 x T + 0.25 at lambda 0.04, i.e. it adds 0.25 m2K/W to d/lambda; do not use those figures as pure insulation R."
+    },
+    "rdsapLoftUValuesByThickness": {
+      "description": "Assumed roof U-value at ceiling level for an existing loft, by measured insulation thickness (mineral wool or EPS; includes joists and roof-space sheltering). Useful to estimate the starting U-value.",
+      "rows": [
+        {
+          "thicknessMm": 0,
+          "U": 2.3
+        },
+        {
+          "thicknessMm": 12,
+          "U": 1.5
+        },
+        {
+          "thicknessMm": 25,
+          "U": 1
+        },
+        {
+          "thicknessMm": 50,
+          "U": 0.68
+        },
+        {
+          "thicknessMm": 75,
+          "U": 0.5
+        },
+        {
+          "thicknessMm": 100,
+          "U": 0.4
+        },
+        {
+          "thicknessMm": 125,
+          "U": 0.35
+        },
+        {
+          "thicknessMm": 150,
+          "U": 0.3
+        },
+        {
+          "thicknessMm": 175,
+          "U": 0.25
+        },
+        {
+          "thicknessMm": 200,
+          "U": 0.21
+        },
+        {
+          "thicknessMm": 225,
+          "U": 0.19
+        },
+        {
+          "thicknessMm": 250,
+          "U": 0.17
+        },
+        {
+          "thicknessMm": 270,
+          "U": 0.16
+        },
+        {
+          "thicknessMm": 300,
+          "U": 0.14
+        },
+        {
+          "thicknessMm": 350,
+          "U": 0.12
+        },
+        {
+          "thicknessMm": 400,
+          "U": 0.11,
+          "note": ">= 400mm"
+        }
+      ],
+      "rafterColumnAttributedToCeiling": [
+        {
+          "thicknessMm": 0,
+          "U": 2.3
+        },
+        {
+          "thicknessMm": 50,
+          "U": 0.88
+        },
+        {
+          "thicknessMm": 100,
+          "U": 0.54
+        },
+        {
+          "thicknessMm": 150,
+          "U": 0.39
+        },
+        {
+          "thicknessMm": 200,
+          "U": 0.29
+        },
+        {
+          "thicknessMm": 270,
+          "U": 0.21
+        }
+      ],
+      "note": "Insulation taken as between joists up to 150mm and between+over joists above that. If retrofit insulation of unknown thickness is present, RdSAP uses 50mm.",
+      "source": "rdsap10",
+      "ref": "Table 16 / 6.11.4",
+      "confidence": "high"
+    },
+    "rdsapWallDefaults_England": {
+      "description": "Default existing wall U-values (RdSAP Table 6, England). Age bands: A pre-1900, B 1900-29, C 1930-49, D 1950-66, E 1967-75, F 1976-82, G 1983-90, H 1991-95, I 1996-2002, J 2003-06, K 2007-11, L 2012-22, M 2023+.",
+      "rows": [
+        {
+          "wall": "Cavity as built (unfilled)",
+          "bandsAtoE": 1.5,
+          "F": 1,
+          "G": 0.6
+        },
+        {
+          "wall": "Filled cavity",
+          "bandsAtoE": 0.7,
+          "F": 0.4
+        },
+        {
+          "wall": "Solid brick as built, 200-280mm thick (bands A-E)",
+          "U": 1.7
+        },
+        {
+          "wall": "Solid brick up to 200mm",
+          "U": 2.5
+        },
+        {
+          "wall": "Solid brick 280-420mm",
+          "U": 1.4
+        },
+        {
+          "wall": "Solid brick >420mm",
+          "U": 1.1
+        },
+        {
+          "wall": "Timber frame as built (band A)",
+          "U": 2.5
+        }
+      ],
+      "source": "rdsap10",
+      "ref": "Tables 6 and 13",
+      "confidence": "high"
+    },
+    "vermiculite": {
+      "lambda": null,
+      "confidence": "low",
+      "source": null,
+      "note": "No verified lambda found. RdSAP Table 16 applies to mineral wool/EPS only; for other loft materials it falls back to age-band defaults (Table 18), so a calculator should treat vermiculite as \"unknown/do not count\" rather than estimate its R-value.",
+      "asbestosWarning": {
+        "text": "Loose vermiculite loft insulation (grey-brown/gold granules) may be contaminated with asbestos. Assume it contains asbestos and do not disturb, remove or lay new insulation over it yourself; get it tested/handled by a licensed asbestos professional. Separately, loose-fill asbestos insulation (fluffy blue-grey or whitish) can be found in loft spaces, cavities and under floors and is among the most dangerous asbestos materials.",
+        "sources": [
+          "epa-vermiculite",
+          "hse-asbestos-materials"
+        ],
+        "confidence": "high",
+        "context": "US EPA: Libby (Montana) mine supplied >70% of US vermiculite 1919-1990 (sold as Zonolite) and was contaminated with asbestos; EPA advises assuming any vermiculite insulation contains asbestos. EPA is a US source - no UK-specific vermiculite guidance was located; HSE covers loose-fill asbestos in loft spaces."
+      }
+    }
+  },
+  "terminology": [
+    {
+      "uk": "loft",
+      "us": "attic",
+      "note": "Unheated roof void above the top-floor ceiling."
+    },
+    {
+      "uk": "loft hatch",
+      "us": "attic hatch / scuttle / attic access"
+    },
+    {
+      "uk": "loft conversion / room in roof",
+      "us": "finished attic / attic bonus room"
+    },
+    {
+      "uk": "ceiling joists (loft floor joists)",
+      "us": "ceiling joists / attic floor joists"
+    },
+    {
+      "uk": "rafters",
+      "us": "rafters"
+    },
+    {
+      "uk": "joist centres (400mm / 600mm)",
+      "us": "on-center spacing (16 in / 24 in o.c.)",
+      "note": "Approximate equivalents; UK uses metric 400/600mm centres."
+    },
+    {
+      "uk": "loft roll / quilt",
+      "us": "batts and rolls / blanket insulation"
+    },
+    {
+      "uk": "combi-cut / ready-cut roll",
+      "us": "pre-cut / perforated batts"
+    },
+    {
+      "uk": "top up (loft insulation)",
+      "us": "add insulation over existing / attic top-up"
+    },
+    {
+      "uk": "cross-laid second layer",
+      "us": "second layer perpendicular to joists"
+    },
+    {
+      "uk": "mineral wool (glass mineral wool / stone or rock mineral wool)",
+      "us": "fiberglass / mineral wool (rock wool, slag wool)"
+    },
+    {
+      "uk": "loose-fill / blown insulation",
+      "us": "loose-fill / blown-in insulation"
+    },
+    {
+      "uk": "cavity wall",
+      "us": "masonry cavity wall (closest US analog: brick veneer with air space)",
+      "note": "Two masonry leaves with a gap; common in UK homes from about the 1920s-30s."
+    },
+    {
+      "uk": "cavity wall insulation (CWI) / cavity fill",
+      "us": "blown-in / injected wall insulation"
+    },
+    {
+      "uk": "solid wall",
+      "us": "solid masonry wall (multi-wythe brick)"
+    },
+    {
+      "uk": "internal wall insulation (IWI) / dry-lining",
+      "us": "interior insulation / furring out walls"
+    },
+    {
+      "uk": "external wall insulation (EWI)",
+      "us": "exterior insulation / EIFS / exterior continuous insulation"
+    },
+    {
+      "uk": "insulated plasterboard",
+      "us": "insulated drywall / laminated foam-backed drywall"
+    },
+    {
+      "uk": "plasterboard",
+      "us": "drywall / gypsum board / Sheetrock"
+    },
+    {
+      "uk": "suspended timber floor",
+      "us": "wood-framed floor over a crawlspace"
+    },
+    {
+      "uk": "solid (ground-bearing) floor",
+      "us": "slab-on-grade"
+    },
+    {
+      "uk": "airbricks",
+      "us": "foundation / crawlspace vents"
+    },
+    {
+      "uk": "eaves ventilation",
+      "us": "soffit vents"
+    },
+    {
+      "uk": "cold roof (insulation at ceiling, ventilated loft)",
+      "us": "vented attic"
+    },
+    {
+      "uk": "warm roof (insulation at rafters/deck)",
+      "us": "unvented / conditioned attic, hot roof"
+    },
+    {
+      "uk": "vapour control layer (VCL)",
+      "us": "vapor retarder / vapor barrier"
+    },
+    {
+      "uk": "breather membrane / roofing underlay (felt)",
+      "us": "housewrap / roof underlayment"
+    },
+    {
+      "uk": "PIR board",
+      "us": "polyiso (polyisocyanurate) board"
+    },
+    {
+      "uk": "EPS / XPS",
+      "us": "EPS (beadboard) / XPS (extruded polystyrene, e.g. \"pink/blue board\")"
+    },
+    {
+      "uk": "U-value (W/m2K)",
+      "us": "U-factor (Btu/h.ft2.F); US practice usually quotes R-value",
+      "note": "UK specifies maximum U-values; US codes usually specify minimum R-values."
+    },
+    {
+      "uk": "R-value (m2K/W)",
+      "us": "R-value (h.ft2.F/Btu)",
+      "conversion": {
+        "factor": 5.678,
+        "text": "R(US) = R(SI) x 5.678",
+        "source": "derived",
+        "inputs": "1 Btu(IT) = 1055.056 J, 1 ft = 0.3048 m, 1 F = 5/9 K, 1 h = 3600 s",
+        "confidence": "high"
+      }
+    },
+    {
+      "uk": "lambda (thermal conductivity, W/mK)",
+      "us": "k-value (Btu.in/h.ft2.F)"
+    },
+    {
+      "uk": "Building Regulations / Approved Document L / building control",
+      "us": "building/energy code (IECC) / code official"
+    },
+    {
+      "uk": "EPC (Energy Performance Certificate) / SAP / RdSAP",
+      "us": "HERS rating / Home Energy Score"
+    },
+    {
+      "uk": "terraced / semi-detached / detached house; flat",
+      "us": "row house or townhouse / duplex (approx.) / single-family detached; apartment or condo"
+    },
+    {
+      "uk": "competent person scheme / TrustMark installer",
+      "us": "licensed / certified contractor"
+    }
+  ],
+  "sources": [
+    {
+      "id": "adl2021",
+      "title": "Approved Document L, Volume 1: Dwellings, 2021 edition incorporating 2023 amendments (England)",
+      "url": "https://assets.publishing.service.gov.uk/media/662a2e3e55e1582b6ca7e592/Approved_Document_L__Conservation_of_fuel_and_power__Volume_1_Dwellings__2021_edition_incorporating_2023_amendments.pdf",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "adl2026",
+      "title": "Approved Document L, Volume 1: Dwellings, 2026 edition (England) - revised version published 8 Sep 2026; takes effect 24 Mar 2027",
+      "url": "https://assets.publishing.service.gov.uk/media/6a9a8da39a177a1decf97e0d/Approved_Document_L__Volume_1_Dwellings.pdf",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "adl2026-page",
+      "title": "GOV.UK: Approved Document L (2026) publication page (published 24 Mar 2026, updated 8 Sep 2026)",
+      "url": "https://www.gov.uk/government/publications/approved-document-l-2026",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "adl2026-faq",
+      "title": "GOV.UK: Approved Document L: Energy and greenhouse gas emissions, FAQs (2026 edition)",
+      "url": "https://www.gov.uk/guidance/approved-document-l-energy-and-greenhouse-gas-emissions-frequently-asked-questions",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "br443",
+      "title": "BRE BR 443 Conventions for U-value calculations, 2019 edition (copy hosted by CIBSE)",
+      "url": "https://www.cibse.org/media/wzrjrf3l/conventions-for-u-value-calculations.pdf",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "rdsap10",
+      "title": "RdSAP10 Specification (12 February 2024), BRE",
+      "url": "https://bregroup.com/documents/d/bre-group/rdsap10-dt13-02-2024-1-pdf",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "est-loft",
+      "title": "Energy Saving Trust: Roof and loft insulation guide (last updated 8 May 2026)",
+      "url": "https://energysavingtrust.org.uk/advice/roof-and-loft-insulation/",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "est-cavity",
+      "title": "Energy Saving Trust: Cavity wall insulation (last updated 8 May 2026)",
+      "url": "https://energysavingtrust.org.uk/advice/cavity-wall-insulation/",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "est-floor",
+      "title": "Energy Saving Trust: Floor insulation (last updated 19 May 2026)",
+      "url": "https://energysavingtrust.org.uk/advice/floor-insulation/",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "est-solidwall",
+      "title": "Energy Saving Trust: Solid wall insulation (last updated 18 June 2026)",
+      "url": "https://energysavingtrust.org.uk/advice/solid-wall-insulation/",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "wales-adl1-2022",
+      "title": "Welsh Government: Approved Document L Volume 1 Dwellings (2022 edition, in force 23 Nov 2022)",
+      "url": "https://www.gov.wales/sites/default/files/publications/2024-05/building-regulations-approved-document-l-vol-1.pdf",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "wales-adl1-2026",
+      "title": "Welsh Government: Approved Document L Volume 1 Dwellings (2026 edition, takes effect 4 Mar 2027)",
+      "url": "https://www.gov.wales/sites/default/files/publications/2026-04/building-regulations-approved-document-l-vol-1-2026.pdf",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "wales-wgc006-2026",
+      "title": "Welsh Government circular WGC 006/2026: Publication of Approved Document L (2026)",
+      "url": "https://www.gov.wales/node/76006",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "scot-th-2026",
+      "title": "Scottish Government: Building Standards Technical Handbook - Domestic (April 2026; warrants on/after 6 Apr 2026)",
+      "url": "https://www.gov.scot/publications/building-standards-technical-handbook-domestic-april-2026-pdf/",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "knauf-lr44-readycut",
+      "title": "Knauf: Loft Roll 44 (Ready-cut) product page",
+      "url": "https://knauf.com/en-GB/p/product/loft-roll-44-ready-cut-26339_4206",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "knauf-lr44-combicut",
+      "title": "Knauf: Loft Roll 44 (Combi-cut) product page",
+      "url": "https://knauf.com/en-GB/p/product/loft-roll-44-combi-cut-26333_4206",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "knauf-lr40-combicut",
+      "title": "Knauf: Loft Roll 40 (Combi-cut) product page",
+      "url": "https://knauf.com/en-GB/p/product/loft-roll-40-combi-cut-26332_4206",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "knauf-loftroll-ds",
+      "title": "Knauf Insulation: Loft Roll 40 and 44 datasheet (valid from November 2025)",
+      "url": "https://knauf.com/api/download-center/v1/assets/cfda0c68-e342-45d3-9c85-eeb95814a749?download=true&country=gb",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "knauf-loftroll-guide",
+      "title": "Knauf Insulation: Loft Roll Installation Guide (valid from July 2025)",
+      "url": "https://knauf.com/api/download-center/v1/assets/8bedb4b5-e85d-43ac-8ecb-3a2fb1fa09bc?download=true&country=gb",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "knauf-solutions-2026",
+      "title": "Knauf Insulation: UK & Ireland Insulation Solutions Guide (June 2026)",
+      "url": "https://knauf.com/api/download-center/v1/assets/ebadf176-5e33-4515-9ad0-fb5e6c674c8d?download=true&country=gb",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "knauf-supafil34",
+      "title": "Knauf: Supafil 34 (blown glass mineral wool, cavity walls)",
+      "url": "https://knauf.com/en-GB/p/product/supafil-r-34-23889_4206",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "knauf-supafil40",
+      "title": "Knauf: Supafil 40 (blown glass mineral wool, cavity walls)",
+      "url": "https://knauf.com/en-GB/p/product/supafil-r-40-26377_4206",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "isover-spacesaver",
+      "title": "Isover UK: Isover Spacesaver (last updated 28.01.2026)",
+      "url": "https://www.isover.co.uk/products/isover-spacesaver",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "isover-spacesaver-plus",
+      "title": "Isover UK: Isover Spacesaver Plus",
+      "url": "https://www.isover.co.uk/products/isover-spacesaver-plus",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "rockwool-roll",
+      "title": "ROCKWOOL UK: Roll product page",
+      "url": "https://www.rockwool.com/uk/products/roll/",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "rockwool-roll-ds",
+      "title": "ROCKWOOL: Technical datasheet - Roll, Twin Roll and Rollbatt (v1.03, March 2026)",
+      "url": "https://brandportal.rockwool.com/original/gallery/39052/files/original/84d97b9d-76a6-4a33-85be-cbd6ec66857c.pdf",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "rockwool-flexi",
+      "title": "ROCKWOOL UK: Flexi product page",
+      "url": "https://www.rockwool.com/uk/products/flexi/",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "rockwool-flexi-ds",
+      "title": "ROCKWOOL: Technical datasheet - Flexi (v1.05, November 2025)",
+      "url": "https://brandportal.rockwool.com/original/gallery/39052/files/original/ffe4ca9b-060a-4962-b1b2-8564b6b5266b.pdf",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "soprema-ga4000",
+      "title": "SOPREMA UK: SOPRATHERM GA4000 (previously Celotex GA4000)",
+      "url": "https://www.soprema.co.uk/products/sopratherm-ga4000",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "soprema-celotex",
+      "title": "SOPREMA UK: \"Celotex is now SOPREMA\"",
+      "url": "https://www.soprema.co.uk/welcome-celotex",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "kingspan-tp10",
+      "title": "Kingspan GB: Thermapitch TP10",
+      "url": "https://www.insulation.kingspan.com/gb/en/products/insulation-boards/roof-insulation-boards/thermapitch-tp10",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "kingspan-k107",
+      "title": "Kingspan GB: Kooltherm K107 Pitched Roof Board",
+      "url": "https://www.insulation.kingspan.com/gb/en/products/insulation-boards/roof-insulation-boards/kooltherm-k107-pitched-roof-board",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "kingspan-k118",
+      "title": "Kingspan GB: Kooltherm K118 Insulated Plasterboard",
+      "url": "https://www.insulation.kingspan.com/gb/en/products/insulation-boards/wall-insulation-boards/kooltherm-k118-insulated-plasterboard",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "kingspan-tf70",
+      "title": "Kingspan GB: Thermafloor TF70",
+      "url": "https://www.insulation.kingspan.com/gb/en/products/insulation-boards/floor-insulation-boards/thermafloor-tf70",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "kingspan-k103",
+      "title": "Kingspan GB: Kooltherm K103 Floorboard",
+      "url": "https://www.insulation.kingspan.com/gb/en/products/insulation-boards/floor-insulation-boards/kooltherm-k103-floorboard",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "steico-flex036",
+      "title": "STEICO UK: STEICOflex 036 wood fibre insulation",
+      "url": "https://www.steico.com/uk/products/insulation/insulation-between-studs/flexible-thermal-insulation/steicoflex-036",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "thermafleece-cosywool",
+      "title": "Thermafleece: CosyWool Roll (sheep wool) - manufacturer web shop",
+      "url": "https://thermafleece.com/product/cosywool-roll",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "wickes-loft",
+      "title": "Wickes: Loft Insulation category",
+      "url": "https://www.wickes.co.uk/Products/Building-Materials/Insulation/Loft-Insulation+Accessories/Loft-Insulation/c/1000270",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "wickes-boards",
+      "title": "Wickes: Insulation Boards category",
+      "url": "https://www.wickes.co.uk/Products/Building-Materials/Insulation/Insulation-Boards/c/1000272",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "wickes-cavity",
+      "title": "Wickes: Cavity Wall Insulation category",
+      "url": "https://www.wickes.co.uk/Products/Building-Materials/Insulation/Cavity-Wall-Insulation/c/1000273",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "toolstation-insulation",
+      "title": "Toolstation: Insulation product pages (via toolstation.com sitemap, category 20)",
+      "url": "https://www.toolstation.com/construction-insulation/insulation/c754",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "tp-loft",
+      "title": "Travis Perkins: Loft Insulation category",
+      "url": "https://www.travisperkins.co.uk/product/building-materials/insulation/loft-insulation/c/1500215/",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "tp-boards",
+      "title": "Travis Perkins: Insulation Board category",
+      "url": "https://www.travisperkins.co.uk/product/building-materials/insulation/insulation-board/c/1500213/",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "tp-cavity",
+      "title": "Travis Perkins: Cavity and Internal Wall Insulation category",
+      "url": "https://www.travisperkins.co.uk/product/building-materials/insulation/cavity-and-internal-wall-insulation/c/1500214/",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "screwfix-loft",
+      "title": "Screwfix: Loft Insulation category",
+      "url": "https://www.screwfix.com/c/building-doors/loft-insulation/cat850298",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "bq-diy",
+      "title": "B&Q (diy.com) - returned HTTP 503 maintenance page to automated access on 2026-10-14",
+      "url": "https://www.diy.com/",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "hse-asbestos-materials",
+      "title": "HSE: Asbestos - location of materials (loose-fill asbestos)",
+      "url": "https://www.hse.gov.uk/asbestos/location-materials.htm",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "epa-vermiculite",
+      "title": "US EPA: Protect your family from asbestos-contaminated vermiculite insulation (last updated 17 Apr 2026)",
+      "url": "https://www.epa.gov/asbestos/protect-your-family-asbestos-contaminated-vermiculite-insulation",
+      "accessed": "2026-10-14"
+    },
+    {
+      "id": "derived",
+      "title": "Derived in this file by arithmetic from the cited inputs (formula given in each note)",
+      "url": null,
+      "accessed": "2026-10-14"
+    }
+  ]
+}

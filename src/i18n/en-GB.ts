@@ -23,8 +23,9 @@ const enGB: Dict = {
     areaQ: "What are you insulating?",
     areas: {
       attic: "Loft",
-      roof: "Sloped roof",
-      wall: "Walls",
+      roof: "Room in roof",
+      wall: "Cavity walls",
+      solidWall: "Solid walls",
       floor: "Floor",
       basementWall: "Basement walls",
     },

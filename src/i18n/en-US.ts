@@ -26,6 +26,7 @@ const enUS = {
       attic: "Attic",
       roof: "Sloped roof",
       wall: "Walls",
+      solidWall: "Solid walls",
       floor: "Floor",
       basementWall: "Basement walls",
     },

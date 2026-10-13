@@ -3,7 +3,7 @@
 export type MarketId = "us" | "uk" | "de" | "fr";
 
 /** attic = attic floor / loft / oberste Geschossdecke / combles perdus. roof = sloped roof between rafters. */
-export type AreaType = "attic" | "roof" | "wall" | "floor" | "basementWall";
+export type AreaType = "attic" | "roof" | "wall" | "solidWall" | "floor" | "basementWall";
 
 export type ProductForm = "batt" | "roll" | "board" | "loosefill" | "spray";
 
@@ -75,6 +75,8 @@ export interface Product extends Sourced {
   areas: AreaType[];
   /** typically installed between joists/studs/rafters */
   betweenFraming: boolean;
+  /** installer fills the whole cavity (UK cavity-wall fill): depth = cavity depth, not the minimum needed */
+  fillsCavity?: boolean;
   thicknesses?: Thickness[];
   loosefill?: {
     bagKg: number;
@@ -87,7 +89,9 @@ export interface Product extends Sourced {
   };
   spray?: {
     /** installed price per m² per mm of thickness */
-    pricePerM2Mm: PriceRange;
+    pricePerM2Mm?: PriceRange;
+    /** flat installed price per m² (whatever the thickness) */
+    pricePerM2?: PriceRange;
   };
   /** YYYY-MM of the price check */
   priceDate: string;

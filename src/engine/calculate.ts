@@ -175,6 +175,10 @@ export function calculate(input: CalcInput, market: MarketData): CalcResult {
     settledMm = maxNewMm;
     capped = true;
     warnings.push("cavityLimit");
+  } else if (product.fillsCavity && maxNewMm != null) {
+    // Cavity-wall fill can't be installed part-way: the installer fills the whole cavity.
+    settledMm = maxNewMm;
+    capped = true;
   }
 
   if (product.form === "loosefill" && product.loosefill) {
@@ -209,7 +213,12 @@ export function calculate(input: CalcInput, market: MarketData): CalcResult {
 
   if (product.form === "spray" && product.spray) {
     const afterRSI = rWith([{ mm: settledMm, lambda }]);
-    const cost = priced(product.spray.pricePerM2Mm, input.areaM2 * settledMm);
+    const { pricePerM2, pricePerM2Mm } = product.spray;
+    const cost = pricePerM2
+      ? priced(pricePerM2, input.areaM2)
+      : pricePerM2Mm
+        ? priced(pricePerM2Mm, input.areaM2 * settledMm)
+        : { low: 0, high: 0 };
     steps.push({ key: "spray", values: { depthMm: settledMm } });
     steps.push({ key: "cost", values: { ...cost, currency: market.currency } });
     return {

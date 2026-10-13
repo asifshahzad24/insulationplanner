@@ -27,8 +27,8 @@ export function Header({
   const text = dark ? "text-night-text" : "text-muted";
   return (
     <header className={`no-print relative z-30 ${dark ? "text-white" : "border-b border-line bg-surface text-ink"}`}>
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <Link href={home} className="flex items-center gap-2.5 font-display text-[17px] font-extrabold tracking-tight">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-4 sm:gap-4 sm:px-6">
+        <Link href={home} className="flex shrink-0 items-center gap-2 whitespace-nowrap font-display text-[15px] font-extrabold tracking-tight sm:gap-2.5 sm:text-[17px]">
           <LogoMark className="size-6" />
           <span>{site.name}</span>
         </Link>
@@ -88,7 +88,7 @@ function CountrySwitcher({
             hrefLang={MARKETS[id].lang}
             aria-current={active ? "true" : undefined}
             title={MARKETS[id].name}
-            className={`rounded-[7px] px-2 py-1 transition ${
+            className={`rounded-[7px] px-1.5 py-1 transition sm:px-2 ${
               active ? (dark ? "bg-white text-night" : "bg-ink text-white") : dark ? "text-night-text hover:text-white" : "text-muted hover:text-ink"
             }`}
           >
