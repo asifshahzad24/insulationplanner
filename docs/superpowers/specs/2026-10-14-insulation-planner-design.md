@@ -18,11 +18,13 @@ A free, no-signup insulation calculator site for homeowners and DIYers in the US
 | Theme | "Thermal": a thermal-camera gradient as the brand, a dark hero only at the top, light content, and friendly question-style labels |
 | Markets | 🇺🇸 US at `/`, 🇬🇧 UK at `/uk/`, 🇩🇪 DE at `/de/`, 🇫🇷 FR at `/fr/` |
 | Languages | en-US, en-GB, de-DE, fr-FR |
-| Domain | Placeholder in `src/config/site.ts` (`siteUrl`). Owner picks before launch. |
+| Domain | **loftinsulationcalc.com** (registered by the owner on Cloudflare), set in `src/config/site.ts` |
 | Launch scope | Lean launch: full calculator, converter, ~8 SEO pages and the trust/legal pages per market. Grow weekly after launch. |
 | Monetisation | None at launch. Affiliate boxes and ads are phase 2. Affiliate-disclosure page ships at launch. |
 
 ## 3. Markets
+
+> **Updated during build (2026-10-14):** the US has a single tier (DOE/ENERGY STAR = 2021 IECC values). The UK splits walls into cavity fill (Part L 0.55) and solid walls (0.30), and uses a "new-build standard" second tier (ADL Table 4.2). In Germany the GEG was renamed **GModG** on 29 Jul 2026 (same values). In France, MaPrimeRénov' *par geste* no longer funds insulation since 1 Sep 2026, so the second tier is the CEE level, counting only new insulation.
 
 | | US | UK | DE | FR |
 |---|---|---|---|---|
