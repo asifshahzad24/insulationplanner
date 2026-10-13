@@ -1,6 +1,6 @@
 ---
 title: "Einblasdämmung Rechner: Kosten & Dicke für den Dachboden"
-description: "Einblasdämmung Kosten berechnen: Der Rechner zeigt die nötige Dicke und typische Fachbetrieb-Preise für Zellulose auf der obersten Geschossdecke, inkl. Einbau."
+description: "Einblasdämmung Kosten berechnen: Der Rechner zeigt die nötige Dicke und typische Fachbetrieb-Preise für Zellulose auf der obersten Geschossdecke, mit Einbau."
 h1: "Einblasdämmung – Rechner für Dicke und Kosten"
 nav: "Einblasdämmung"
 intro: "Für Zellulose, die ein Fachbetrieb offen auf die oberste Geschossdecke bläst: Der Rechner zeigt, wie dick die Schicht sein muss und was sie inklusive Einblasen typischerweise kostet."
