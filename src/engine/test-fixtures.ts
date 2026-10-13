@@ -1,0 +1,136 @@
+// Synthetic markets for engine tests. Numbers are chosen for easy hand-checking,
+// not taken from real products.
+import { inches, lb, pcf, perBoardFoot, rIP, sqft } from "./units";
+import type { MarketData } from "./types";
+
+const src = { source: "fixture" };
+
+export const fixtureInsulationR: MarketData = {
+  id: "us",
+  locale: "en-US",
+  currency: "USD",
+  defaultUnits: "imperial",
+  rDisplay: "ip",
+  areas: ["attic", "wall"],
+  zoneKind: "usClimate",
+  defaultZone: "5A",
+  tiers: [
+    {
+      id: "code",
+      basis: "insulationR",
+      byZone: {
+        "4": { attic: rIP(49), wall: rIP(13) },
+        "4C": { attic: rIP(60), wall: rIP(20) },
+        "5": { attic: rIP(60), wall: rIP(20) },
+      },
+      ...src,
+    },
+    { id: "flat", basis: "insulationR", values: { attic: rIP(49) }, ...src },
+  ],
+  defaultTier: "code",
+  products: [
+    {
+      id: "batt",
+      material: "fiberglass",
+      form: "batt",
+      name: "Fiberglass batt",
+      lambda: 0.0254 / (3.14 * 0.1761101838),
+      packageUnit: "bag",
+      areas: ["attic", "wall"],
+      betweenFraming: true,
+      thicknesses: [
+        { mm: inches(3.5), rSI: rIP(13), coverageM2: sqft(40), price: { low: 30, high: 40 }, label: "R-13" },
+        { mm: inches(6.25), rSI: rIP(19), coverageM2: sqft(48.96), price: { low: 40, high: 50 }, label: "R-19" },
+        { mm: inches(10), rSI: rIP(30), coverageM2: sqft(58.67), price: { low: 45, high: 55 }, label: "R-30" },
+        { mm: inches(12), rSI: rIP(38), coverageM2: sqft(48.96), price: { low: 50, high: 60 }, label: "R-38" },
+      ],
+      priceDate: "2026-10",
+      ...src,
+    },
+    {
+      id: "cellulose",
+      material: "blownCellulose",
+      form: "loosefill",
+      name: "Blown cellulose",
+      lambda: 0.039,
+      packageUnit: "bag",
+      areas: ["attic"],
+      betweenFraming: false,
+      loosefill: {
+        bagKg: lb(25),
+        settledDensity: pcf(1.6),
+        settlingPct: 15,
+        price: { low: 15, high: 18 },
+        chart: [
+          { rSI: rIP(30), m2PerBag: sqft(30), settledMm: inches(8.2), installedMm: inches(9.5) },
+          { rSI: rIP(38), m2PerBag: sqft(23), settledMm: inches(10.4), installedMm: inches(12) },
+          { rSI: rIP(49), m2PerBag: sqft(18), settledMm: inches(13.4), installedMm: inches(15.5) },
+          { rSI: rIP(60), m2PerBag: sqft(14.5), settledMm: inches(16.5), installedMm: inches(19) },
+        ],
+      },
+      priceDate: "2026-10",
+      ...src,
+    },
+    {
+      id: "sprayClosed",
+      material: "sprayClosed",
+      form: "spray",
+      name: "Closed-cell spray foam",
+      lambda: 0.0254 / (6.5 * 0.1761101838),
+      areas: ["wall"],
+      betweenFraming: true,
+      spray: { pricePerM2Mm: { low: perBoardFoot(1), high: perBoardFoot(1.5) } },
+      priceDate: "2026-10",
+      ...src,
+    },
+  ],
+  defaultProduct: { attic: "cellulose", wall: "batt" },
+  existing: [
+    { id: "oldBatts", lambda: 0.0254 / (3.0 * 0.1761101838) },
+    { id: "vermiculite", lambda: 0.0254 / (2.13 * 0.1761101838), warning: "asbestosRisk" },
+  ],
+  conventions: {},
+  sources: [{ id: "fixture", title: "Test fixture", url: "https://example.com", accessed: "2026-10-14" }],
+};
+
+export const fixtureElementU: MarketData = {
+  id: "de",
+  locale: "de-DE",
+  currency: "EUR",
+  defaultUnits: "metric",
+  rDisplay: "si",
+  areas: ["attic", "wall"],
+  zoneKind: "none",
+  tiers: [
+    { id: "geg", basis: "elementU", values: { attic: 0.24, wall: 0.24 }, ...src },
+    { id: "beg", basis: "elementU", values: { attic: 0.14, wall: 0.2 }, ...src },
+  ],
+  defaultTier: "geg",
+  products: [
+    {
+      id: "roll035",
+      material: "mineralWool",
+      form: "roll",
+      name: "Mineralwolle WLS 035",
+      lambda: 0.035,
+      packageUnit: "roll",
+      areas: ["attic", "wall"],
+      betweenFraming: true,
+      thicknesses: [100, 140, 200, 240].map((mm) => ({
+        mm,
+        rSI: mm / 1000 / 0.035,
+        coverageM2: 5,
+        price: { low: 30, high: 40 },
+      })),
+      priceDate: "2026-10",
+      ...src,
+    },
+  ],
+  defaultProduct: { attic: "roll035", wall: "roll035" },
+  existing: [{ id: "oldWool", lambda: 0.045, warning: "oldMineralWool" }],
+  conventions: {
+    attic: { rsi: 0.1, rse: 0.04, rStructure: 0.06, framingMm: 150, timberFraction: 0.1 },
+    wall: { rsi: 0.13, rse: 0.04, rStructure: 0.5, framingMm: 0, timberFraction: 0 },
+  },
+  sources: [{ id: "fixture", title: "Test fixture", url: "https://example.com", accessed: "2026-10-14" }],
+};
