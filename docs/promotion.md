@@ -6,22 +6,13 @@ Do them in this order. All of them are free.
 
 ---
 
-## 1. Cloudflare: send everyone to one address (5 minutes)
+## 1. Cloudflare: send everyone to one address ✅ done 14 Oct 2026
 
-At the moment `http://loftinsulationcalc.com` and `www.loftinsulationcalc.com` both open the site. They should send visitors on to `https://loftinsulationcalc.com`.
+`http://` and `www.` addresses now go to `https://loftinsulationcalc.com` with a permanent (301) redirect. Both settings are on the loftinsulationcalc.com domain in the Cloudflare dashboard:
+- **SSL/TLS** → **Edge Certificates** → **Always Use HTTPS**: On.
+- **Rules** → **Redirect Rules**: if Hostname equals `www.loftinsulationcalc.com`, redirect (Dynamic, 301, query string kept) to `concat("https://loftinsulationcalc.com", http.request.uri.path)`.
 
-**A. Always use HTTPS**
-1. Go to dash.cloudflare.com and log in with aqrab89@gmail.com.
-2. Click **loftinsulationcalc.com**.
-3. Left menu: **SSL/TLS** → **Edge Certificates**.
-4. Scroll to **Always Use HTTPS** and switch it **On**.
-
-**B. www to the main address**
-1. Still on loftinsulationcalc.com, left menu: **Rules** → **Overview**.
-2. Click **Create rule** → **Redirect Rule**.
-3. Choose the template **Redirect from WWW to root** and click **Deploy**.
-
-**Check:** open `http://www.loftinsulationcalc.com/uk` in a private window. The address bar should end up at `https://loftinsulationcalc.com/uk`.
+Do not change this rule to "All incoming requests". That would send every page into a redirect loop.
 
 ---
 

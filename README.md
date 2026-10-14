@@ -68,6 +68,7 @@ The walkthrough videos (US, UK, DE and FR, wide and tall, with voiceover) are ma
 - [x] Cloudflare Web Analytics on "Automatic setup" (Cloudflare injects the beacon, so `site.analyticsToken` stays empty)
 - [x] Search Console verified and sitemap submitted
 - [x] IndexNow key in `site.indexNowKey` and `public/<key>.txt`
-- [ ] Traffic tasks in [docs/promotion.md](docs/promotion.md): Cloudflare HTTPS and www redirects, Bing Webmaster Tools, YouTube, links
+- [x] Cloudflare: Always Use HTTPS and a www → root redirect rule
+- [ ] Traffic tasks in [docs/promotion.md](docs/promotion.md): Bing Webmaster Tools, YouTube, links
 - [ ] Review the generated legal pages (privacy, terms) and adapt them to your situation
 - [ ] Before adding ads or affiliate links: update the privacy policy and affiliate disclosure, and add a consent banner if any ad network sets cookies
