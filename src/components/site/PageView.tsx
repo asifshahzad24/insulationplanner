@@ -51,7 +51,12 @@ export function PageView({ entry }: { entry: RouteEntry }) {
 
       {/* ── Dark thermal hero ──────────────────────────────────────────── */}
       <div className={`relative overflow-hidden bg-night ${isTool ? "pb-28" : "pb-14"}`}>
-        <div aria-hidden className="thermal-glow pointer-events-none absolute -right-24 -top-24 h-[420px] w-[620px] max-w-none" />
+        {/* Glow anchored to the content column, so it stays beside the heading on wide screens. */}
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <div className="relative mx-auto h-full max-w-6xl">
+            <div className="thermal-glow absolute -right-40 -top-24 h-[420px] w-[620px] max-w-none" />
+          </div>
+        </div>
         <Header market={entry.market} dict={dict} nav={nav} switcher={switcherLinks(entry)} />
         <div className="relative mx-auto max-w-6xl px-4 pt-6 sm:px-6 sm:pt-10">
           {crumbs.length ? <Breadcrumbs items={crumbs} /> : null}
