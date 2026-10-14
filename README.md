@@ -58,7 +58,7 @@ The full explanation is on each market's Methodology page.
 ## Owner checklist before launch
 
 - [x] Domain set in `src/config/site.ts` (`loftinsulationcalc.com`), live on Cloudflare Workers
-- [ ] Contact email `info@loftinsulationcalc.com` forwarded with Cloudflare Email Routing
+- [x] Contact email `info@loftinsulationcalc.com` forwarded with Cloudflare Email Routing
 - [x] **Impressum (DE) and mentions légales (FR):** publisher name and postal address filled in
 - [ ] Cloudflare Web Analytics token in `site.analyticsToken`
 - [x] Search Console verified and sitemap submitted
