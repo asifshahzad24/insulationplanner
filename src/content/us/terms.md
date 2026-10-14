@@ -1,13 +1,13 @@
 ---
-title: "Terms of Use & Disclaimer | Insulation Planner"
-description: "Terms of use for Insulation Planner. Our estimates are for planning only, not professional advice: check product labels and local code before you start."
+title: "Terms of Use & Disclaimer | Loft Insulation Calc"
+description: "Terms of use for Loft Insulation Calc. Our estimates are for planning only, not professional advice: check product labels and local code before you start."
 h1: "Terms of use and disclaimer"
 nav: "Terms"
 intro: "The rules for using this site, and what our estimates can and can't tell you."
 ---
 Last updated: October 14, 2026
 
-By using Insulation Planner at loftinsulationcalc.com ("the site", "we", "us"), you agree to these terms. If you don't agree, please don't use the site.
+By using Loft Insulation Calc at loftinsulationcalc.com ("the site", "we", "us"), you agree to these terms. If you don't agree, please don't use the site.
 
 ## Estimates are for planning only
 
@@ -67,4 +67,4 @@ We may update these terms from time to time. The date at the top shows when they
 
 ## Contact
 
-Questions about these terms: hello@loftinsulationcalc.com
+Questions about these terms: info@loftinsulationcalc.com

@@ -83,7 +83,7 @@ Les prix de pose professionnelle cités dans nos articles proviennent de guides 
 
 Les sections Royaume-Uni et Allemagne utilisent une **méthode par coefficient U** : l'exigence porte sur la paroi entière, et le calculateur retranche les résistances superficielles et celle de la structure, en tenant compte de la part d'ossature bois. La section États-Unis utilise les valeurs R américaines par zone climatique.
 
-Une erreur, une source plus récente ? Écrivez-nous : hello@loftinsulationcalc.com. Voir aussi la page [à propos](/fr/a-propos).
+Une erreur, une source plus récente ? Écrivez-nous : info@loftinsulationcalc.com. Voir aussi la page [à propos](/fr/a-propos).
 
 ## Sources
 

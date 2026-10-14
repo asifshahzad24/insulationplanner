@@ -1,4 +1,4 @@
-# Deploying Insulation Planner
+# Deploying Loft Insulation Calc
 
 The site is a static export (`out/`). It runs on **Cloudflare Pages**, on the same account as your domain **loftinsulationcalc.com**. Hosting is free.
 
@@ -47,7 +47,7 @@ Search Console groups the language versions through the `hreflang` tags the site
 
 ## 6. Email (optional)
 
-The site lists `hello@loftinsulationcalc.com`. Set it up for free with Cloudflare **Email Routing**: forward it to your personal inbox.
+The site lists `info@loftinsulationcalc.com`. Set it up for free with Cloudflare **Email Routing**: forward it to your personal inbox.
 
 ## Updating prices and data
 

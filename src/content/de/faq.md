@@ -45,4 +45,4 @@ Die meisten Fragen beantwortet der Rechner direkt für Ihr Haus. Wählen Sie das
 
 Die rechtlichen Grenzwerte und Förderbedingungen finden Sie gesammelt unter [GEG- und BEG-Anforderungen](/de/geg-beg-anforderungen). Wie wir rechnen und woher unsere Zahlen stammen, erklärt die [Methodik](/de/methodik).
 
-Ihre Frage ist nicht dabei oder Sie haben einen Fehler gefunden? Schreiben Sie uns an hello@loftinsulationcalc.com.
+Ihre Frage ist nicht dabei oder Sie haben einen Fehler gefunden? Schreiben Sie uns an info@loftinsulationcalc.com.

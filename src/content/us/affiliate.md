@@ -1,6 +1,6 @@
 ---
-title: "Affiliate Disclosure | Insulation Planner"
-description: "How Insulation Planner may earn money from affiliate links in future, what that means for you, and why it never changes the calculator's results or rankings."
+title: "Affiliate Disclosure | Loft Insulation Calc"
+description: "How Loft Insulation Calc may earn money from affiliate links in future, what that means for you, and why it never changes the calculator's results or rankings."
 h1: "Affiliate disclosure"
 nav: "Affiliate disclosure"
 intro: "An honest note on how this free site may be funded, and what that does and doesn't affect."
@@ -9,7 +9,7 @@ Last updated: October 14, 2026
 
 ## Where things stand today
 
-At the time of writing, Insulation Planner carries **no affiliate links** and no advertising. Nobody pays us to mention a product, a brand or a store.
+At the time of writing, Loft Insulation Calc carries **no affiliate links** and no advertising. Nobody pays us to mention a product, a brand or a store.
 
 ## How this may change
 
@@ -36,4 +36,4 @@ Once we're enrolled in the Amazon Associates program, this statement will apply:
 
 ## Questions
 
-If you have questions about this disclosure or how the site is funded, email hello@loftinsulationcalc.com. You can also read more [about Insulation Planner](/about).
+If you have questions about this disclosure or how the site is funded, email info@loftinsulationcalc.com. You can also read more [about Loft Insulation Calc](/about).

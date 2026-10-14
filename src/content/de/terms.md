@@ -1,13 +1,13 @@
 ---
 title: "Nutzungsbedingungen und Haftungsausschluss"
-description: "Nutzungsbedingungen von Insulation Planner: Ergebnisse sind Planungsschätzungen, keine Energieberatung und kein bauphysikalischer oder statischer Nachweis."
+description: "Nutzungsbedingungen von Loft Insulation Calc: Ergebnisse sind Planungsschätzungen, keine Energieberatung und kein bauphysikalischer oder statischer Nachweis."
 h1: "Nutzungsbedingungen und Haftungsausschluss"
 nav: "Nutzungsbedingungen"
 intro: "Was Sie von unseren Rechnern erwarten können und was nicht. Bitte lesen Sie diese Hinweise, bevor Sie auf Grundlage eines Ergebnisses einkaufen oder einen Auftrag vergeben."
 ---
 ## 1. Geltungsbereich
 
-Diese Nutzungsbedingungen gelten für die Nutzung der Website loftinsulationcalc.com („Insulation Planner“) und aller darauf angebotenen Rechner, Tabellen und Texte. Die Nutzung ist kostenlos und ohne Anmeldung möglich. Mit der Nutzung erklären Sie sich mit diesen Bedingungen einverstanden.
+Diese Nutzungsbedingungen gelten für die Nutzung der Website loftinsulationcalc.com („Loft Insulation Calc“) und aller darauf angebotenen Rechner, Tabellen und Texte. Die Nutzung ist kostenlos und ohne Anmeldung möglich. Mit der Nutzung erklären Sie sich mit diesen Bedingungen einverstanden.
 
 ## 2. Nur Schätzungen zur Planung
 

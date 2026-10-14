@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { site } from "@/config/site";
 import type { MarketId } from "@/engine/types";
 import type { Dict } from "@/i18n";
 import { MARKET_IDS, MARKETS } from "@/markets/meta";
-import { LogoMark } from "./Logo";
+import { Wordmark } from "./Wordmark";
 
 export interface NavLink {
   href: string;
@@ -28,9 +27,8 @@ export function Header({
   return (
     <header className={`no-print relative z-30 ${dark ? "text-white" : "border-b border-line bg-surface text-ink"}`}>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-4 sm:gap-4 sm:px-6">
-        <Link href={home} className="flex shrink-0 items-center gap-2 whitespace-nowrap font-display text-[15px] font-extrabold tracking-tight sm:gap-2.5 sm:text-[17px]">
-          <LogoMark className="size-6" />
-          <span>{site.name}</span>
+        <Link href={home} className="shrink-0">
+          <Wordmark tone={dark ? "dark" : "light"} />
         </Link>
 
         <nav aria-label={dict.nav.calculators} className={`hidden items-center gap-5 text-[13.5px] md:flex ${text}`}>
@@ -42,7 +40,10 @@ export function Header({
         </nav>
 
         <div className="flex items-center gap-2">
-          <CountrySwitcher market={market} switcher={switcher} label={dict.nav.country} dark={dark} />
+          {/* On small phones the switcher moves into the menu so the bar never overflows. */}
+          <div className="hidden sm:block">
+            <CountrySwitcher market={market} switcher={switcher} label={dict.nav.country} dark={dark} />
+          </div>
           <details className="relative md:hidden">
             <summary
               className={`flex cursor-pointer list-none items-center rounded-lg border px-2.5 py-1.5 text-[13px] font-medium ${
@@ -57,6 +58,10 @@ export function Header({
                   {l.label}
                 </Link>
               ))}
+              <div className="mt-2 border-t border-line px-3 pb-1 pt-3 sm:hidden">
+                <p className="mb-2 text-xs font-medium text-muted">{dict.nav.country}</p>
+                <CountrySwitcher market={market} switcher={switcher} label={dict.nav.country} dark={false} />
+              </div>
             </div>
           </details>
         </div>

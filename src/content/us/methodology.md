@@ -1,6 +1,6 @@
 ---
 title: "Methodology: How Our Insulation Calculator Works"
-description: "How Insulation Planner works out R-values, depth, bags and cost: targets from ENERGY STAR and the 2021 IECC, manufacturer coverage charts and retail prices."
+description: "How Loft Insulation Calc works out R-values, depth, bags and cost: targets from ENERGY STAR and the 2021 IECC, manufacturer coverage charts and retail prices."
 h1: "How the calculator works"
 nav: "Methodology"
 intro: "Every formula, assumption and source behind our numbers, so you can check the work yourself."
@@ -123,7 +123,7 @@ Our UK and German sections work from building regulations written as maximum U-v
 
 ## Checking our numbers
 
-The engine is covered by automated tests. The worked examples on our pages are produced by the same engine through a command-line tool, so every quoted depth, bag count and price matches what the calculator shows. If you spot an error, email hello@loftinsulationcalc.com.
+The engine is covered by automated tests. The worked examples on our pages are produced by the same engine through a command-line tool, so every quoted depth, bag count and price matches what the calculator shows. If you spot an error, email info@loftinsulationcalc.com.
 
 ## Sources
 

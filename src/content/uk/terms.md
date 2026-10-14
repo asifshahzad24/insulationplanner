@@ -1,5 +1,5 @@
 ---
-title: "Terms of Use & Disclaimer (UK) | Insulation Planner"
+title: "Terms of Use & Disclaimer (UK) | Loft Insulation Calc"
 description: "Terms of use for the UK insulation calculator: estimates are for planning only, not a survey or energy assessment. Check Building Regulations first."
 h1: "Terms of use and disclaimer"
 nav: "Terms"
@@ -7,7 +7,7 @@ intro: "The rules for using this site, and what our estimates can and can't tell
 ---
 Last updated: 14 October 2026
 
-By using Insulation Planner at loftinsulationcalc.com (‘the site’, ‘we’, ‘us’), you agree to these terms. If you don't agree, please don't use the site.
+By using Loft Insulation Calc at loftinsulationcalc.com (‘the site’, ‘we’, ‘us’), you agree to these terms. If you don't agree, please don't use the site.
 
 ## Estimates are for planning only
 
@@ -70,4 +70,4 @@ We may update these terms from time to time. The date at the top shows when they
 
 ## Contact
 
-Questions about these terms: hello@loftinsulationcalc.com
+Questions about these terms: info@loftinsulationcalc.com

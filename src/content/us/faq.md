@@ -42,4 +42,4 @@ These answers cover the basics. For numbers specific to your home, pick the calc
 - [Insulation R-values by climate zone](/insulation-by-climate-zone) and the [R-value chart](/r-value-chart)
 - [R-value to U-value converter](/r-value-to-u-value-converter)
 
-Want to know exactly how the numbers are worked out? Our [methodology](/methodology) lists every formula and source. Still have a question? Email hello@loftinsulationcalc.com.
+Want to know exactly how the numbers are worked out? Our [methodology](/methodology) lists every formula and source. Still have a question? Email info@loftinsulationcalc.com.

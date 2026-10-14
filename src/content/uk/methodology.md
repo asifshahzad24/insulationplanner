@@ -119,7 +119,7 @@ The site has separate sections for the US, Germany and France, and each uses a d
 
 ## Checking our numbers
 
-The engine is covered by automated tests, and the worked examples on our pages come from the same engine through a command-line tool, so every quoted depth, roll count, price and U-value matches the calculator. **Show the maths** under each result lists every step. If you spot an error, email hello@loftinsulationcalc.com.
+The engine is covered by automated tests, and the worked examples on our pages come from the same engine through a command-line tool, so every quoted depth, roll count, price and U-value matches the calculator. **Show the maths** under each result lists every step. If you spot an error, email info@loftinsulationcalc.com.
 
 ## Sources
 

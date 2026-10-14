@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import { fontVariables } from "./fonts";
-import { LogoMark } from "@/components/site/Logo";
+import { Wordmark } from "@/components/site/Wordmark";
 import { site } from "@/config/site";
 import { MARKET_IDS, MARKETS } from "@/markets/meta";
 import { getDict } from "@/i18n";
@@ -21,8 +21,8 @@ export default function GlobalNotFound() {
         <div className="relative min-h-dvh overflow-hidden bg-night text-white">
         <main className="relative mx-auto flex min-h-dvh max-w-3xl flex-col justify-center px-6 py-16">
           <div aria-hidden className="thermal-glow pointer-events-none absolute -right-40 top-10 h-[420px] w-[620px]" />
-          <Link href="/" className="relative mb-10 flex items-center gap-2.5 font-display text-lg font-extrabold">
-            <LogoMark className="size-7" /> {site.name}
+          <Link href="/" className="relative mb-10">
+            <Wordmark size="lg" />
           </Link>
           <p className="relative font-mono text-sm text-[#fdba74]">404</p>
           <h1 className="relative mt-2 font-display text-5xl font-extrabold tracking-tight">{en.notFoundTitle}</h1>

@@ -1,6 +1,6 @@
 ---
-title: "Datenschutzerklärung | Insulation Planner"
-description: "Datenschutzerklärung von Insulation Planner: keine Cookies, kein Konto, Rechnen im Browser. Infos zum Hosting bei Cloudflare, zu Logfiles und Ihren Rechten."
+title: "Datenschutzerklärung | Loft Insulation Calc"
+description: "Datenschutzerklärung von Loft Insulation Calc: keine Cookies, kein Konto, Rechnen im Browser. Infos zum Hosting bei Cloudflare, zu Logfiles und Ihren Rechten."
 h1: "Datenschutzerklärung"
 nav: "Datenschutz"
 intro: "Kurz gesagt: keine Cookies, kein Konto, keine Formulare. Ihre Berechnungen bleiben in Ihrem Browser. Im Folgenden erklären wir, welche Daten beim Aufruf der Website dennoch anfallen."
@@ -11,7 +11,7 @@ Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datens
 
 [Name und Anschrift des Verantwortlichen – siehe Impressum]
 
-E-Mail: hello@loftinsulationcalc.com
+E-Mail: info@loftinsulationcalc.com
 
 Die vollständigen Anbieterangaben finden Sie im [Impressum](/de/impressum).
 
@@ -65,7 +65,7 @@ Sie haben nach der DSGVO folgende Rechte, soweit die gesetzlichen Voraussetzunge
 - Datenübertragbarkeit (Art. 20 DSGVO),
 - **Widerspruch** gegen Verarbeitungen, die auf Art. 6 Abs. 1 lit. f DSGVO beruhen, aus Gründen, die sich aus Ihrer besonderen Situation ergeben (Art. 21 DSGVO).
 
-Wenden Sie sich dazu an hello@loftinsulationcalc.com. Da wir auf der Website keine Daten erheben, mit denen wir Sie identifizieren können, können wir Anfragen zu Server-Logfiles unter Umständen nur eingeschränkt zuordnen.
+Wenden Sie sich dazu an info@loftinsulationcalc.com. Da wir auf der Website keine Daten erheben, mit denen wir Sie identifizieren können, können wir Anfragen zu Server-Logfiles unter Umständen nur eingeschränkt zuordnen.
 
 Außerdem haben Sie das Recht, sich bei einer **Datenschutz-Aufsichtsbehörde** zu beschweren, insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des mutmaßlichen Verstoßes (Art. 77 DSGVO).
 

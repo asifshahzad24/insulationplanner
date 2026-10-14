@@ -1,6 +1,6 @@
 ---
 title: "Affiliate-Hinweis: Werbelinks und Provisionen"
-description: "Affiliate-Hinweis: Wie sich Insulation Planner künftig über Werbelinks finanzieren könnte, warum Sie nicht mehr zahlen und was das für die Rechner heißt."
+description: "Affiliate-Hinweis: Wie sich Loft Insulation Calc künftig über Werbelinks finanzieren könnte, warum Sie nicht mehr zahlen und was das für die Rechner heißt."
 h1: "Affiliate-Hinweis"
 nav: "Affiliate-Hinweis"
 intro: "Transparent vorab: Wie wir diese kostenlose Website künftig finanzieren könnten und warum das unsere Rechenergebnisse nicht beeinflusst."
@@ -11,7 +11,7 @@ intro: "Transparent vorab: Wie wir diese kostenlose Website künftig finanzieren
 
 ## Was sich künftig ändern kann
 
-Damit Insulation Planner kostenlos und ohne Anmeldung bleiben kann, setzen wir möglicherweise künftig sogenannte **Affiliate-Links** ein. Das sind Werbelinks, zum Beispiel zu Dämmstoffen oder Werkzeug bei Onlinehändlern.
+Damit Loft Insulation Calc kostenlos und ohne Anmeldung bleiben kann, setzen wir möglicherweise künftig sogenannte **Affiliate-Links** ein. Das sind Werbelinks, zum Beispiel zu Dämmstoffen oder Werkzeug bei Onlinehändlern.
 
 - Wenn Sie über einen solchen Link etwas kaufen, erhalten wir vom Händler eine **Provision**.
 - Für Sie entstehen dadurch **keine Mehrkosten**. Der Preis ist derselbe wie ohne den Link.
@@ -25,6 +25,6 @@ Provisionen haben keinen Einfluss auf unsere Berechnungen. Welche Dicke, welche 
 
 ## Fragen
 
-Wenn Sie Fragen zu diesem Hinweis haben, schreiben Sie uns an hello@loftinsulationcalc.com. Mehr über uns erfahren Sie unter [Über uns](/de/ueber-uns), Informationen zum Datenschutz in der [Datenschutzerklärung](/de/datenschutz).
+Wenn Sie Fragen zu diesem Hinweis haben, schreiben Sie uns an info@loftinsulationcalc.com. Mehr über uns erfahren Sie unter [Über uns](/de/ueber-uns), Informationen zum Datenschutz in der [Datenschutzerklärung](/de/datenschutz).
 
 Stand: 14. Oktober 2026

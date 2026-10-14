@@ -44,4 +44,4 @@ These answers cover the basics. For numbers specific to your home, pick the calc
 - [Part L U-values](/uk/part-l-u-values) and [loft insulation thickness](/uk/loft-insulation-thickness)
 - [U-value calculator](/uk/u-value-calculator) for converting between R, U and thickness
 
-Want to know exactly how the numbers are worked out? Our [methodology](/uk/methodology) explains every formula and source. Still have a question? Email hello@loftinsulationcalc.com.
+Want to know exactly how the numbers are worked out? Our [methodology](/uk/methodology) explains every formula and source. Still have a question? Email info@loftinsulationcalc.com.

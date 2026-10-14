@@ -1,5 +1,5 @@
 ---
-title: "Privacy Notice (UK GDPR) | Insulation Planner"
+title: "Privacy Notice (UK GDPR) | Loft Insulation Calc"
 description: "Privacy notice for UK users under UK GDPR: no cookies, no accounts and no forms. Calculations run in your browser and your inputs stay in the page address."
 h1: "Privacy notice"
 nav: "Privacy"
@@ -7,7 +7,7 @@ intro: "The short version: we don't collect your personal information, we don't 
 ---
 Last updated: 14 October 2026
 
-This notice explains what happens to your information when you use Insulation Planner at loftinsulationcalc.com (‘the site’, ‘we’, ‘us’). It's written for people in the UK and reflects the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+This notice explains what happens to your information when you use Loft Insulation Calc at loftinsulationcalc.com (‘the site’, ‘we’, ‘us’). It's written for people in the UK and reflects the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
 
 ## The short version
 
@@ -19,7 +19,7 @@ This notice explains what happens to your information when you use Insulation Pl
 
 ## Who is responsible
 
-Insulation Planner is responsible for the limited personal data described in this notice. You can contact us about anything in it at **hello@loftinsulationcalc.com**.
+Loft Insulation Calc is responsible for the limited personal data described in this notice. You can contact us about anything in it at **info@loftinsulationcalc.com**.
 
 ## Your calculator inputs
 
@@ -73,7 +73,7 @@ Under UK data protection law you have the right to:
 - object to processing based on legitimate interests; and
 - receive your data in a portable format, where that applies.
 
-Because we don't keep accounts or profiles, we usually hold no data that can be linked to you. To make a request, email hello@loftinsulationcalc.com. We'll respond within one month.
+Because we don't keep accounts or profiles, we usually hold no data that can be linked to you. To make a request, email info@loftinsulationcalc.com. We'll respond within one month.
 
 ## Complaints
 
@@ -93,4 +93,4 @@ If we change how the site handles information, we'll update this page and the da
 
 ## Contact
 
-Questions about privacy: hello@loftinsulationcalc.com
+Questions about privacy: info@loftinsulationcalc.com

@@ -1,6 +1,6 @@
 ---
 title: "Conditions d'utilisation et avertissement"
-description: "Conditions d'utilisation d'Insulation Planner : estimations indicatives, absence de garantie, limites de responsabilité et précautions de sécurité."
+description: "Conditions d'utilisation de Loft Insulation Calc : estimations indicatives, absence de garantie, limites de responsabilité et précautions de sécurité."
 h1: "Conditions d'utilisation et avertissement"
 nav: "Conditions d'utilisation"
 intro: "En utilisant ce site, vous acceptez les conditions ci-dessous. Elles sont courtes : lisez-les avant de vous fier à un résultat."
@@ -9,7 +9,7 @@ Dernière mise à jour : 14 octobre 2026
 
 ## Objet du site
 
-Insulation Planner met à disposition, gratuitement et sans inscription, des calculateurs et des articles pour estimer l'isolation d'un logement : résistance thermique à atteindre, épaisseur d'isolant, quantités de matériaux et coût indicatif. L'éditeur est identifié dans les [mentions légales](/fr/mentions-legales).
+Loft Insulation Calc met à disposition, gratuitement et sans inscription, des calculateurs et des articles pour estimer l'isolation d'un logement : résistance thermique à atteindre, épaisseur d'isolant, quantités de matériaux et coût indicatif. L'éditeur est identifié dans les [mentions légales](/fr/mentions-legales).
 
 ## Des estimations, pas un avis professionnel
 
@@ -59,4 +59,4 @@ Ces conditions peuvent être modifiées à tout moment. La version applicable es
 
 ## Droit applicable
 
-Ces conditions sont régies par le droit du lieu d'établissement de l'éditeur, sans préjudice des dispositions impératives protectrices des consommateurs de votre pays de résidence. Pour toute question, écrivez à **hello@loftinsulationcalc.com**.
+Ces conditions sont régies par le droit du lieu d'établissement de l'éditeur, sans préjudice des dispositions impératives protectrices des consommateurs de votre pays de résidence. Pour toute question, écrivez à **info@loftinsulationcalc.com**.

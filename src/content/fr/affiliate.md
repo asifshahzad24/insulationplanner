@@ -9,7 +9,7 @@ Dernière mise à jour : 14 octobre 2026
 
 ## La situation aujourd'hui
 
-À la date de rédaction de cette page, **Insulation Planner ne contient aucun lien d'affiliation** et n'affiche aucune publicité. Aucun fabricant, aucune enseigne et aucune entreprise de travaux ne nous rémunère, et aucun produit n'est mis en avant contre paiement.
+À la date de rédaction de cette page, **Loft Insulation Calc ne contient aucun lien d'affiliation** et n'affiche aucune publicité. Aucun fabricant, aucune enseigne et aucune entreprise de travaux ne nous rémunère, et aucun produit n'est mis en avant contre paiement.
 
 ## Ce qui pourrait changer
 
@@ -29,4 +29,4 @@ Si des liens d'affiliation sont ajoutés, cette page sera mise à jour pour en i
 
 ## Des questions ?
 
-Écrivez-nous à **hello@loftinsulationcalc.com**. Pour en savoir plus sur le site, consultez la page [à propos](/fr/a-propos).
+Écrivez-nous à **info@loftinsulationcalc.com**. Pour en savoir plus sur le site, consultez la page [à propos](/fr/a-propos).

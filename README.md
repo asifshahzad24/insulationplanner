@@ -1,4 +1,4 @@
-# Insulation Planner
+# Loft Insulation Calc
 
 A free, independent insulation calculator for homeowners in the **US, UK, Germany and France**. It tells you how much insulation to add, how many bags, rolls or boards to buy, and what it will cost.
 

@@ -1,6 +1,6 @@
 ---
-title: "Affiliate Disclosure (UK) | Insulation Planner"
-description: "How Insulation Planner may earn commission from affiliate links in future, at no extra cost to you, and why that never changes the UK calculator's results."
+title: "Affiliate Disclosure (UK) | Loft Insulation Calc"
+description: "How Loft Insulation Calc may earn commission from affiliate links in future, at no extra cost to you, and why that never changes the UK calculator's results."
 h1: "Affiliate disclosure"
 nav: "Affiliate disclosure"
 intro: "An honest note on how this free site may be funded, and what that does and doesn't affect."
@@ -9,7 +9,7 @@ Last updated: 14 October 2026
 
 ## Where things stand today
 
-At the time of writing, Insulation Planner carries **no affiliate links** and no advertising. Nobody pays us to mention a product, a brand, a retailer or an installer.
+At the time of writing, Loft Insulation Calc carries **no affiliate links** and no advertising. Nobody pays us to mention a product, a brand, a retailer or an installer.
 
 ## How this may change
 
@@ -36,4 +36,4 @@ Once we're enrolled in the Amazon Associates programme, this statement will appl
 
 ## Questions
 
-If you have questions about this disclosure or how the site is funded, email hello@loftinsulationcalc.com. You can also read more [about Insulation Planner](/uk/about).
+If you have questions about this disclosure or how the site is funded, email info@loftinsulationcalc.com. You can also read more [about Loft Insulation Calc](/uk/about).

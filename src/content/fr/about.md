@@ -1,13 +1,13 @@
 ---
-title: "À propos d'Insulation Planner, calculateur d'isolation"
-description: "Insulation Planner est un calculateur d'isolation gratuit et indépendant, sans compte ni cookies, qui fonctionne dans votre navigateur pour la France et l'Europe."
-h1: "À propos d'Insulation Planner"
+title: "À propos de Loft Insulation Calc, calculateur d'isolation"
+description: "Loft Insulation Calc est un calculateur d'isolation gratuit et indépendant, sans compte ni cookies, qui fonctionne dans votre navigateur pour la France et l'Europe."
+h1: "À propos de Loft Insulation Calc"
 nav: "À propos"
 intro: "Un outil gratuit et indépendant pour estimer l'isolation de votre logement avant de parler à un magasin ou à un artisan."
 ---
 ## Ce que propose le site
 
-Insulation Planner est un calculateur d'isolation gratuit, destiné aux particuliers qui veulent savoir, avant d'acheter ou de demander un devis, quelle épaisseur d'isolant poser, combien de rouleaux, de panneaux ou de sacs prévoir, et ce que coûtera le matériau.
+Loft Insulation Calc est un calculateur d'isolation gratuit, destiné aux particuliers qui veulent savoir, avant d'acheter ou de demander un devis, quelle épaisseur d'isolant poser, combien de rouleaux, de panneaux ou de sacs prévoir, et ce que coûtera le matériau.
 
 Vous indiquez ce que vous isolez, la surface, l'isolant déjà en place et votre département. Le calculateur en déduit la résistance thermique à atteindre, l'épaisseur à ajouter, les quantités et une fourchette de prix, en détaillant chaque étape du calcul.
 
@@ -38,6 +38,6 @@ Le site est aujourd'hui gratuit et sans publicité. Pour couvrir ses frais, il p
 
 ## Nous contacter
 
-Une erreur, une donnée à mettre à jour, une suggestion ? Écrivez-nous à **hello@loftinsulationcalc.com**. Les erreurs signalées sont corrigées après vérification, avec la source correspondante.
+Une erreur, une donnée à mettre à jour, une suggestion ? Écrivez-nous à **info@loftinsulationcalc.com**. Les erreurs signalées sont corrigées après vérification, avec la source correspondante.
 
 Les informations légales sur l'éditeur et l'hébergeur figurent dans les [mentions légales](/fr/mentions-legales).

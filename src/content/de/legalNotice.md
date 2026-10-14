@@ -1,9 +1,9 @@
 ---
-title: "Impressum | Insulation Planner"
-description: "Impressum von Insulation Planner (loftinsulationcalc.com): Angaben gemäß § 5 DDG, Kontakt, Verantwortlicher nach § 18 Abs. 2 MStV, Haftung und Urheberrecht."
+title: "Impressum | Loft Insulation Calc"
+description: "Impressum von Loft Insulation Calc (loftinsulationcalc.com): Angaben gemäß § 5 DDG, Kontakt, Verantwortlicher nach § 18 Abs. 2 MStV, Haftung und Urheberrecht."
 h1: "Impressum"
 nav: "Impressum"
-intro: "Anbieterkennzeichnung für loftinsulationcalc.com und die deutschsprachigen Seiten von Insulation Planner."
+intro: "Anbieterkennzeichnung für loftinsulationcalc.com und die deutschsprachigen Seiten von Loft Insulation Calc."
 ---
 ## Angaben gemäß § 5 DDG
 
@@ -14,7 +14,7 @@ intro: "Anbieterkennzeichnung für loftinsulationcalc.com und die deutschsprachi
 
 ## Kontakt
 
-E-Mail: hello@loftinsulationcalc.com
+E-Mail: info@loftinsulationcalc.com
 
 ## Umsatzsteuer-ID
 
@@ -40,7 +40,7 @@ Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wi
 
 ## Urheberrecht
 
-Die von uns erstellten Inhalte und Werke auf dieser Website unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen unserer schriftlichen Zustimmung. Soweit Inhalte auf dieser Seite nicht von uns erstellt wurden, beachten wir die Urheberrechte Dritter und kennzeichnen deren Inhalte, etwa Gesetzestexte und Quellen, entsprechend. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen Hinweis an hello@loftinsulationcalc.com.
+Die von uns erstellten Inhalte und Werke auf dieser Website unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen unserer schriftlichen Zustimmung. Soweit Inhalte auf dieser Seite nicht von uns erstellt wurden, beachten wir die Urheberrechte Dritter und kennzeichnen deren Inhalte, etwa Gesetzestexte und Quellen, entsprechend. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen Hinweis an info@loftinsulationcalc.com.
 
 ## Datenschutz
 

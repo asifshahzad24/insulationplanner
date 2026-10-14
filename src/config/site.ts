@@ -2,11 +2,11 @@
 // (see the owner checklist in README.md).
 
 export const site = {
-  name: "Insulation Planner",
+  name: "Loft Insulation Calc",
   /** Production domain, no trailing slash. Drives canonical URLs, hreflang and the sitemap. */
   url: "https://loftinsulationcalc.com",
-  /** PLACEHOLDER: public contact address (create it in Cloudflare Email Routing). */
-  email: "hello@loftinsulationcalc.com",
+  /** Public contact address (forward it to your inbox with Cloudflare Email Routing). */
+  email: "info@loftinsulationcalc.com",
   /** PLACEHOLDER: publisher details, required for the German Impressum and French mentions légales. */
   owner: {
     name: "[Owner / company name]",

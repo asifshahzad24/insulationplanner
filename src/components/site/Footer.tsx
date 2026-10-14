@@ -4,7 +4,7 @@ import type { MarketId } from "@/engine/types";
 import { tpl, type Dict } from "@/i18n";
 import { MARKET_IDS, MARKETS } from "@/markets/meta";
 import type { NavLink } from "./Header";
-import { LogoMark } from "./Logo";
+import { Wordmark } from "./Wordmark";
 
 export function Footer({
   market,
@@ -24,10 +24,7 @@ export function Footer({
     <footer className="no-print mt-20 border-t border-line bg-surface">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <div className="flex items-center gap-2.5 font-display text-[17px] font-extrabold tracking-tight">
-            <LogoMark className="size-6" />
-            {site.name}
-          </div>
+          <Wordmark tone="light" />
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">{f.blurb}</p>
           <p className="mt-4 text-sm text-muted">
             <a className="underline-offset-4 hover:text-ink hover:underline" href={`mailto:${site.email}`}>

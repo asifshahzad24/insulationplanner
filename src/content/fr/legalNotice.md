@@ -1,5 +1,5 @@
 ---
-title: "Mentions légales du site Insulation Planner"
+title: "Mentions légales du site Loft Insulation Calc"
 description: "Mentions légales de loftinsulationcalc.com : éditeur, directeur de la publication, hébergeur Cloudflare, propriété intellectuelle et responsabilité."
 h1: "Mentions légales"
 nav: "Mentions légales"
@@ -7,11 +7,11 @@ intro: "Informations prévues par l'article 6 de la loi n° 2004-575 du 21 juin 
 ---
 ## Éditeur du site
 
-Le site **Insulation Planner**, accessible à l'adresse loftinsulationcalc.com, est édité par :
+Le site **Loft Insulation Calc**, accessible à l'adresse loftinsulationcalc.com, est édité par :
 
 - [Nom de l'éditeur]
 - [Adresse postale]
-- [E-mail : hello@loftinsulationcalc.com]
+- [E-mail : info@loftinsulationcalc.com]
 
 ## Directeur de la publication
 
@@ -46,4 +46,4 @@ Le traitement des données personnelles est décrit dans la [politique de confid
 
 ## Contact
 
-Pour toute question ou pour signaler un contenu : **hello@loftinsulationcalc.com**.
+Pour toute question ou pour signaler un contenu : **info@loftinsulationcalc.com**.

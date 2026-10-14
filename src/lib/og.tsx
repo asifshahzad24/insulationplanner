@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og";
-import { site } from "@/config/site";
 
 export const ogSize = { width: 1200, height: 630 };
 
@@ -39,7 +38,10 @@ export function ogImage(market: keyof typeof COPY) {
               background: "linear-gradient(135deg,#dc2626,#f97316,#facc15,#22d3ee,#3b82f6,#312e81)",
             }}
           />
-          <div style={{ fontSize: 34, fontWeight: 800 }}>{site.name}</div>
+          <div style={{ display: "flex", fontSize: 36, fontWeight: 800, letterSpacing: -0.5 }}>
+            {/* the OG renderer adds a word gap between spans; the negative margin closes it */}
+            <span>LoftInsulation</span><span style={{ color: "#fb923c", marginLeft: -9 }}>Calc</span>
+          </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div style={{ fontSize: 70, fontWeight: 800, lineHeight: 1.02, letterSpacing: -2, maxWidth: 980 }}>{c.headline}</div>

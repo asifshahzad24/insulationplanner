@@ -1,5 +1,5 @@
 ---
-title: "Privacy Policy | Insulation Planner"
+title: "Privacy Policy | Loft Insulation Calc"
 description: "Our privacy policy in plain English: no accounts, no cookies and no tracking. Calculations run in your browser, and your inputs stay in the page address only."
 h1: "Privacy policy"
 nav: "Privacy"
@@ -7,7 +7,7 @@ intro: "The short version: we don't collect your personal information, we don't 
 ---
 Last updated: October 14, 2026
 
-This policy explains what happens to your information when you use Insulation Planner at loftinsulationcalc.com ("the site", "we", "us").
+This policy explains what happens to your information when you use Loft Insulation Calc at loftinsulationcalc.com ("the site", "we", "us").
 
 ## The short version
 
@@ -47,7 +47,7 @@ We may use Cloudflare Web Analytics to understand how many people visit and whic
 
 ## Email
 
-If you email us at hello@loftinsulationcalc.com, we'll receive your email address and whatever you write. We use it only to reply to you, and we delete it when it's no longer needed for that conversation.
+If you email us at info@loftinsulationcalc.com, we'll receive your email address and whatever you write. We use it only to reply to you, and we delete it when it's no longer needed for that conversation.
 
 ## Advertising and affiliate links
 
@@ -65,7 +65,7 @@ You have the right to:
 - receive it in a portable format; and
 - complain to your local data protection authority (in the UK, the Information Commissioner's Office).
 
-Because we don't keep accounts or profiles, we usually hold no data that can be linked to you. To make a request, email hello@loftinsulationcalc.com and we'll respond within one month.
+Because we don't keep accounts or profiles, we usually hold no data that can be linked to you. To make a request, email info@loftinsulationcalc.com and we'll respond within one month.
 
 ## Your rights in US states (including California)
 
@@ -75,7 +75,7 @@ Under the California Consumer Privacy Act and similar state laws, you have the r
 - We don't collect sensitive personal information.
 - Because we don't sell or share, there's nothing to opt out of. If your browser sends a Global Privacy Control signal, we treat it as an opt-out request anyway.
 
-To make a request, email hello@loftinsulationcalc.com.
+To make a request, email info@loftinsulationcalc.com.
 
 ## Children
 
@@ -91,4 +91,4 @@ If we change how the site handles information, we'll update this page and the da
 
 ## Contact
 
-Questions about privacy: hello@loftinsulationcalc.com
+Questions about privacy: info@loftinsulationcalc.com

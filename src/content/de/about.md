@@ -1,13 +1,13 @@
 ---
 title: "Über uns: Unabhängiger, kostenloser Dämmungsrechner"
-description: "Insulation Planner: ein unabhängiger, kostenloser Dämmungsrechner ohne Anmeldung und ohne Cookies – für Deutschland, Frankreich, Großbritannien und die USA."
-h1: "Über Insulation Planner"
+description: "Loft Insulation Calc: ein unabhängiger, kostenloser Dämmungsrechner ohne Anmeldung und ohne Cookies – für Deutschland, Frankreich, Großbritannien und die USA."
+h1: "Über Loft Insulation Calc"
 nav: "Über uns"
 intro: "Ein kostenloser, unabhängiger Rechner, der Ihnen sagt, wie viel Dämmung Sie brauchen, was Sie einkaufen müssen und woher jede Zahl stammt."
 ---
 ## Was wir machen
 
-Insulation Planner beantwortet eine praktische Frage: Wie viel Dämmung brauche ich, und was muss ich dafür kaufen? Sie geben Fläche, vorhandene Dämmung und Ihr Ziel ein. Der Rechner zeigt die nötige Dicke, die Zahl der Rollen, Pakete oder Platten und eine Kostenschätzung.
+Loft Insulation Calc beantwortet eine praktische Frage: Wie viel Dämmung brauche ich, und was muss ich dafür kaufen? Sie geben Fläche, vorhandene Dämmung und Ihr Ziel ein. Der Rechner zeigt die nötige Dicke, die Zahl der Rollen, Pakete oder Platten und eine Kostenschätzung.
 
 Für Deutschland rechnen wir mit den U-Werten, die das Gebäudemodernisierungsgesetz (GModG, ehemals GEG) und die BAFA-Förderung (BEG EM) vorgeben. Wir verwenden das übliche Berechnungsverfahren, Bemessungswerte der Dämmstoffe und Paketinhalte, die im Baumarkt tatsächlich im Regal stehen.
 
@@ -30,7 +30,7 @@ Derzeit gibt es auf der Website weder Werbung noch Affiliate-Links. Damit der Re
 
 ## Für welche Länder
 
-Insulation Planner gibt es für **Deutschland, Frankreich, Großbritannien und die USA**. Jede Länderversion rechnet mit den Vorgaben, Einheiten, Produkten und Preisen des jeweiligen Landes. Sie wechseln das Land über die Länderauswahl oben auf der Seite.
+Loft Insulation Calc gibt es für **Deutschland, Frankreich, Großbritannien und die USA**. Jede Länderversion rechnet mit den Vorgaben, Einheiten, Produkten und Preisen des jeweiligen Landes. Sie wechseln das Land über die Länderauswahl oben auf der Seite.
 
 ## Quellen und Aktualität
 
@@ -38,4 +38,4 @@ Jede Seite nennt ihre Quellen: Gesetzestexte, Förderrichtlinien, amtliche Bekan
 
 ## Kontakt
 
-Fehler gefunden, eine Frage oder ein Vorschlag? Schreiben Sie uns an **hello@loftinsulationcalc.com**. Wir lesen jede Nachricht, können aber keine individuelle Energieberatung leisten. Die Anbieterangaben finden Sie im [Impressum](/de/impressum).
+Fehler gefunden, eine Frage oder ein Vorschlag? Schreiben Sie uns an **info@loftinsulationcalc.com**. Wir lesen jede Nachricht, können aber keine individuelle Energieberatung leisten. Die Anbieterangaben finden Sie im [Impressum](/de/impressum).

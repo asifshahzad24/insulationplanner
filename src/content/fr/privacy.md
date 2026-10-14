@@ -1,6 +1,6 @@
 ---
 title: "Politique de confidentialité et données personnelles"
-description: "Politique de confidentialité d'Insulation Planner : ni compte ni cookies, calculs dans votre navigateur, hébergement Cloudflare et vos droits RGPD."
+description: "Politique de confidentialité de Loft Insulation Calc : ni compte ni cookies, calculs dans votre navigateur, hébergement Cloudflare et vos droits RGPD."
 h1: "Politique de confidentialité"
 nav: "Confidentialité"
 intro: "Ce site est conçu pour collecter le moins de données possible. Voici précisément ce qui est traité, par qui et pourquoi."
@@ -12,15 +12,15 @@ Dernière mise à jour : 14 octobre 2026
 - Pas de compte, pas de formulaire, pas de cookies.
 - Les calculs sont faits dans votre navigateur ; vos saisies ne nous sont pas transmises.
 - Notre hébergeur, Cloudflare, traite des données techniques (dont l'adresse IP) pour livrer les pages et protéger le site.
-- Vous pouvez exercer vos droits à tout moment en écrivant à hello@loftinsulationcalc.com.
+- Vous pouvez exercer vos droits à tout moment en écrivant à info@loftinsulationcalc.com.
 
 ## Responsable du traitement
 
-Le responsable du traitement est l'éditeur du site, dont les coordonnées figurent dans les [mentions légales](/fr/mentions-legales). Pour toute question relative à vos données : **hello@loftinsulationcalc.com**.
+Le responsable du traitement est l'éditeur du site, dont les coordonnées figurent dans les [mentions légales](/fr/mentions-legales). Pour toute question relative à vos données : **info@loftinsulationcalc.com**.
 
 ## Un site statique, sans compte ni cookies
 
-Insulation Planner est un site statique. Il ne propose ni création de compte, ni formulaire, ni espace commentaire. Il ne dépose **aucun cookie** et n'utilise aucune autre technique de stockage sur votre appareil, ni traceur publicitaire. Aucun bandeau de consentement n'est donc nécessaire.
+Loft Insulation Calc est un site statique. Il ne propose ni création de compte, ni formulaire, ni espace commentaire. Il ne dépose **aucun cookie** et n'utilise aucune autre technique de stockage sur votre appareil, ni traceur publicitaire. Aucun bandeau de consentement n'est donc nécessaire.
 
 ## Vos saisies dans le calculateur
 
@@ -50,7 +50,7 @@ Nos pages renvoient vers des sites tiers (sources officielles, fiches de fabrica
 
 ## Vos droits
 
-Conformément au RGPD et à la loi Informatique et Libertés, vous disposez d'un droit d'**accès**, de **rectification**, d'**effacement**, de **limitation** et d'**opposition** au traitement de vos données. Pour les exercer, écrivez à **hello@loftinsulationcalc.com**. Comme nous ne collectons presque aucune donnée, nous pourrons vous demander les informations nécessaires pour retrouver celles qui vous concernent, par exemple dans un échange d'e-mails.
+Conformément au RGPD et à la loi Informatique et Libertés, vous disposez d'un droit d'**accès**, de **rectification**, d'**effacement**, de **limitation** et d'**opposition** au traitement de vos données. Pour les exercer, écrivez à **info@loftinsulationcalc.com**. Comme nous ne collectons presque aucune donnée, nous pourrons vous demander les informations nécessaires pour retrouver celles qui vous concernent, par exemple dans un échange d'e-mails.
 
 Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la **CNIL** (Commission nationale de l'informatique et des libertés), [www.cnil.fr](https://www.cnil.fr).
 
