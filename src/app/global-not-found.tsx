@@ -17,8 +17,9 @@ export default function GlobalNotFound() {
   const en = getDict("us").page;
   return (
     <html lang="en" className={`${fontVariables} antialiased`}>
-      <body className="min-h-dvh bg-night text-white">
-        <main className="relative mx-auto flex min-h-dvh max-w-3xl flex-col justify-center overflow-hidden px-6 py-16">
+      <body>
+        <div className="relative min-h-dvh overflow-hidden bg-night text-white">
+        <main className="relative mx-auto flex min-h-dvh max-w-3xl flex-col justify-center px-6 py-16">
           <div aria-hidden className="thermal-glow pointer-events-none absolute -right-40 top-10 h-[420px] w-[620px]" />
           <Link href="/" className="relative mb-10 flex items-center gap-2.5 font-display text-lg font-extrabold">
             <LogoMark className="size-7" /> {site.name}
@@ -40,6 +41,7 @@ export default function GlobalNotFound() {
             ))}
           </ul>
         </main>
+        </div>
       </body>
     </html>
   );

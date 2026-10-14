@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "calc": "tsx scripts/calc.ts",
     "check": "npm run lint && npm run typecheck && npm run test",
-    "verify": "tsx scripts/verify-build.ts"
+    "verify": "tsx scripts/verify-build.ts",
+    "postbuild": "node scripts/fix-export-segments.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

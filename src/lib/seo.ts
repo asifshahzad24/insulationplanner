@@ -16,6 +16,9 @@ export function hreflangs(entry: RouteEntry): Record<string, string> {
   return map;
 }
 
+/** Per-market share image, generated at build time by src/app/og/<market>.png/route.tsx. */
+export const ogImageUrl = (market: MarketId) => absoluteUrl(`/og/${market}.png`);
+
 export function buildMetadata(entry: RouteEntry, content: PageContent): Metadata {
   const url = absoluteUrl(pathOf(entry));
   const meta = MARKETS[entry.market];
@@ -30,8 +33,14 @@ export function buildMetadata(entry: RouteEntry, content: PageContent): Metadata
       description: content.description,
       siteName: site.name,
       locale: meta.lang.replace("-", "_"),
+      images: [{ url: ogImageUrl(entry.market), width: 1200, height: 630, alt: site.name }],
     },
-    twitter: { card: "summary_large_image", title: content.title, description: content.description },
+    twitter: {
+      card: "summary_large_image",
+      title: content.title,
+      description: content.description,
+      images: [ogImageUrl(entry.market)],
+    },
   };
 }
 

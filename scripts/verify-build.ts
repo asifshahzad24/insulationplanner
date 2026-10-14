@@ -32,12 +32,13 @@ for (const entry of ROUTES) {
   if ((html.match(/<h1[\s>]/g) ?? []).length !== 1) fail(`${p}: expected exactly one <h1>`);
   if (entry.kind !== "article" && !html.includes('"@type":"WebApplication"')) fail(`${p}: missing WebApplication JSON-LD`);
   if (entry.kind === "calculator" && !html.includes('id="results"')) fail(`${p}: calculator results not prerendered`);
+  if (!html.includes(`<meta property="og:image" content="${site.url}/og/${entry.market}.png"`)) fail(`${p}: missing og:image`);
 }
 
 const sitemap = fs.existsSync(path.join(OUT, "sitemap.xml")) ? fs.readFileSync(path.join(OUT, "sitemap.xml"), "utf8") : "";
 if (!sitemap) fail("missing sitemap.xml");
 for (const entry of ROUTES) if (sitemap && !sitemap.includes(`<loc>${url(pathOf(entry))}</loc>`)) fail(`sitemap missing ${pathOf(entry)}`);
-for (const f of ["robots.txt", "404.html", "llms.txt", "_headers"]) if (!fs.existsSync(path.join(OUT, f))) fail(`missing ${f}`);
+for (const f of ["robots.txt", "404.html", "llms.txt", "_headers", "og/us.png", "og/uk.png", "og/de.png", "og/fr.png"]) if (!fs.existsSync(path.join(OUT, f))) fail(`missing ${f}`);
 const zipChunks = fs.existsSync(path.join(OUT, "data", "zip")) ? fs.readdirSync(path.join(OUT, "data", "zip")).length : 0;
 if (zipChunks < 800) fail(`expected ~891 ZIP chunks in out/data/zip, found ${zipChunks}`);
 
