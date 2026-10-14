@@ -1,0 +1,65 @@
+# Promo video: design
+
+**Status:** approved 2026-10-14
+
+## Goal
+
+A ~30-second, silent promo video for each market (US, UK, DE, FR), in two shapes:
+
+- 16:9 at 1920×1080 for YouTube and the website
+- 9:16 at 1080×1920 for TikTok, Reels and Shorts
+
+The 16:9 version is also embedded on each market's home page.
+
+## Approach
+
+The video shows **real screenshots of the live calculator, animated**. A capture script drives the site with Playwright, and Remotion composes the shots into video.
+
+- **Why screenshots, not a rebuilt UI:** the video shows the real product, and the numbers come from the real engine.
+- **Why Remotion, not a screen recording:** the captions, zooms and cursor stay sharp, and every version can be re-rendered with one command.
+
+## Pieces
+
+All of this lives in `video/`, a separate npm package. The site's install, lint, typecheck and build ignore it.
+
+| File | Job |
+|---|---|
+| `video/scripts/capture.ts` | Opens each market's home calculator, desktop (1280 px @2x) and mobile (400 px @3x). It runs that market's scenario keystroke by keystroke and screenshots the calculator card after each action. It also records the target element's box. Writes `video/public/capture/<market>-<layout>/NN.png` and `manifest.json`. |
+| `video/src/copy.ts` | Caption text per market: hook, three questions, step captions, result line, benefits, call to action |
+| `video/src/scenes/*` | Intro (hook and questions), Demo (screenshot sequence with camera, cursor and captions), Benefits, Outro (wordmark and URL) |
+| `video/src/Root.tsx` | 8 compositions (`us-wide`, `us-tall`, …), 30 fps |
+| `video/scripts/render.ts` | Renders all 8 MP4s to `video/out/`. Also renders the web copies (720p) and poster JPGs into `public/video/`. |
+
+## Demo scenarios (real site inputs)
+
+| Market | Step 1 | Step 2 | Step 3 |
+|---|---|---|---|
+| US | Attic 40 × 30 ft | ZIP 60601 → Zone 5A | Blown-in cellulose |
+| UK | Loft 10 × 8 m | Existing 100 mm mineral wool | Loft roll |
+| DE | Dachboden 10 × 8 m | Existing 8 cm Mineralwolle | Klemmfilz WLS 035 |
+| FR | Combles 10 × 8 m | Département 69 (H1) | Ouate de cellulose |
+
+After step 3, the camera moves to the results panel: added depth, number of packages and cost.
+
+## Storyboard (30 s)
+
+| Time | Scene |
+|---|---|
+| 0–3 s | Hook ("Insulating your attic?" / loft / Dachboden / combles) |
+| 3–6 s | The questions pop in: thickness, packages, cost |
+| 6–21 s | Demo: three steps, then the results |
+| 21–25 s | Benefits: free · no sign-up · code-based targets |
+| 25–30 s | Wordmark, loftinsulationcalc.com, tagline |
+
+The visuals use the site's thermal theme: night background, orange gradient, Bricolage Grotesque for headings and Geist for text.
+
+## Website embed
+
+- **Component:** `PromoVideo`, on home pages only (`group === "home"`), placed under the calculator.
+- **Markup:** `<video controls preload="none" playsInline poster>`, so it downloads nothing until play is pressed.
+- **Files:** a self-hosted MP4 at `/video/<market>.mp4` (720p, a few MB), so there are no third-party cookies and no consent banner. The CSP `default-src 'self'` already allows it.
+- **Accessibility:** a visible one-line text description, since the video has no audio track.
+
+## Out of scope
+
+Voiceover and music (added on the social platforms), VideoObject structured data (Google only indexes videos that are a page's main content), and videos for non-home pages.
