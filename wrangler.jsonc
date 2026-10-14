@@ -1,0 +1,16 @@
+// Cloudflare Workers (static assets) deployment for the static export in out/.
+// Workers Builds settings: build command `npm run build`, deploy command `npx wrangler deploy`.
+// Having this file stops `wrangler deploy` from auto-configuring the project as a Next.js
+// server app (OpenNext); the site is plain prebuilt HTML, CSS, JS and JSON.
+{
+  // Must match the Worker's name in the Cloudflare dashboard.
+  "name": "loftinsulationcalc",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    // /uk → uk.html, /uk/loft-insulation-calculator → uk/loft-insulation-calculator.html
+    "html_handling": "auto-trailing-slash",
+    // unknown URLs get out/404.html with a real 404 status
+    "not_found_handling": "404-page"
+  }
+}
