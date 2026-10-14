@@ -7,12 +7,12 @@ export const site = {
   url: "https://loftinsulationcalc.com",
   /** Public contact address (forward it to your inbox with Cloudflare Email Routing). */
   email: "info@loftinsulationcalc.com",
-  /** PLACEHOLDER: publisher details, required for the German Impressum and French mentions légales. */
+  /** Publisher details, shown in the German Impressum and French mentions légales. */
   owner: {
-    name: "[Owner / company name]",
-    street: "[Street and number]",
-    city: "[Postcode City]",
-    country: "[Country]",
+    name: "Asif Shahzad",
+    street: "House 10, Street 50, Jinnah Garden",
+    city: "Islamabad 44023",
+    country: "Pakistan",
     vatId: "",
   },
   /** Hosting provider named in the privacy policy and legal notices. */

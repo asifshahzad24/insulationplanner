@@ -17,6 +17,10 @@ This policy explains what happens to your information when you use Loft Insulati
 - Our host, Cloudflare, processes standard technical data such as your IP address to deliver the site and keep it secure.
 - We don't sell or share your personal information.
 
+## Who runs this site
+
+Loft Insulation Calc is run by Asif Shahzad, House 10, Street 50, Jinnah Garden, Islamabad 44023, Pakistan. Email: **info@loftinsulationcalc.com**.
+
 ## Your calculator inputs
 
 Everything you type into a calculator, such as areas, depths, your climate zone or a price, is processed by your own browser. It isn't sent to us.

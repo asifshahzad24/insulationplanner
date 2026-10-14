@@ -19,7 +19,7 @@ This notice explains what happens to your information when you use Loft Insulati
 
 ## Who is responsible
 
-Loft Insulation Calc is responsible for the limited personal data described in this notice. You can contact us about anything in it at **info@loftinsulationcalc.com**.
+Loft Insulation Calc is run by Asif Shahzad, House 10, Street 50, Jinnah Garden, Islamabad 44023, Pakistan, who is the controller for the limited personal data described in this notice. You can contact us about anything in it at **info@loftinsulationcalc.com**.
 
 ## Your calculator inputs
 

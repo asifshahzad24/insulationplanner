@@ -9,13 +9,13 @@ intro: "Informations prévues par l'article 6 de la loi n° 2004-575 du 21 juin 
 
 Le site **Loft Insulation Calc**, accessible à l'adresse loftinsulationcalc.com, est édité par :
 
-- [Nom de l'éditeur]
-- [Adresse postale]
-- [E-mail : info@loftinsulationcalc.com]
+- Asif Shahzad
+- House 10, Street 50, Jinnah Garden, Islamabad 44023, Pakistan
+- E-mail : info@loftinsulationcalc.com
 
 ## Directeur de la publication
 
-[Nom]
+Asif Shahzad
 
 ## Hébergeur
 
@@ -23,7 +23,7 @@ Le site est hébergé par :
 
 - **Cloudflare, Inc.**
 - 101 Townsend St, San Francisco, CA 94107, USA
-- [Téléphone de l'hébergeur]
+- Téléphone : +1 650 319 8930
 - www.cloudflare.com
 
 ## Propriété intellectuelle

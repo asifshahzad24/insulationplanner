@@ -9,7 +9,9 @@ intro: "Kurz gesagt: keine Cookies, kein Konto, keine Formulare. Ihre Berechnung
 
 Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
 
-[Name und Anschrift des Verantwortlichen – siehe Impressum]
+Asif Shahzad\
+House 10, Street 50, Jinnah Garden\
+Islamabad 44023, Pakistan
 
 E-Mail: info@loftinsulationcalc.com
 

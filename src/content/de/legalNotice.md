@@ -7,22 +7,19 @@ intro: "Anbieterkennzeichnung für loftinsulationcalc.com und die deutschsprachi
 ---
 ## Angaben gemäß § 5 DDG
 
-[Vorname Nachname / Firma]\
-[Straße Hausnummer]\
-[PLZ Ort]\
-[Land]
+Asif Shahzad\
+House 10, Street 50\
+Jinnah Garden\
+Islamabad 44023\
+Pakistan
 
 ## Kontakt
 
 E-Mail: info@loftinsulationcalc.com
 
-## Umsatzsteuer-ID
-
-Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: [USt-IdNr., falls vorhanden]
-
 ## Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
 
-[Name, Anschrift]
+Asif Shahzad, Anschrift wie oben
 
 ## Verbraucherstreitbeilegung
 
