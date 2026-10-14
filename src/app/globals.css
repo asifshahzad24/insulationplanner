@@ -182,10 +182,25 @@ body {
   background: var(--color-canvas);
 }
 
-/* ── Print: only the shopping list and summary ─────────────────────────── */
+/* ── Print: only the results card (depth, shopping list, cost, math) ──── */
 @media print {
   body {
     background: #fff;
+  }
+  /* hide everything that is neither the results card, inside it, nor one of its ancestors */
+  body *:not(:has(#results)):not(#results):not(#results *) {
+    display: none !important;
+  }
+  body *:has(#results) {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+    display: block !important;
+  }
+  #results details {
+    display: block;
   }
   .no-print {
     display: none !important;
