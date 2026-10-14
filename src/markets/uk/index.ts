@@ -133,7 +133,8 @@ export const uk: MarketData = {
       name: "Blown mineral wool loft insulation (installer)",
       lambda: 0.045,
       areas: ["attic"],
-      betweenFraming: false,
+      // Blown wool fills between the joists first, so it is bridged like the first roll layer.
+      betweenFraming: true,
       spray: { pricePerM2Mm: { low: 750 / 55 / 270, high: 750 / 40 / 270 } },
       priceDate: PRICE_DATE,
       source: "supafil_loft",
