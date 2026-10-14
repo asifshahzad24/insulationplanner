@@ -174,6 +174,9 @@ const enGB: Dict = {
     notFoundTitle: "Page not found",
     notFoundBody: "The page you're looking for doesn't exist. Try the calculator instead.",
     notFoundCta: "Open the calculator",
+    videoTitle: "See how it works",
+    videoDesc: "A 30-second walkthrough: enter your loft size, add what's already there and choose your target. The calculator shows the depth to add, how many rolls to buy and the cost.",
+    videoCaptions: "English captions",
   },
   footer: {
     blurb: "Free, independent insulation calculators for the UK, US and Europe. Runs in your browser. No sign-up, no cookies.",

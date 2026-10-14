@@ -10,7 +10,7 @@ A free, independent insulation calculator for homeowners in the **US, UK, German
 - Next.js 16 (App Router), static export (`out/`), so there is no server
 - TypeScript, Tailwind CSS 4, Vitest
 - Content in Markdown, rendered at build time
-- Hosted on Cloudflare Pages
+- Hosted on Cloudflare Workers (static assets)
 
 ## Commands
 
@@ -54,6 +54,10 @@ The full explanation is on each market's Methodology page.
 1. Add an entry to `src/routes/registry.ts`. Give it a `group` and reuse an existing group when the page has equivalents in other markets, so hreflang links them.
 2. Create `src/content/<market>/<group>.md`.
 3. Run `npm run check && npm run build`.
+
+## Promo videos
+
+The walkthrough videos (US, UK, DE and FR, wide and tall, with voiceover) are made in [video/](video/README.md) from screenshots of the live site. The wide versions are embedded on each home page from `public/video/`.
 
 ## Owner checklist before launch
 

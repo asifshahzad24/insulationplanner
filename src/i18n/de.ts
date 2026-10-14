@@ -174,6 +174,9 @@ const de: Dict = {
     notFoundTitle: "Seite nicht gefunden",
     notFoundBody: "Diese Seite gibt es nicht. Probieren Sie stattdessen den Rechner.",
     notFoundCta: "Zum Rechner",
+    videoTitle: "So funktioniert's",
+    videoDesc: "In 30 Sekunden erklärt: Fläche eingeben, vorhandene Dämmung angeben und Ziel wählen. Der Rechner zeigt Dämmdicke, Anzahl der Rollen und Kosten.",
+    videoCaptions: "Deutsche Untertitel",
   },
   footer: {
     blurb: "Kostenlose, unabhängige Dämmungsrechner für Deutschland, Europa und die USA. Läuft im Browser. Ohne Anmeldung, ohne Cookies.",

@@ -174,6 +174,9 @@ const fr: Dict = {
     notFoundTitle: "Page introuvable",
     notFoundBody: "Cette page n'existe pas. Essayez plutôt le calculateur.",
     notFoundCta: "Ouvrir le calculateur",
+    videoTitle: "Comment ça marche",
+    videoDesc: "En 30 secondes : indiquez la surface, votre département et l'isolant. Le calculateur affiche l'épaisseur à ajouter, le nombre de sacs et le coût.",
+    videoCaptions: "Sous-titres français",
   },
   footer: {
     blurb: "Calculateurs d'isolation gratuits et indépendants pour la France, l'Europe et les États-Unis. Fonctionne dans votre navigateur. Sans inscription, sans cookies.",

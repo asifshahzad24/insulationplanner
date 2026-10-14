@@ -11,6 +11,7 @@ import { pathOf, routeByGroup, routesFor, type Group, type RouteEntry } from "@/
 import { Breadcrumbs, Faq, JsonLd, RelatedLinks } from "./Blocks";
 import { Footer } from "./Footer";
 import { Header, type NavLink } from "./Header";
+import { PromoVideo } from "./PromoVideo";
 import { TargetsTable, ThicknessChart } from "./Widgets";
 
 const linksFor = (entry: RouteEntry, groups: Group[]): NavLink[] =>
@@ -84,6 +85,8 @@ export function PageView({ entry }: { entry: RouteEntry }) {
             <Converter dict={dict} locale={market.locale} imperialFirst={market.defaultUnits === "imperial"} />
           </div>
         ) : null}
+
+        {entry.group === "home" ? <PromoVideo market={entry.market} dict={dict} /> : null}
 
         {entry.widget === "targetsTable" ? <TargetsTable market={market} dict={dict} /> : null}
         {entry.widget === "thicknessChart" ? <ThicknessChart market={market} dict={dict} /> : null}

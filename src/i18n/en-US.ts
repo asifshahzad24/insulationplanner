@@ -179,6 +179,9 @@ const enUS = {
     notFoundTitle: "Page not found",
     notFoundBody: "The page you're looking for doesn't exist. Try the calculator instead.",
     notFoundCta: "Open the calculator",
+    videoTitle: "See how it works",
+    videoDesc: "A 30-second walkthrough: enter your attic size and ZIP code, pick a material, and the calculator shows the depth to add, how many bags to buy and the cost.",
+    videoCaptions: "English captions",
   },
   footer: {
     blurb: "Free, independent insulation calculators for the US and Europe. Runs in your browser. No sign-up, no cookies.",
