@@ -18,7 +18,8 @@ A free, independent insulation calculator for homeowners in the **US, UK, German
 npm install
 npm run dev          # http://localhost:3000
 npm run check        # lint + typecheck + unit tests
-npm run build        # static site in out/
+npm run build        # static site in out/ (postbuild flattens Next prefetch files on Windows)
+npm run verify       # check out/: pages, lang, canonical, hreflang, JSON-LD, og:image, sitemap, 404
 npm start            # serve out/ locally
 npm run calc -- --market us --list                        # ids for a market
 npm run calc -- --market us --area attic --size 1200 --zone 5A --product cellulose
