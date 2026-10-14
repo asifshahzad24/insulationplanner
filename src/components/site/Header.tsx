@@ -31,7 +31,7 @@ export function Header({
           <Wordmark tone={dark ? "dark" : "light"} />
         </Link>
 
-        <nav aria-label={dict.nav.calculators} className={`hidden items-center gap-5 text-[13.5px] md:flex ${text}`}>
+        <nav aria-label={dict.nav.menu} className={`hidden items-center gap-5 whitespace-nowrap text-[13.5px] lg:flex ${text}`}>
           {nav.map((l) => (
             <Link key={l.href} href={l.href} className={dark ? "hover:text-white" : "hover:text-ink"}>
               {l.label}
@@ -44,7 +44,7 @@ export function Header({
           <div className="hidden sm:block">
             <CountrySwitcher market={market} switcher={switcher} label={dict.nav.country} dark={dark} />
           </div>
-          <details className="relative md:hidden">
+          <details className="relative lg:hidden">
             <summary
               className={`flex cursor-pointer list-none items-center rounded-lg border px-2.5 py-1.5 text-[13px] font-medium ${
                 dark ? "border-white/20" : "border-line-2"

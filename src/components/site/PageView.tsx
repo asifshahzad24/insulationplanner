@@ -27,11 +27,14 @@ export function PageView({ entry }: { entry: RouteEntry }) {
   const home = routeByGroup(entry.market, "home")!;
   const isTool = entry.kind === "calculator" || entry.kind === "converter";
 
-  const nav = linksFor(entry, ["attic", "wall", "floor", "converter", "methodology"]);
+  const nav = [
+    { href: pathOf(home), label: dict.page.home },
+    ...linksFor(entry, ["attic", "wall", "floor", "converter", "about", "contact"]),
+  ];
   const tools = routesFor(entry.market)
     .filter((e) => e.tool)
     .map((e) => ({ href: pathOf(e), label: getContent(e).nav }));
-  const company = linksFor(entry, ["methodology", "faq", "about"]);
+  const company = linksFor(entry, ["methodology", "faq", "about", "contact"]);
   const legal = linksFor(entry, ["privacy", "terms", "affiliate", "legalNotice"]);
   const related = tools.filter((l) => l.href !== pathOf(entry)).slice(0, 6);
 

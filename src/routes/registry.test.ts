@@ -28,7 +28,7 @@ describe("route registry", () => {
   });
 
   it("covers the launch page set in every market", () => {
-    const required = ["home", "attic", "wall", "floor", "blown", "thickness", "converter", "targets", "methodology", "faq", "about", "privacy", "terms", "affiliate"];
+    const required = ["home", "attic", "wall", "floor", "blown", "thickness", "converter", "targets", "methodology", "faq", "about", "contact", "privacy", "terms", "affiliate"];
     for (const m of MARKET_IDS) {
       const groups = new Set(routesFor(m).map((e) => e.group));
       for (const g of required) expect(groups, `${m} is missing ${g}`).toContain(g);

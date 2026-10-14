@@ -22,6 +22,7 @@ export type Group =
   | "methodology"
   | "faq"
   | "about"
+  | "contact"
   | "privacy"
   | "terms"
   | "affiliate"
@@ -81,6 +82,7 @@ export const ROUTES: RouteEntry[] = [
     methodology: "methodology",
     faq: "faq",
     about: "about",
+    contact: "contact",
     privacy: "privacy",
     terms: "terms",
     affiliate: "affiliate-disclosure",
@@ -100,6 +102,7 @@ export const ROUTES: RouteEntry[] = [
     methodology: "methodology",
     faq: "faq",
     about: "about",
+    contact: "contact",
     privacy: "privacy",
     terms: "terms",
     affiliate: "affiliate-disclosure",
@@ -119,6 +122,7 @@ export const ROUTES: RouteEntry[] = [
     methodology: "methodik",
     faq: "faq",
     about: "ueber-uns",
+    contact: "kontakt",
     privacy: "datenschutz",
     terms: "nutzungsbedingungen",
     affiliate: "affiliate-hinweis",
@@ -139,6 +143,7 @@ export const ROUTES: RouteEntry[] = [
     methodology: "methodologie",
     faq: "faq",
     about: "a-propos",
+    contact: "contact",
     privacy: "confidentialite",
     terms: "conditions-utilisation",
     affiliate: "divulgation-affiliation",
