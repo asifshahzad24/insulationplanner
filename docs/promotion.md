@@ -217,3 +217,10 @@ In **Google Search Console** (search.google.com/search-console):
 2. **Indexing** → **Pages:** look at how many of the 62 pages are indexed. The number should rise over the next few weeks.
 
 Then do the same in **Bing Webmaster Tools** → **Search Performance**.
+
+**Visitors:** Cloudflare dashboard → **Analytics & Logs** → **Web Analytics** → **loftinsulationcalc.com**. Switch the time range to **Last 7 days**. Look at:
+- **Visits:** the number of visitors.
+- **Referers:** where they came from (Google, Bing, YouTube, Reddit…).
+- **Countries:** which countries they're in.
+
+This is the best way to see which of your efforts bring people in.

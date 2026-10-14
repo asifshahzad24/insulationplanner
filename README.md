@@ -65,7 +65,7 @@ The walkthrough videos (US, UK, DE and FR, wide and tall, with voiceover) are ma
 - [x] Domain set in `src/config/site.ts` (`loftinsulationcalc.com`), live on Cloudflare Workers
 - [x] Contact email `info@loftinsulationcalc.com` forwarded with Cloudflare Email Routing
 - [x] **Impressum (DE) and mentions légales (FR):** publisher name and postal address filled in
-- [ ] Cloudflare Web Analytics token in `site.analyticsToken`
+- [x] Cloudflare Web Analytics on "Automatic setup" (Cloudflare injects the beacon, so `site.analyticsToken` stays empty)
 - [x] Search Console verified and sitemap submitted
 - [x] IndexNow key in `site.indexNowKey` and `public/<key>.txt`
 - [ ] Traffic tasks in [docs/promotion.md](docs/promotion.md): Cloudflare HTTPS and www redirects, Bing Webmaster Tools, YouTube, links

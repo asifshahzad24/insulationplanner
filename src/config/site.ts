@@ -20,7 +20,10 @@ export const site = {
     name: "Cloudflare, Inc.",
     address: "101 Townsend St, San Francisco, CA 94107, USA",
   },
-  /** Cloudflare Web Analytics token. Empty = analytics off. */
+  /**
+   * Cloudflare Web Analytics token. Leave empty: the site uses Web Analytics "Automatic setup",
+   * where Cloudflare injects the beacon at the edge. Setting a token here would add a second beacon.
+   */
   analyticsToken: "",
   /** IndexNow key (Bing, Yandex, Seznam…). public/<key>.txt must contain the same value. */
   indexNowKey: "6cd8909b44bf070e67faf659a317ce11",
