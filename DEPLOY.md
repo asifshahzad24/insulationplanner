@@ -11,7 +11,7 @@ The code lives at `https://github.com/asifshahzad24/insulationplanner`, branch `
 Cloudflare's dashboard creates **Workers** projects by default, and that is what we use. The repo's `wrangler.jsonc` tells Cloudflare to serve the prebuilt `out/` folder. Without it, Cloudflare tries to treat the site as a Next.js server app (OpenNext) and the build fails.
 
 1. Cloudflare dashboard → **Workers & Pages** → **Create application** → **Import a repository** → pick `insulationplanner`.
-2. **Project / Worker name:** `loftinsulationcalc`. This must match `name` in `wrangler.jsonc`.
+2. **Project / Worker name:** `insulationplanner`. This must match `name` in `wrangler.jsonc`.
 3. **Build command:** `npm run build`
 4. **Deploy command:** `npx wrangler deploy`
 5. **Build variables (optional):** `NODE_VERSION` = `22`
