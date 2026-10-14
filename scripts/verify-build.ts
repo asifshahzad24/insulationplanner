@@ -39,6 +39,8 @@ const sitemap = fs.existsSync(path.join(OUT, "sitemap.xml")) ? fs.readFileSync(p
 if (!sitemap) fail("missing sitemap.xml");
 for (const entry of ROUTES) if (sitemap && !sitemap.includes(`<loc>${url(pathOf(entry))}</loc>`)) fail(`sitemap missing ${pathOf(entry)}`);
 for (const f of ["robots.txt", "404.html", "llms.txt", "_headers", "og/us.png", "og/uk.png", "og/de.png", "og/fr.png"]) if (!fs.existsSync(path.join(OUT, f))) fail(`missing ${f}`);
+const keyFile = path.join(OUT, `${site.indexNowKey}.txt`);
+if (!fs.existsSync(keyFile) || fs.readFileSync(keyFile, "utf8").trim() !== site.indexNowKey) fail(`IndexNow key file ${site.indexNowKey}.txt missing or wrong`);
 const zipChunks = fs.existsSync(path.join(OUT, "data", "zip")) ? fs.readdirSync(path.join(OUT, "data", "zip")).length : 0;
 if (zipChunks < 800) fail(`expected ~891 ZIP chunks in out/data/zip, found ${zipChunks}`);
 

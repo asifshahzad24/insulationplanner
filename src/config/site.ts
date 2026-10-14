@@ -22,6 +22,8 @@ export const site = {
   },
   /** Cloudflare Web Analytics token. Empty = analytics off. */
   analyticsToken: "",
+  /** IndexNow key (Bing, Yandex, Seznam…). public/<key>.txt must contain the same value. */
+  indexNowKey: "6cd8909b44bf070e67faf659a317ce11",
   /** Date shown as "last updated" on calculator pages. */
   updated: "2026-10-14",
 } as const;

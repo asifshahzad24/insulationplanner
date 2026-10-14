@@ -13,6 +13,7 @@
     "calc": "tsx scripts/calc.ts",
     "check": "npm run lint && npm run typecheck && npm run test",
     "verify": "tsx scripts/verify-build.ts",
+    "indexnow": "tsx scripts/indexnow.ts",
     "postbuild": "node scripts/fix-export-segments.mjs"
   },
   "dependencies": {

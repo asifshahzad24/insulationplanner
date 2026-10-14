@@ -21,6 +21,7 @@ npm run check        # lint + typecheck + unit tests
 npm run build        # static site in out/ (postbuild flattens Next prefetch files on Windows)
 npm run verify       # check out/: pages, lang, canonical, hreflang, JSON-LD, og:image, sitemap, 404
 npm start            # serve out/ locally
+npm run indexnow     # after a live deploy: ask Bing & co. to recrawl every page (or name paths: -- /uk /de)
 npm run calc -- --market us --list                        # ids for a market
 npm run calc -- --market us --area attic --size 1200 --zone 5A --product cellulose
 ```
@@ -66,5 +67,7 @@ The walkthrough videos (US, UK, DE and FR, wide and tall, with voiceover) are ma
 - [x] **Impressum (DE) and mentions légales (FR):** publisher name and postal address filled in
 - [ ] Cloudflare Web Analytics token in `site.analyticsToken`
 - [x] Search Console verified and sitemap submitted
+- [x] IndexNow key in `site.indexNowKey` and `public/<key>.txt`
+- [ ] Traffic tasks in [docs/promotion.md](docs/promotion.md): Cloudflare HTTPS and www redirects, Bing Webmaster Tools, YouTube, links
 - [ ] Review the generated legal pages (privacy, terms) and adapt them to your situation
 - [ ] Before adding ads or affiliate links: update the privacy policy and affiliate disclosure, and add a consent banner if any ad network sets cookies
