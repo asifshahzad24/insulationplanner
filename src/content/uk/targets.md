@@ -82,7 +82,7 @@ These are England's values. **Wales** and **Scotland** set their own, and some a
 
 ## Next steps
 
-- Size the job with the [loft insulation calculator](/uk/loft-insulation-calculator), [cavity wall insulation calculator](/uk/cavity-wall-insulation-calculator), [solid wall insulation calculator](/uk/solid-wall-insulation-calculator) or [floor insulation calculator](/uk/floor-insulation-calculator)
+- Size the job with the [loft insulation calculator](/uk/loft-insulation-calculator), [pitched roof insulation calculator](/uk/pitched-roof-insulation-calculator), [cavity wall insulation calculator](/uk/cavity-wall-insulation-calculator), [solid wall insulation calculator](/uk/solid-wall-insulation-calculator) or [floor insulation calculator](/uk/floor-insulation-calculator)
 - See how many millimetres each product needs in [loft insulation thickness](/uk/loft-insulation-thickness)
 
 ## Sources

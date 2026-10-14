@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import { viewport } from "@/config/viewport";
 import { fontVariables } from "./fonts";
 import { Wordmark } from "@/components/site/Wordmark";
 import { site } from "@/config/site";
 import { MARKET_IDS, MARKETS } from "@/markets/meta";
 import { getDict } from "@/i18n";
+
+export { viewport };
 
 export const metadata: Metadata = {
   title: `404 — ${site.name}`,

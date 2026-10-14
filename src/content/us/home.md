@@ -74,6 +74,7 @@ Each area has its own page with tips for that job:
 - [Wall insulation calculator](/wall-insulation-calculator): what fits in 2×4 and 2×6 walls
 - [Floor insulation calculator](/floor-insulation-calculator): floors over crawl spaces and garages
 - [Basement insulation calculator](/basement-insulation-calculator): foam board and framed basement walls
+- [Roof insulation calculator](/roof-insulation-calculator): cathedral ceilings and rafters, and what fits in the bay
 
 Not sure what your zone calls for? See the full table of [insulation R-values by climate zone](/insulation-by-climate-zone).
 

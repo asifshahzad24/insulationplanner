@@ -6,7 +6,8 @@ import { getDict, tpl } from "@/i18n";
 import { getContent } from "@/lib/content";
 import { ATTIC_DIAGRAM_GROUPS, ATTIC_DIAGRAMS, atticDiagramPath, DIAGRAM_SIZE } from "@/lib/diagrams";
 import { fmtDate } from "@/lib/format";
-import { absoluteUrl, breadcrumbLd, faqLd, ogImageUrl, siteGraphLd, switcherLinks, webAppLd, type PageImage } from "@/lib/seo";
+import { absoluteUrl, ogImageUrl, pageGraphLd, switcherLinks, type PageImage } from "@/lib/seo";
+import { videoInfo } from "@/lib/video";
 import { getMarket } from "@/markets";
 import { MARKETS } from "@/markets/meta";
 import { pathOf, routeByGroup, routesFor, type Group, type RouteEntry } from "@/routes/registry";
@@ -42,7 +43,7 @@ export function PageView({ entry }: { entry: RouteEntry }) {
     .map((e) => ({ href: pathOf(e), label: getContent(e).nav }));
   const company = linksFor(entry, ["methodology", "faq", "about", "contact"]);
   const legal = linksFor(entry, ["privacy", "terms", "affiliate", "legalNotice"]);
-  const related = tools.filter((l) => l.href !== pathOf(entry)).slice(0, 6);
+  const related = tools.filter((l) => l.href !== pathOf(entry));
 
   const crumbs = entry.group === "home" ? [] : [
     { name: dict.page.home, href: pathOf(home) },
@@ -53,10 +54,11 @@ export function PageView({ entry }: { entry: RouteEntry }) {
     <>
       <JsonLd
         data={[
-          siteGraphLd(entry, content, mainImage),
-          isTool ? webAppLd(entry, content) : null,
-          faqLd(content),
-          crumbs.length ? breadcrumbLd(crumbs.map((c) => ({ name: c.name, path: c.href }))) : null,
+          pageGraphLd(entry, content, mainImage, {
+            isTool,
+            crumbs: crumbs.map((c) => ({ name: c.name, path: c.href })),
+            video: entry.group === "home" ? videoInfo(entry.market) : null,
+          }),
         ]}
       />
 
@@ -120,7 +122,7 @@ export function PageView({ entry }: { entry: RouteEntry }) {
         <article className={`prose ${isTool || entry.widget ? "mt-14" : "mt-10"}`} dangerouslySetInnerHTML={{ __html: content.html }} />
 
         <Faq title={dict.page.faqTitle} faqs={content.faqs} />
-        {isTool || entry.group === "home" ? <RelatedLinks title={dict.page.related} links={related} /> : null}
+        {entry.legal ? null : <RelatedLinks title={dict.page.related} links={related} />}
 
         <p className="mt-12 text-xs text-faint">
           {tpl(dict.page.updated, { date: fmtDate(MARKETS[entry.market].lang, site.updated) })}

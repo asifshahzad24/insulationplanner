@@ -71,6 +71,7 @@ https://loftinsulationcalc.com
 
 More tools:
 Blown-in insulation calculator: https://loftinsulationcalc.com/blown-in-insulation-calculator
+Roof insulation calculator: https://loftinsulationcalc.com/roof-insulation-calculator
 R-value chart (inches per R-value): https://loftinsulationcalc.com/r-value-chart
 Insulation by climate zone: https://loftinsulationcalc.com/insulation-by-climate-zone
 ```
@@ -93,6 +94,7 @@ Free, no sign-up:
 https://loftinsulationcalc.com/uk/loft-insulation-calculator
 
 More tools:
+Pitched roof insulation calculator: https://loftinsulationcalc.com/uk/pitched-roof-insulation-calculator
 Loft insulation thickness guide: https://loftinsulationcalc.com/uk/loft-insulation-thickness
 Cavity wall insulation calculator: https://loftinsulationcalc.com/uk/cavity-wall-insulation-calculator
 U-value calculator: https://loftinsulationcalc.com/uk/u-value-calculator
@@ -205,7 +207,7 @@ if that's easier: https://loftinsulationcalc.com/blown-in-insulation-calculator
 
 In **Google Search Console** (search.google.com/search-console):
 1. **Performance:** look at **Total impressions** (how often Google showed your pages) and **Total clicks**. Expect small numbers for the first month.
-2. **Indexing** → **Pages:** look at how many of the 62 pages are indexed. The number should rise over the next few weeks.
+2. **Indexing** → **Pages:** look at how many of the 68 pages are indexed. The number should rise over the next few weeks.
 
 Then do the same in **Bing Webmaster Tools** → **Search Performance**.
 

@@ -38,7 +38,7 @@ These answers cover the basics. For numbers specific to your home, pick the calc
 
 - [Insulation calculator](/): start here for any area of the house
 - [Attic insulation calculator](/attic-insulation-calculator) and [blown-in insulation calculator](/blown-in-insulation-calculator)
-- [Wall](/wall-insulation-calculator), [floor](/floor-insulation-calculator) and [basement](/basement-insulation-calculator) insulation calculators
+- [Wall](/wall-insulation-calculator), [floor](/floor-insulation-calculator), [basement](/basement-insulation-calculator) and [roof](/roof-insulation-calculator) insulation calculators
 - [Insulation R-values by climate zone](/insulation-by-climate-zone) and the [R-value chart](/r-value-chart)
 - [R-value to U-value converter](/r-value-to-u-value-converter)
 

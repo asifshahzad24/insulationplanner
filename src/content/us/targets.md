@@ -67,6 +67,10 @@ Floors over a crawl space, garage or unheated basement: R-13 in zones 1–2, R-1
 
 R-13 in zones 3–4 (except 4C) and R-19 in zone 4C and zones 5–8. The [basement insulation calculator](/basement-insulation-calculator) covers foam board and framed walls.
 
+### Sloped roof
+
+The same R-30, R-49 or R-60 as the attic, but only what fits between the rafters. In a 2×10 bay, fiberglass batts stop at R-19. The [roof insulation calculator](/roof-insulation-calculator) shows the shortfall, and what a deeper bay or a layer under the rafters would take.
+
 ## Code minimums and local rules
 
 The IECC is a model code. States and cities adopt it on their own schedule, sometimes an older edition and sometimes with amendments. If your project needs a permit, your building department's rules apply, and they may differ from this table. For a project without a permit, these levels are a sound target. To see how thick each level is in your chosen material, use the [R-value chart](/r-value-chart).

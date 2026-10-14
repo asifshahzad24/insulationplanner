@@ -40,7 +40,7 @@ These answers cover the basics. For numbers specific to your home, pick the calc
 
 - [Insulation calculator](/uk): start here for any part of the house
 - [Loft insulation calculator](/uk/loft-insulation-calculator) and [blown loft insulation calculator](/uk/blown-loft-insulation-calculator)
-- [Cavity wall](/uk/cavity-wall-insulation-calculator), [solid wall](/uk/solid-wall-insulation-calculator) and [floor](/uk/floor-insulation-calculator) insulation calculators
+- [Cavity wall](/uk/cavity-wall-insulation-calculator), [solid wall](/uk/solid-wall-insulation-calculator), [floor](/uk/floor-insulation-calculator) and [pitched roof](/uk/pitched-roof-insulation-calculator) insulation calculators
 - [Part L U-values](/uk/part-l-u-values) and [loft insulation thickness](/uk/loft-insulation-thickness)
 - [U-value calculator](/uk/u-value-calculator) for converting between R, U and thickness
 

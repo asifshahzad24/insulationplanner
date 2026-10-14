@@ -27,7 +27,7 @@ export function Field({
 }
 
 export function Question({ children }: { children: ReactNode }) {
-  return <h3 className="mb-2.5 text-[15px] font-semibold text-ink">{children}</h3>;
+  return <h2 className="mb-2.5 text-[15px] font-semibold text-ink">{children}</h2>;
 }
 
 export function Segmented<T extends string>({

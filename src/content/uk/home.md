@@ -85,6 +85,7 @@ For most homes the loft is the easiest and cheapest place to begin. The Energy S
 - [Cavity wall insulation calculator](/uk/cavity-wall-insulation-calculator): U-value after filling the cavity
 - [Solid wall insulation calculator](/uk/solid-wall-insulation-calculator): internal or external boards
 - [Floor insulation calculator](/uk/floor-insulation-calculator): suspended timber floors
+- [Pitched roof insulation calculator](/uk/pitched-roof-insulation-calculator): rafters for a room in the roof
 
 To see every target in one place, read [Part L U-values](/uk/part-l-u-values).
 

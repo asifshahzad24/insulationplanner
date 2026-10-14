@@ -36,12 +36,23 @@ for (const entry of ROUTES) {
   if (!html.includes(`<meta property="og:image" content="${site.url}/og/${entry.market}.png"`)) fail(`${p}: missing og:image`);
   if (!html.includes('"@type":"WebSite"') || !html.includes('"primaryImageOfPage"')) fail(`${p}: missing WebSite/WebPage JSON-LD`);
   if (!html.includes('rel="apple-touch-icon"')) fail(`${p}: missing apple-touch-icon link`);
+  if (!html.includes("max-image-preview")) fail(`${p}: missing max-image-preview robots directive`);
+  if (!html.includes('name="theme-color"')) fail(`${p}: missing theme-color`);
+  if (entry.group === "home" && !html.includes('"@type":"VideoObject"')) fail(`${p}: missing VideoObject JSON-LD`);
   if (ATTIC_DIAGRAM_GROUPS.includes(entry.group) && !html.includes(`src="${atticDiagramPath(entry.market)}"`)) fail(`${p}: missing attic diagram`);
 }
 
 const sitemap = fs.existsSync(path.join(OUT, "sitemap.xml")) ? fs.readFileSync(path.join(OUT, "sitemap.xml"), "utf8") : "";
 if (!sitemap) fail("missing sitemap.xml");
-for (const entry of ROUTES) if (sitemap && !sitemap.includes(`<loc>${url(pathOf(entry))}</loc>`)) fail(`sitemap missing ${pathOf(entry)}`);
+for (const entry of ROUTES) {
+  if (sitemap && !sitemap.includes(`<loc>${url(pathOf(entry))}</loc>`)) fail(`sitemap missing ${pathOf(entry)}`);
+  if (sitemap && entry.group === "home" && !sitemap.includes(`<video:content_loc>${url(`/video/${entry.market}.mp4`)}</video:content_loc>`)) {
+    fail(`sitemap missing video for ${pathOf(entry)}`);
+  }
+}
+if (sitemap && !sitemap.includes('hreflang="x-default"')) fail("sitemap missing x-default");
+if (sitemap && sitemap.includes("uploaderundefined")) fail("sitemap video uploader tag is broken");
+if (sitemap && !sitemap.includes(`<video:uploader info="${site.url}/">`)) fail("sitemap missing video uploader");
 for (const f of ["robots.txt", "404.html", "llms.txt", "_headers", "favicon.ico", "icon-512.png", "apple-icon.png", "icon1.png", ...MARKET_IDS.map((m) => atticDiagramPath(m).slice(1)), "og/us.png", "og/uk.png", "og/de.png", "og/fr.png"]) if (!fs.existsSync(path.join(OUT, f))) fail(`missing ${f}`);
 const keyFile = path.join(OUT, `${site.indexNowKey}.txt`);
 if (!fs.existsSync(keyFile) || fs.readFileSync(keyFile, "utf8").trim() !== site.indexNowKey) fail(`IndexNow key file ${site.indexNowKey}.txt missing or wrong`);
