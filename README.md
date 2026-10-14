@@ -22,6 +22,7 @@ npm run build        # static site in out/ (postbuild flattens Next prefetch fil
 npm run verify       # check out/: pages, lang, canonical, hreflang, JSON-LD, og:image, sitemap, 404
 npm start            # serve out/ locally
 npm run indexnow     # after a live deploy: ask Bing & co. to recrawl every page (or name paths: -- /uk /de)
+npm run images       # regenerate icons (from src/app/icon.svg) and attic diagrams (src/lib/diagrams.ts)
 npm run calc -- --market us --list                        # ids for a market
 npm run calc -- --market us --area attic --size 1200 --zone 5A --product cellulose
 ```

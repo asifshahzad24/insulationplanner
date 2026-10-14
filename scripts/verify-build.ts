@@ -3,7 +3,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { site } from "../src/config/site";
-import { MARKETS } from "../src/markets/meta";
+import { ATTIC_DIAGRAM_GROUPS, atticDiagramPath } from "../src/lib/diagrams";
+import { MARKET_IDS, MARKETS } from "../src/markets/meta";
 import { alternatesOf, pathOf, ROUTES } from "../src/routes/registry";
 
 const OUT = path.join(process.cwd(), "out");
@@ -33,12 +34,15 @@ for (const entry of ROUTES) {
   if (entry.kind !== "article" && !html.includes('"@type":"WebApplication"')) fail(`${p}: missing WebApplication JSON-LD`);
   if (entry.kind === "calculator" && !html.includes('id="results"')) fail(`${p}: calculator results not prerendered`);
   if (!html.includes(`<meta property="og:image" content="${site.url}/og/${entry.market}.png"`)) fail(`${p}: missing og:image`);
+  if (!html.includes('"@type":"WebSite"') || !html.includes('"primaryImageOfPage"')) fail(`${p}: missing WebSite/WebPage JSON-LD`);
+  if (!html.includes('rel="apple-touch-icon"')) fail(`${p}: missing apple-touch-icon link`);
+  if (ATTIC_DIAGRAM_GROUPS.includes(entry.group) && !html.includes(`src="${atticDiagramPath(entry.market)}"`)) fail(`${p}: missing attic diagram`);
 }
 
 const sitemap = fs.existsSync(path.join(OUT, "sitemap.xml")) ? fs.readFileSync(path.join(OUT, "sitemap.xml"), "utf8") : "";
 if (!sitemap) fail("missing sitemap.xml");
 for (const entry of ROUTES) if (sitemap && !sitemap.includes(`<loc>${url(pathOf(entry))}</loc>`)) fail(`sitemap missing ${pathOf(entry)}`);
-for (const f of ["robots.txt", "404.html", "llms.txt", "_headers", "og/us.png", "og/uk.png", "og/de.png", "og/fr.png"]) if (!fs.existsSync(path.join(OUT, f))) fail(`missing ${f}`);
+for (const f of ["robots.txt", "404.html", "llms.txt", "_headers", "favicon.ico", "icon-512.png", "apple-icon.png", "icon1.png", ...MARKET_IDS.map((m) => atticDiagramPath(m).slice(1)), "og/us.png", "og/uk.png", "og/de.png", "og/fr.png"]) if (!fs.existsSync(path.join(OUT, f))) fail(`missing ${f}`);
 const keyFile = path.join(OUT, `${site.indexNowKey}.txt`);
 if (!fs.existsSync(keyFile) || fs.readFileSync(keyFile, "utf8").trim() !== site.indexNowKey) fail(`IndexNow key file ${site.indexNowKey}.txt missing or wrong`);
 const zipChunks = fs.existsSync(path.join(OUT, "data", "zip")) ? fs.readdirSync(path.join(OUT, "data", "zip")).length : 0;

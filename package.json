@@ -14,6 +14,7 @@
     "check": "npm run lint && npm run typecheck && npm run test",
     "verify": "tsx scripts/verify-build.ts",
     "indexnow": "tsx scripts/indexnow.ts",
+    "images": "tsx scripts/make-images.ts",
     "postbuild": "node scripts/fix-export-segments.mjs"
   },
   "dependencies": {

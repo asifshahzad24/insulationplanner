@@ -55,6 +55,59 @@ export function switcherLinks(entry: RouteEntry | undefined): Record<MarketId, s
 }
 
 // ── JSON-LD ─────────────────────────────────────────────────────────────────
+const ORG_ID = `${site.url}/#organization`;
+const WEBSITE_ID = `${site.url}/#website`;
+
+/** The image Google should treat as the page's main one (search thumbnails). */
+export interface PageImage {
+  url: string;
+  width: number;
+  height: number;
+  caption?: string;
+}
+
+/**
+ * Organization (name + logo), WebSite (site name in results) and WebPage with its main image.
+ * Same Organization/WebSite ids on every page, so Google merges them into one entity.
+ */
+export function siteGraphLd(entry: RouteEntry, content: PageContent, image: PageImage) {
+  const url = absoluteUrl(pathOf(entry));
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": ORG_ID,
+        name: site.name,
+        url: `${site.url}/`,
+        email: site.email,
+        logo: { "@type": "ImageObject", url: absoluteUrl("/icon-512.png"), width: 512, height: 512 },
+      },
+      {
+        "@type": "WebSite",
+        "@id": WEBSITE_ID,
+        name: site.name,
+        alternateName: "LoftInsulationCalc",
+        url: `${site.url}/`,
+        inLanguage: Object.values(MARKETS).map((m) => m.lang),
+        publisher: { "@id": ORG_ID },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: content.title,
+        description: content.description,
+        inLanguage: MARKETS[entry.market].lang,
+        isPartOf: { "@id": WEBSITE_ID },
+        publisher: { "@id": ORG_ID },
+        dateModified: site.updated,
+        primaryImageOfPage: { "@type": "ImageObject", contentUrl: image.url, url: image.url, width: image.width, height: image.height, caption: image.caption },
+      },
+    ],
+  };
+}
+
 export function webAppLd(entry: RouteEntry, content: PageContent) {
   return {
     "@context": "https://schema.org",

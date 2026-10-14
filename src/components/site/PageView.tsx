@@ -1,10 +1,12 @@
+import Image from "next/image";
 import { Calculator } from "@/components/calculator/Calculator";
 import { Converter } from "@/components/converter/Converter";
 import { site } from "@/config/site";
 import { getDict, tpl } from "@/i18n";
 import { getContent } from "@/lib/content";
+import { ATTIC_DIAGRAM_GROUPS, ATTIC_DIAGRAMS, atticDiagramPath, DIAGRAM_SIZE } from "@/lib/diagrams";
 import { fmtDate } from "@/lib/format";
-import { breadcrumbLd, faqLd, switcherLinks, webAppLd } from "@/lib/seo";
+import { absoluteUrl, breadcrumbLd, faqLd, ogImageUrl, siteGraphLd, switcherLinks, webAppLd, type PageImage } from "@/lib/seo";
 import { getMarket } from "@/markets";
 import { MARKETS } from "@/markets/meta";
 import { pathOf, routeByGroup, routesFor, type Group, type RouteEntry } from "@/routes/registry";
@@ -26,6 +28,10 @@ export function PageView({ entry }: { entry: RouteEntry }) {
   const content = getContent(entry);
   const home = routeByGroup(entry.market, "home")!;
   const isTool = entry.kind === "calculator" || entry.kind === "converter";
+  const diagram = ATTIC_DIAGRAM_GROUPS.includes(entry.group) ? ATTIC_DIAGRAMS[entry.market] : null;
+  const mainImage: PageImage = diagram
+    ? { url: absoluteUrl(atticDiagramPath(entry.market)), ...DIAGRAM_SIZE, caption: diagram.alt }
+    : { url: ogImageUrl(entry.market), width: 1200, height: 630 };
 
   const nav = [
     { href: pathOf(home), label: dict.page.home },
@@ -47,6 +53,7 @@ export function PageView({ entry }: { entry: RouteEntry }) {
     <>
       <JsonLd
         data={[
+          siteGraphLd(entry, content, mainImage),
           isTool ? webAppLd(entry, content) : null,
           faqLd(content),
           crumbs.length ? breadcrumbLd(crumbs.map((c) => ({ name: c.name, path: c.href }))) : null,
@@ -93,6 +100,22 @@ export function PageView({ entry }: { entry: RouteEntry }) {
 
         {entry.widget === "targetsTable" ? <TargetsTable market={market} dict={dict} /> : null}
         {entry.widget === "thicknessChart" ? <ThicknessChart market={market} dict={dict} /> : null}
+
+        {diagram ? (
+          <figure className="mt-14 max-w-4xl">
+            {/* Links to the full-size file so phones can zoom into the labels. */}
+            <a href={atticDiagramPath(entry.market)} className="block">
+              <Image
+                src={atticDiagramPath(entry.market)}
+                alt={diagram.alt}
+                width={DIAGRAM_SIZE.width}
+                height={DIAGRAM_SIZE.height}
+                className="block h-auto w-full rounded-[var(--radius-card)] border border-line"
+              />
+            </a>
+            <figcaption className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">{diagram.caption}</figcaption>
+          </figure>
+        ) : null}
 
         <article className={`prose ${isTool || entry.widget ? "mt-14" : "mt-10"}`} dangerouslySetInnerHTML={{ __html: content.html }} />
 
